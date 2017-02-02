@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YzZ-aJ-LLx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Image Peack View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="1FY-3E-gx9">
+            <objects>
+                <navigationController id="YzZ-aJ-LLx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iD8-sj-PW4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="K6W-Ry-xai"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Wk-jD-13X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-975" y="407"/>
+        </scene>
+        <!--Sent images-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ImagePeackViewController" customModule="ImageToServer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoadedImagesViewController" customModule="ImageToServer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +33,127 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cfw-QJ-Xpm">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="POV-vb-srK"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xjC-F7-rXT"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cfw-QJ-Xpm" secondAttribute="bottom" id="5fI-7a-5kt"/>
+                            <constraint firstItem="cfw-QJ-Xpm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="P1k-S3-SU2">
+                                <variation key="widthClass=compact" constant="-16"/>
+                            </constraint>
+                            <constraint firstItem="cfw-QJ-Xpm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="kcB-4K-d4n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cfw-QJ-Xpm" secondAttribute="trailing" id="lPt-S1-8Op">
+                                <variation key="widthClass=compact" constant="-16"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="cfw-QJ-Xpm"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="5fI-7a-5kt"/>
+                                <exclude reference="P1k-S3-SU2"/>
+                                <exclude reference="kcB-4K-d4n"/>
+                                <exclude reference="lPt-S1-8Op"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="cfw-QJ-Xpm"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="5fI-7a-5kt"/>
+                                <include reference="P1k-S3-SU2"/>
+                                <include reference="kcB-4K-d4n"/>
+                                <include reference="lPt-S1-8Op"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Sent images" id="jvk-gp-BS4">
+                        <barButtonItem key="rightBarButtonItem" title="Pick images" id="EQ7-yL-s3Y">
+                            <connections>
+                                <segue destination="7RQ-WV-gs0" kind="show" identifier="ImagePeackViewController" id="gT0-Pk-cwl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-202.5" y="407"/>
+        </scene>
+        <!--Image Peack View Controller-->
+        <scene sceneID="qgi-hG-mTj">
+            <objects>
+                <viewController id="7RQ-WV-gs0" customClass="ImagePeackViewController" customModule="ImageToServer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3fe-ye-dTq"/>
+                        <viewControllerLayoutGuide type="bottom" id="apk-mu-PJH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9j4-Wz-tHF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8uG-DL-dRd">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mmu-IS-B4h">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="7RQ-WV-gs0" id="Gpv-CM-G3G"/>
+                                    <outlet property="delegate" destination="7RQ-WV-gs0" id="Sgi-dm-u0J"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8uG-DL-dRd" firstAttribute="top" secondItem="9j4-Wz-tHF" secondAttribute="topMargin" id="Mt1-cw-Lgy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8uG-DL-dRd" secondAttribute="trailing" id="Odt-wf-xCT">
+                                <variation key="widthClass=compact" constant="-16"/>
+                            </constraint>
+                            <constraint firstItem="apk-mu-PJH" firstAttribute="top" secondItem="8uG-DL-dRd" secondAttribute="bottom" id="adQ-Qv-MCi"/>
+                            <constraint firstItem="8uG-DL-dRd" firstAttribute="leading" secondItem="9j4-Wz-tHF" secondAttribute="leadingMargin" id="wHf-SL-J3A">
+                                <variation key="widthClass=compact" constant="-16"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="8uG-DL-dRd"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Mt1-cw-Lgy"/>
+                                <exclude reference="Odt-wf-xCT"/>
+                                <exclude reference="wHf-SL-J3A"/>
+                                <exclude reference="adQ-Qv-MCi"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="8uG-DL-dRd"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Mt1-cw-Lgy"/>
+                                <include reference="Odt-wf-xCT"/>
+                                <include reference="wHf-SL-J3A"/>
+                                <include reference="adQ-Qv-MCi"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AIx-Oe-5ZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="577.5" y="413"/>
         </scene>
     </scenes>
 </document>

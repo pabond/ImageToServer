@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		02A777061E435F520084D4EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A777051E435F520084D4EE /* AppDelegate.swift */; };
-		02A777081E435F520084D4EE /* ImagePeackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A777071E435F520084D4EE /* ImagePeackViewController.swift */; };
 		02A7770B1E435F520084D4EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A777091E435F520084D4EE /* Main.storyboard */; };
 		02A7770D1E435F520084D4EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A7770C1E435F520084D4EE /* Images.xcassets */; };
 		02A777101E435F520084D4EE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A7770E1E435F520084D4EE /* LaunchScreen.xib */; };
 		02A7771C1E435F520084D4EE /* ImageToServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7771B1E435F520084D4EE /* ImageToServerTests.swift */; };
+		02E15F8B1E4380AE00001D33 /* ImagePeackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F861E4380AE00001D33 /* ImagePeackView.swift */; };
+		02E15F8C1E4380AE00001D33 /* ImagePeackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F871E4380AE00001D33 /* ImagePeackViewController.swift */; };
+		02E15F8D1E4380AE00001D33 /* LoadedImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F891E4380AE00001D33 /* LoadedImagesViewController.swift */; };
+		02E15F8E1E4380AE00001D33 /* LoadedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F8A1E4380AE00001D33 /* LoadedImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +32,16 @@
 		02A777001E435F520084D4EE /* ImageToServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageToServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A777041E435F520084D4EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02A777051E435F520084D4EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		02A777071E435F520084D4EE /* ImagePeackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePeackViewController.swift; sourceTree = "<group>"; };
 		02A7770A1E435F520084D4EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02A7770C1E435F520084D4EE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		02A7770F1E435F520084D4EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		02A777151E435F520084D4EE /* ImageToServerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageToServerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A7771A1E435F520084D4EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02A7771B1E435F520084D4EE /* ImageToServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageToServerTests.swift; sourceTree = "<group>"; };
+		02E15F861E4380AE00001D33 /* ImagePeackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePeackView.swift; sourceTree = "<group>"; };
+		02E15F871E4380AE00001D33 /* ImagePeackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePeackViewController.swift; sourceTree = "<group>"; };
+		02E15F891E4380AE00001D33 /* LoadedImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadedImagesViewController.swift; sourceTree = "<group>"; };
+		02E15F8A1E4380AE00001D33 /* LoadedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadedImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +83,10 @@
 		02A777021E435F520084D4EE /* ImageToServer */ = {
 			isa = PBXGroup;
 			children = (
+				02A777251E436F960084D4EE /* Library */,
+				02A777261E436F960084D4EE /* Resurses */,
+				02A777271E436F960084D4EE /* Sources */,
 				02A777051E435F520084D4EE /* AppDelegate.swift */,
-				02A777071E435F520084D4EE /* ImagePeackViewController.swift */,
 				02A777091E435F520084D4EE /* Main.storyboard */,
 				02A7770C1E435F520084D4EE /* Images.xcassets */,
 				02A7770E1E435F520084D4EE /* LaunchScreen.xib */,
@@ -110,6 +118,63 @@
 				02A7771A1E435F520084D4EE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		02A777251E436F960084D4EE /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		02A777261E436F960084D4EE /* Resurses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resurses;
+			sourceTree = "<group>";
+		};
+		02A777271E436F960084D4EE /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				02E15F841E4380AE00001D33 /* UI */,
+				02A777281E436F960084D4EE /* Models */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		02A777281E436F960084D4EE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		02E15F841E4380AE00001D33 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				02E15F851E4380AE00001D33 /* ImagePeackViewController */,
+				02E15F881E4380AE00001D33 /* LoadedImagesViewController */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		02E15F851E4380AE00001D33 /* ImagePeackViewController */ = {
+			isa = PBXGroup;
+			children = (
+				02E15F871E4380AE00001D33 /* ImagePeackViewController.swift */,
+				02E15F861E4380AE00001D33 /* ImagePeackView.swift */,
+			);
+			path = ImagePeackViewController;
+			sourceTree = "<group>";
+		};
+		02E15F881E4380AE00001D33 /* LoadedImagesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				02E15F891E4380AE00001D33 /* LoadedImagesViewController.swift */,
+				02E15F8A1E4380AE00001D33 /* LoadedImageView.swift */,
+			);
+			path = LoadedImagesViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,8 +277,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02A777081E435F520084D4EE /* ImagePeackViewController.swift in Sources */,
 				02A777061E435F520084D4EE /* AppDelegate.swift in Sources */,
+				02E15F8C1E4380AE00001D33 /* ImagePeackViewController.swift in Sources */,
+				02E15F8E1E4380AE00001D33 /* LoadedImageView.swift in Sources */,
+				02E15F8D1E4380AE00001D33 /* LoadedImagesViewController.swift in Sources */,
+				02E15F8B1E4380AE00001D33 /* ImagePeackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +475,7 @@
 				02A777211E435F520084D4EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		02A777221E435F520084D4EE /* Build configuration list for PBXNativeTarget "ImageToServerTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +484,7 @@
 				02A777241E435F520084D4EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

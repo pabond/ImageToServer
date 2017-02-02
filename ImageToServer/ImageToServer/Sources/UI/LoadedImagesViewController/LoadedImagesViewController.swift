@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoadedImagesViewController.swift
 //  ImageToServer
 //
 //  Created by Pavel Bondar on 2/2/17.
@@ -8,13 +8,10 @@
 
 import UIKit
 
-class ImagePeackViewController: UIViewController, UIImagePickerControllerDelegate {
+class LoadedImagesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
     }
-
 }
-
