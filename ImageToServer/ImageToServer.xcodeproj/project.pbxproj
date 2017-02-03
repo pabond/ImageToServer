@@ -18,6 +18,8 @@
 		02E15F8E1E4380AE00001D33 /* LoadedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F8A1E4380AE00001D33 /* LoadedImageView.swift */; };
 		02F319FE1E446F5900758A11 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F319FC1E446F5900758A11 /* ImageCollectionViewCell.swift */; };
 		02F319FF1E446F5900758A11 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F319FD1E446F5900758A11 /* ImageCollectionViewCell.xib */; };
+		AC71275F1E449640007A0333 /* Library in Resources */ = {isa = PBXBuildFile; fileRef = AC71275E1E449640007A0333 /* Library */; };
+		AC7127611E449A8E007A0333 /* SentImagesCell in Resources */ = {isa = PBXBuildFile; fileRef = AC7127601E449A8E007A0333 /* SentImagesCell */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		02E15F8A1E4380AE00001D33 /* LoadedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadedImageView.swift; sourceTree = "<group>"; };
 		02F319FC1E446F5900758A11 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		02F319FD1E446F5900758A11 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		AC71275E1E449640007A0333 /* Library */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Library; sourceTree = "<group>"; };
+		AC7127601E449A8E007A0333 /* SentImagesCell */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SentImagesCell; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +91,7 @@
 		02A777021E435F520084D4EE /* ImageToServer */ = {
 			isa = PBXGroup;
 			children = (
-				02A777251E436F960084D4EE /* Library */,
+				AC71275E1E449640007A0333 /* Library */,
 				02A777261E436F960084D4EE /* Resurses */,
 				02A777271E436F960084D4EE /* Sources */,
 				02A777051E435F520084D4EE /* AppDelegate.swift */,
@@ -122,13 +126,6 @@
 				02A7771A1E435F520084D4EE /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		02A777251E436F960084D4EE /* Library */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Library;
 			sourceTree = "<group>";
 		};
 		02A777261E436F960084D4EE /* Resurses */ = {
@@ -178,6 +175,7 @@
 			children = (
 				02E15F891E4380AE00001D33 /* LoadedImagesViewController.swift */,
 				02E15F8A1E4380AE00001D33 /* LoadedImageView.swift */,
+				AC7127601E449A8E007A0333 /* SentImagesCell */,
 			);
 			path = LoadedImagesViewController;
 			sourceTree = "<group>";
@@ -240,9 +238,11 @@
 				TargetAttributes = {
 					02A776FF1E435F520084D4EE = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 0800;
 					};
 					02A777141E435F520084D4EE = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 02A776FF1E435F520084D4EE;
 					};
 				};
@@ -275,6 +275,8 @@
 				02A777101E435F520084D4EE /* LaunchScreen.xib in Resources */,
 				02F319FF1E446F5900758A11 /* ImageCollectionViewCell.xib in Resources */,
 				02A7770D1E435F520084D4EE /* Images.xcassets in Resources */,
+				AC7127611E449A8E007A0333 /* SentImagesCell in Resources */,
+				AC71275F1E449640007A0333 /* Library in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +427,7 @@
 				INFOPLIST_FILE = ImageToServer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -435,6 +438,7 @@
 				INFOPLIST_FILE = ImageToServer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -453,6 +457,7 @@
 				INFOPLIST_FILE = ImageToServerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageToServer.app/ImageToServer";
 			};
 			name = Debug;
@@ -468,6 +473,7 @@
 				INFOPLIST_FILE = ImageToServerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageToServer.app/ImageToServer";
 			};
 			name = Release;
