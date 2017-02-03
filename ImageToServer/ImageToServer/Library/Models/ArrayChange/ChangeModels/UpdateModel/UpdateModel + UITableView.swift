@@ -6,6 +6,8 @@
 //  Copyright © 2016 Pavel Bondar. All rights reserved.
 //
 
+import UIKit
+
 extension UpdateModel {
     override func apply(to tableView: UITableView, with rowAnimation: UITableViewRowAnimation) {
         tableView.update({ [weak self] in

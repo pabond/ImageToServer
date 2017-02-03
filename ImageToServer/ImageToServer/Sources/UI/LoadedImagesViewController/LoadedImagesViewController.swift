@@ -22,7 +22,7 @@ extension LoadedImagesViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueCellWithClass(SentImagesCell, path: indexPath)
+        return tableView.dequeueCellWithClass(SentImagesCell.self, path: indexPath)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

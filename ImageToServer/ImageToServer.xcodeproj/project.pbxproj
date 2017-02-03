@@ -19,8 +19,6 @@
 		02F319FE1E446F5900758A11 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F319FC1E446F5900758A11 /* ImageCollectionViewCell.swift */; };
 		02F319FF1E446F5900758A11 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F319FD1E446F5900758A11 /* ImageCollectionViewCell.xib */; };
 		AC71279E1E449F56007A0333 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7127661E449F56007A0333 /* Lock.swift */; };
-		AC71279F1E449F56007A0333 /* AppDelegate + MagicalRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7127691E449F56007A0333 /* AppDelegate + MagicalRecord.swift */; };
-		AC7127A01E449F56007A0333 /* AppDelegate + SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71276A1E449F56007A0333 /* AppDelegate + SignIn.swift */; };
 		AC7127A11E449F56007A0333 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71276B1E449F56007A0333 /* Array.swift */; };
 		AC7127A21E449F56007A0333 /* NSManagedObject+BPVExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC71276E1E449F56007A0333 /* NSManagedObject+BPVExtensions.m */; };
 		AC7127A31E449F56007A0333 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71276F1E449F56007A0333 /* UICollectionView.swift */; };
@@ -46,7 +44,6 @@
 		AC7127B71E449F56007A0333 /* OneIndexArrayChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71278C1E449F56007A0333 /* OneIndexArrayChange.swift */; };
 		AC7127B81E449F56007A0333 /* TwoIndexArrayChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71278E1E449F56007A0333 /* TwoIndexArrayChange.swift */; };
 		AC7127B91E449F56007A0333 /* ArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71278F1E449F56007A0333 /* ArrayModel.swift */; };
-		AC7127BA1E449F56007A0333 /* DBArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7127901E449F56007A0333 /* DBArrayModel.swift */; };
 		AC7127BB1E449F56007A0333 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7127911E449F56007A0333 /* Model.swift */; };
 		AC7127BC1E449F56007A0333 /* SlideInPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7127941E449F56007A0333 /* SlideInPresentationAnimator.swift */; };
 		AC7127BD1E449F56007A0333 /* SlideInPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7127951E449F56007A0333 /* SlideInPresentationController.swift */; };
@@ -88,8 +85,6 @@
 		02F319FC1E446F5900758A11 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		02F319FD1E446F5900758A11 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		AC7127661E449F56007A0333 /* Lock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
-		AC7127691E449F56007A0333 /* AppDelegate + MagicalRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate + MagicalRecord.swift"; sourceTree = "<group>"; };
-		AC71276A1E449F56007A0333 /* AppDelegate + SignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate + SignIn.swift"; sourceTree = "<group>"; };
 		AC71276B1E449F56007A0333 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		AC71276D1E449F56007A0333 /* NSManagedObject+BPVExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+BPVExtensions.h"; sourceTree = "<group>"; };
 		AC71276E1E449F56007A0333 /* NSManagedObject+BPVExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+BPVExtensions.m"; sourceTree = "<group>"; };
@@ -116,7 +111,6 @@
 		AC71278C1E449F56007A0333 /* OneIndexArrayChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneIndexArrayChange.swift; sourceTree = "<group>"; };
 		AC71278E1E449F56007A0333 /* TwoIndexArrayChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoIndexArrayChange.swift; sourceTree = "<group>"; };
 		AC71278F1E449F56007A0333 /* ArrayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayModel.swift; sourceTree = "<group>"; };
-		AC7127901E449F56007A0333 /* DBArrayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBArrayModel.swift; sourceTree = "<group>"; };
 		AC7127911E449F56007A0333 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		AC7127941E449F56007A0333 /* SlideInPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationAnimator.swift; sourceTree = "<group>"; };
 		AC7127951E449F56007A0333 /* SlideInPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationController.swift; sourceTree = "<group>"; };
@@ -291,7 +285,6 @@
 		AC7127671E449F56007A0333 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AC7127681E449F56007A0333 /* AppDelegate */,
 				AC71276B1E449F56007A0333 /* Array.swift */,
 				AC71276C1E449F56007A0333 /* NSManagedObject */,
 				AC71276F1E449F56007A0333 /* UICollectionView.swift */,
@@ -301,15 +294,6 @@
 				AC7127731E449F56007A0333 /* UIWindow.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		AC7127681E449F56007A0333 /* AppDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				AC7127691E449F56007A0333 /* AppDelegate + MagicalRecord.swift */,
-				AC71276A1E449F56007A0333 /* AppDelegate + SignIn.swift */,
-			);
-			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		AC71276C1E449F56007A0333 /* NSManagedObject */ = {
@@ -326,7 +310,6 @@
 			children = (
 				AC7127751E449F56007A0333 /* ArrayChange */,
 				AC71278F1E449F56007A0333 /* ArrayModel.swift */,
-				AC7127901E449F56007A0333 /* DBArrayModel.swift */,
 				AC7127911E449F56007A0333 /* Model.swift */,
 			);
 			path = Models;
@@ -510,6 +493,11 @@
 					02A776FF1E435F520084D4EE = {
 						CreatedOnToolsVersion = 6.1.1;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					02A777141E435F520084D4EE = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -564,7 +552,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC71279F1E449F56007A0333 /* AppDelegate + MagicalRecord.swift in Sources */,
 				AC7127C21E449F56007A0333 /* ViewController.swift in Sources */,
 				AC7127A11E449F56007A0333 /* Array.swift in Sources */,
 				AC7127B21E449F56007A0333 /* RemoveModel + UITableView.swift in Sources */,
@@ -583,7 +570,6 @@
 				AC7127AB1E449F56007A0333 /* AddModel + UICollectionView.swift in Sources */,
 				AC7127B81E449F56007A0333 /* TwoIndexArrayChange.swift in Sources */,
 				AC7127A31E449F56007A0333 /* UICollectionView.swift in Sources */,
-				AC7127A01E449F56007A0333 /* AppDelegate + SignIn.swift in Sources */,
 				AC7127C31E449F56007A0333 /* RoundedView.swift in Sources */,
 				AC71279E1E449F56007A0333 /* Lock.swift in Sources */,
 				AC7127AA1E449F56007A0333 /* ArrayChange.swift in Sources */,
@@ -609,7 +595,6 @@
 				AC7127A51E449F56007A0333 /* UITableView.swift in Sources */,
 				AC7127A61E449F56007A0333 /* UIViewController.swift in Sources */,
 				AC7127A71E449F56007A0333 /* UIWindow.swift in Sources */,
-				AC7127BA1E449F56007A0333 /* DBArrayModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,7 +670,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -722,7 +707,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

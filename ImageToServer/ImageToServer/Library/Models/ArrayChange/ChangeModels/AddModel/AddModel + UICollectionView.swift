@@ -6,6 +6,8 @@
 //  Copyright © 2016 Pavel Bondar. All rights reserved.
 //
 
+import UIKit
+
 extension AddModel {
     override func applyToCollectionView(_ collectionView: UICollectionView) {
         if let indexPath = self.indexPath {

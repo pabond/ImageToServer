@@ -9,10 +9,16 @@
 import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var imageView: UIImageView!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    var object: AnyObject? {
+        didSet {
+            fillWith(self.object)
+        }
     }
-
+    
+    func fillWith(_ object: AnyObject?) {
+        guard let image = object as? UIImage else { return }
+        imageView.image = image
+    }
 }

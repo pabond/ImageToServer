@@ -9,5 +9,6 @@
 import UIKit
 
 class ImagePeackView: UIView {
+    @IBOutlet weak var collectionView: UICollectionView!
     
 }

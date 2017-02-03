@@ -20,9 +20,7 @@ extension UICollectionView {
     }
 
     func registerCell(withClass cls: AnyClass?) {
-        if let cls = cls {
-            self.register(UINib.nibWithClass(cls), forCellWithReuseIdentifier: String(describing: cls.self))
-        }
+        cls.map { self.register(UINib.nibWithClass($0), forCellWithReuseIdentifier: String(describing: $0.self)) }
     }
     
     func registerCells(withClasses classes: [AnyClass]?) {
