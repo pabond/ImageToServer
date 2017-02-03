@@ -6,7 +6,6 @@
 //  Copyright © 2016 Pavel Bondar. All rights reserved.
 //
 
-
 import MagicalRecord
 
 extension AppDelegate {
