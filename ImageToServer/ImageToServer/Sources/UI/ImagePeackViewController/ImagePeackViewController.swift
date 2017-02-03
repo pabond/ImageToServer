@@ -9,6 +9,8 @@
 import UIKit
 import Photos
 
+fileprivate let inset: CGFloat = 3.0
+
 class ImagePeackViewController: UIViewController {
     var imagePeackView: ImagePeackView?
     var images = [UIImage]()
@@ -16,8 +18,8 @@ class ImagePeackViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imagePeackView?.collectionView.registerCell(withClass: ImageCollectionViewCell.self)
         imagePeackView = viewGetter()
+        imagePeackView?.collectionView.registerCell(withClass: ImageCollectionViewCell.self)
         allImages()
     }
 
@@ -52,8 +54,8 @@ extension ImagePeackViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.cellWithClass(ImageCollectionViewCell.self, for: indexPath) as? ImageCollectionViewCell
-        cell?.object = images[indexPath.row]
+        let cell = collectionView.cellWithClass(ImageCollectionViewCell.self, for: indexPath) as! ImageCollectionViewCell
+        cell.object = images[indexPath.row]
         
         return cell
     }
@@ -64,5 +66,30 @@ extension ImagePeackViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+    }
+}
+
+extension ImagePeackViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        let width = collectionView.frame.width / 4 - inset
+        
+        return CGSize(width: width, height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat
+    {
+        return inset
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
+    {
+        return inset
     }
 }
