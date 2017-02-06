@@ -9,10 +9,12 @@
 import UIKit
 
 class RoundedView: UIView {
+    var cornerRadius: CGFloat { return 10 }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.roundedView(cornerRadius: 12)
+        self.roundedView(cornerRadius: cornerRadius)
     }
 }
 

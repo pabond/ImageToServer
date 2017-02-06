@@ -8,11 +8,26 @@
 
 import UIKit
 
-class LoadedImagesViewController: UIViewController {
+enum CloudType {
+    case dropBox, gDrive, box, mailRuCloud, iCloud
+}
 
+class LoadedImagesViewController: UIViewController {
+    var loadImageView: LoadedImageView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadImageView = viewGetter()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? ImagePeackViewController else { return }
+        vc.startSending = sendImages
+    }
+    
+    func sendImages(to cloudType: CloudType, with images: ArrayModel?) {
+        print(images?.count ?? "")
     }
 }
 

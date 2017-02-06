@@ -1,7 +1,7 @@
 # Podfile
 use_frameworks!
 
-target 'RecipesList' do
+target 'ImageToServer' do
 	pod 'Google/SignIn'
 	pod 'RxSwift',    '~> 3.0'
 	pod 'RxCocoa',    '~> 3.0'

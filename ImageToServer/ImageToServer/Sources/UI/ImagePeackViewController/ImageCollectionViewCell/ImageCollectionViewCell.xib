@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,10 +17,22 @@
                 <rect key="frame" x="0.0" y="0.0" width="147" height="136"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VST-bO-jt3"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VST-bO-jt3">
+                        <rect key="frame" x="0.0" y="0.0" width="147" height="136"/>
+                    </imageView>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dYB-8g-Z4z" customClass="RoundView" customModule="ImageToServer" customModuleProvider="target">
+                        <rect key="frame" x="119" y="108" width="20" height="20"/>
+                        <color key="backgroundColor" red="0.052649337580843204" green="0.76354031735751293" blue="0.1653859627891148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="PFZ-pq-4ZA"/>
+                            <constraint firstAttribute="width" constant="20" id="iqA-7O-n8Z"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="dYB-8g-Z4z" secondAttribute="bottom" constant="8" id="BY3-Q2-Hwa"/>
+                <constraint firstAttribute="trailing" secondItem="dYB-8g-Z4z" secondAttribute="trailing" constant="8" id="IEu-Hg-TX9"/>
                 <constraint firstItem="VST-bO-jt3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="LbH-cm-QF0"/>
                 <constraint firstAttribute="bottom" secondItem="VST-bO-jt3" secondAttribute="bottom" id="b1x-Nw-BIz"/>
                 <constraint firstAttribute="trailing" secondItem="VST-bO-jt3" secondAttribute="trailing" id="mQc-dS-Q6Z"/>
@@ -27,6 +41,7 @@
             <size key="customSize" width="147" height="136"/>
             <connections>
                 <outlet property="imageView" destination="VST-bO-jt3" id="Lyj-Q6-gef"/>
+                <outlet property="selectedView" destination="dYB-8g-Z4z" id="eVx-Fw-Ixc"/>
             </connections>
             <point key="canvasLocation" x="721.5" y="500"/>
         </collectionViewCell>

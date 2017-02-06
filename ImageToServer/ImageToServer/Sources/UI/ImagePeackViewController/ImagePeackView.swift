@@ -11,4 +11,9 @@ import UIKit
 class ImagePeackView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        collectionView.allowsMultipleSelection = true
+    }
 }
