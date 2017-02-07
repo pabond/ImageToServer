@@ -12,6 +12,9 @@ import RxSwift
 fileprivate let inset: CGFloat = 3.0
 fileprivate let cellsPerRow: CGFloat = 4
 
+fileprivate let alertTitle = "No pictures picked"
+fileprivate let alertText = "Please pick some images to send first"
+
 class ImagePeackViewController: UIViewController {
     var startSending: ((_ cloudType: CloudType, _ images: ArrayModel?) -> ())?
     let disposeBag = DisposeBag()
@@ -41,8 +44,21 @@ class ImagePeackViewController: UIViewController {
         }
     }
     
-    @IBAction func onStoreToCloud(_ sender: Any) {
-        startSending?(.dropBox, pickedImages)
+    @IBAction func onStoreCloud(_ sender: Any) {
+        if pickedImages.count != 0 {
+            performSegue(toViewControllerWithClass: CloudPeackViewController.self, sender: nil)
+        } else {
+            infoAlert(title: alertTitle, text: alertText)
+        }
+    }
+    
+    func loadToCloud(_ cloud: CloudType) {
+        startSending?(cloud, pickedImages)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? CloudPeackViewController else { return }
+        vc.loadImages = loadToCloud
     }
 }
 

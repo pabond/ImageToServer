@@ -27,7 +27,7 @@ class LoadedImagesViewController: UIViewController {
     }
     
     func sendImages(to cloudType: CloudType, with images: ArrayModel?) {
-        print(images?.count ?? "")
+        print(cloudType.hashValue)
     }
 }
 

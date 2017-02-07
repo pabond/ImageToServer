@@ -10,8 +10,5 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    func popCurrentViewController() {
-        _ = navigationController?.popViewController(animated: true)
-    }
 }
 

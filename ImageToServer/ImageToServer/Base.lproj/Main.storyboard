@@ -166,11 +166,13 @@
                     <navigationItem key="navigationItem" title="Title" id="4h7-I8-H4i">
                         <barButtonItem key="rightBarButtonItem" title="Store to cloud" id="RTq-qF-HoY">
                             <connections>
-                                <action selector="onStoreToCloud:" destination="7RQ-WV-gs0" id="93T-ZA-f6o"/>
-                                <segue destination="GcV-X7-GaX" kind="presentation" id="uiD-od-tV1"/>
+                                <action selector="onStoreCloud:" destination="7RQ-WV-gs0" id="l5m-Tq-sqY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="GcV-X7-GaX" kind="presentation" identifier="CloudPeackViewController" id="7n4-fN-kqO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIx-Oe-5ZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

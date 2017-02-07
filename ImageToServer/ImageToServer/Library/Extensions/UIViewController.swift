@@ -44,4 +44,19 @@ extension UIViewController {
     func performSegue(toViewControllerWithClass cls: AnyClass, sender: Any?) {
         performSegue(withIdentifier: String(describing: cls.self), sender: sender)
     }
+    
+    func infoAlert(title: String, text: String) {
+        let alertController = UIAlertController(title: title,
+                                                message: text,
+                                                preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func popCurrentViewController() {
+        _ = navigationController?.popViewController(animated: true)
+    }
 }
