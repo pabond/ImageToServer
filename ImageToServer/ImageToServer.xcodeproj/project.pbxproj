@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0211B8311E49C99900A3F723 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0211B8301E49C99900A3F723 /* GoogleService-Info.plist */; };
+		0211B8331E49CCF900A3F723 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0211B8321E49CCF900A3F723 /* GoogleService-Info.plist */; };
 		025DC5141E48706C00FB679F /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5131E48706C00FB679F /* Context.swift */; };
 		025DC5171E4870E200FB679F /* FetchImagesContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5161E4870E200FB679F /* FetchImagesContext.swift */; };
 		025DC5191E488FBB00FB679F /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5181E488FBB00FB679F /* RoundView.swift */; };
@@ -77,7 +77,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0211B8301E49C99900A3F723 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0211B8321E49CCF900A3F723 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		025DC5131E48706C00FB679F /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		025DC5161E4870E200FB679F /* FetchImagesContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchImagesContext.swift; sourceTree = "<group>"; };
 		025DC5181E488FBB00FB679F /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
@@ -227,7 +227,7 @@
 		02A777031E435F520084D4EE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0211B8301E49C99900A3F723 /* GoogleService-Info.plist */,
+				0211B8321E49CCF900A3F723 /* GoogleService-Info.plist */,
 				02A777041E435F520084D4EE /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -615,7 +615,7 @@
 				02F319FF1E446F5900758A11 /* ImageCollectionViewCell.xib in Resources */,
 				02A7770D1E435F520084D4EE /* Images.xcassets in Resources */,
 				AC7127C91E44A024007A0333 /* SentImagesCell.xib in Resources */,
-				0211B8311E49C99900A3F723 /* GoogleService-Info.plist in Resources */,
+				0211B8331E49CCF900A3F723 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

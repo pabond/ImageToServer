@@ -2,8 +2,8 @@
 use_frameworks!
 
 target 'ImageToServer' do
-	pod 'Google/SignIn'
 	pod 'RxSwift',    '~> 3.0'
-	pod 'RxCocoa',    '~> 3.0'
 	pod 'MagicalRecord'
+	pod 'GoogleAPIClient/Drive', '~> 1.0.2'
+	pod 'GTMOAuth2', '~> 1.1.0'
 end
