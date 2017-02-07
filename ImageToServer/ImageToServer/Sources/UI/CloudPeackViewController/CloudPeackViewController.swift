@@ -10,7 +10,6 @@ import UIKit
 
 class CloudPeackViewController: TrancitionViewController {
     var loadImages: ((_: CloudType) -> ())?
-    var cloudPeackView: CloudPeakView?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -30,7 +29,6 @@ class CloudPeackViewController: TrancitionViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onCancel(_:)))
         view.addGestureRecognizer(tapGesture)
-        cloudPeackView = viewGetter()
     }
     
     @IBAction func onICloud(_ sender: Any) {

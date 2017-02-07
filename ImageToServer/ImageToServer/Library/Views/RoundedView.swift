@@ -15,6 +15,7 @@ class RoundedView: UIView {
         super.awakeFromNib()
         
         self.roundedView(cornerRadius: cornerRadius)
+        clipsToBounds = true
     }
 }
 

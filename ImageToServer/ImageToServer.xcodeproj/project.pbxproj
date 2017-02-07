@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0211B8311E49C99900A3F723 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0211B8301E49C99900A3F723 /* GoogleService-Info.plist */; };
 		025DC5141E48706C00FB679F /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5131E48706C00FB679F /* Context.swift */; };
 		025DC5171E4870E200FB679F /* FetchImagesContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5161E4870E200FB679F /* FetchImagesContext.swift */; };
 		025DC5191E488FBB00FB679F /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5181E488FBB00FB679F /* RoundView.swift */; };
@@ -20,7 +21,6 @@
 		02E15F8D1E4380AE00001D33 /* LoadedImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F891E4380AE00001D33 /* LoadedImagesViewController.swift */; };
 		02E15F8E1E4380AE00001D33 /* LoadedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F8A1E4380AE00001D33 /* LoadedImageView.swift */; };
 		02E3F8D31E48BA560076866E /* CloudPeackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E3F8D21E48BA560076866E /* CloudPeackViewController.swift */; };
-		02E3F8D51E48BA740076866E /* CloudPeakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E3F8D41E48BA740076866E /* CloudPeakView.swift */; };
 		02E3F8D81E48D73B0076866E /* FilesToCloudContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E3F8D71E48D73B0076866E /* FilesToCloudContext.swift */; };
 		02E3F8DB1E48DBDC0076866E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02E3F8D91E48DBDC0076866E /* Model.xcdatamodeld */; };
 		02F319FE1E446F5900758A11 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F319FC1E446F5900758A11 /* ImageCollectionViewCell.swift */; };
@@ -77,6 +77,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0211B8301E49C99900A3F723 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		025DC5131E48706C00FB679F /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		025DC5161E4870E200FB679F /* FetchImagesContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchImagesContext.swift; sourceTree = "<group>"; };
 		025DC5181E488FBB00FB679F /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
@@ -94,7 +95,6 @@
 		02E15F891E4380AE00001D33 /* LoadedImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadedImagesViewController.swift; sourceTree = "<group>"; };
 		02E15F8A1E4380AE00001D33 /* LoadedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadedImageView.swift; sourceTree = "<group>"; };
 		02E3F8D21E48BA560076866E /* CloudPeackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudPeackViewController.swift; sourceTree = "<group>"; };
-		02E3F8D41E48BA740076866E /* CloudPeakView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudPeakView.swift; sourceTree = "<group>"; };
 		02E3F8D71E48D73B0076866E /* FilesToCloudContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesToCloudContext.swift; sourceTree = "<group>"; };
 		02E3F8DA1E48DBDC0076866E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		02F319FC1E446F5900758A11 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -227,6 +227,7 @@
 		02A777031E435F520084D4EE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0211B8301E49C99900A3F723 /* GoogleService-Info.plist */,
 				02A777041E435F520084D4EE /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -299,7 +300,6 @@
 			isa = PBXGroup;
 			children = (
 				02E3F8D21E48BA560076866E /* CloudPeackViewController.swift */,
-				02E3F8D41E48BA740076866E /* CloudPeakView.swift */,
 			);
 			path = CloudPeackViewController;
 			sourceTree = "<group>";
@@ -615,6 +615,7 @@
 				02F319FF1E446F5900758A11 /* ImageCollectionViewCell.xib in Resources */,
 				02A7770D1E435F520084D4EE /* Images.xcassets in Resources */,
 				AC7127C91E44A024007A0333 /* SentImagesCell.xib in Resources */,
+				0211B8311E49C99900A3F723 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,7 +714,6 @@
 				AC7127C41E449F56007A0333 /* TableViewCell.swift in Sources */,
 				AC7127C81E44A024007A0333 /* SentImagesCell.swift in Sources */,
 				AC7127B51E449F56007A0333 /* UpdateModel + UITableView.swift in Sources */,
-				02E3F8D51E48BA740076866E /* CloudPeakView.swift in Sources */,
 				02E15F8E1E4380AE00001D33 /* LoadedImageView.swift in Sources */,
 				AC7127A41E449F56007A0333 /* UINib.swift in Sources */,
 				AC7127B31E449F56007A0333 /* RemoveModel.swift in Sources */,
