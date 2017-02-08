@@ -204,10 +204,10 @@
             </objects>
             <point key="canvasLocation" x="528" y="407"/>
         </scene>
-        <!--View Controller-->
+        <!--Load Setup View Controller-->
         <scene sceneID="7sq-cU-9GL">
             <objects>
-                <viewController id="V83-ga-aWn" sceneMemberID="viewController">
+                <viewController id="V83-ga-aWn" customClass="LoadSetupViewController" customModule="ImageToServer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Eqx-Oc-FHx"/>
                         <viewControllerLayoutGuide type="bottom" id="g66-Ky-Z78"/>

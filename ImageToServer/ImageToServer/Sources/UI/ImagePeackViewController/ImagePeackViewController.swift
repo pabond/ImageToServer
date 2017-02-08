@@ -54,6 +54,7 @@ class ImagePeackViewController: UIViewController {
     
     func loadToCloud(_ cloud: CloudType) {
         startSending?(cloud, pickedImages)
+        popCurrentViewController()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

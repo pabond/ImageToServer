@@ -27,7 +27,12 @@ class LoadedImagesViewController: UIViewController {
     }
     
     func sendImages(to cloudType: CloudType, with images: ArrayModel?) {
-        print(cloudType.hashValue)
+        if cloudType == .dropBox {
+            images.map {
+                let loadContext = FilesToCloudContext(objects: $0)
+                loadContext.execute()
+            }
+        }
     }
 }
 

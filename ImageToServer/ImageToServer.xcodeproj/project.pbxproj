@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0211B8331E49CCF900A3F723 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0211B8321E49CCF900A3F723 /* GoogleService-Info.plist */; };
+		0211B8361E4A0A3900A3F723 /* LoadSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211B8351E4A0A3900A3F723 /* LoadSetupViewController.swift */; };
+		0211B8391E4A123F00A3F723 /* LoginContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211B8381E4A123F00A3F723 /* LoginContext.swift */; };
+		0211B83B1E4A125700A3F723 /* LoginWithDropbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211B83A1E4A125700A3F723 /* LoginWithDropbox.swift */; };
+		0211B83D1E4A1D6000A3F723 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211B83C1E4A1D6000A3F723 /* UIApplication.swift */; };
 		025DC5141E48706C00FB679F /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5131E48706C00FB679F /* Context.swift */; };
 		025DC5171E4870E200FB679F /* FetchImagesContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5161E4870E200FB679F /* FetchImagesContext.swift */; };
 		025DC5191E488FBB00FB679F /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5181E488FBB00FB679F /* RoundView.swift */; };
@@ -78,6 +82,10 @@
 
 /* Begin PBXFileReference section */
 		0211B8321E49CCF900A3F723 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0211B8351E4A0A3900A3F723 /* LoadSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadSetupViewController.swift; sourceTree = "<group>"; };
+		0211B8381E4A123F00A3F723 /* LoginContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginContext.swift; sourceTree = "<group>"; };
+		0211B83A1E4A125700A3F723 /* LoginWithDropbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWithDropbox.swift; sourceTree = "<group>"; };
+		0211B83C1E4A1D6000A3F723 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		025DC5131E48706C00FB679F /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		025DC5161E4870E200FB679F /* FetchImagesContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchImagesContext.swift; sourceTree = "<group>"; };
 		025DC5181E488FBB00FB679F /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
@@ -162,6 +170,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0211B8341E4A09FB00A3F723 /* LoadSetup */ = {
+			isa = PBXGroup;
+			children = (
+				0211B8351E4A0A3900A3F723 /* LoadSetupViewController.swift */,
+			);
+			path = LoadSetup;
+			sourceTree = "<group>";
+		};
+		0211B8371E4A121000A3F723 /* LoginContext */ = {
+			isa = PBXGroup;
+			children = (
+				0211B8381E4A123F00A3F723 /* LoginContext.swift */,
+				0211B83A1E4A125700A3F723 /* LoginWithDropbox.swift */,
+			);
+			path = LoginContext;
+			sourceTree = "<group>";
+		};
 		025DC50E1E486FB000FB679F /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				025DC5131E48706C00FB679F /* Context.swift */,
+				0211B8371E4A121000A3F723 /* LoginContext */,
 				02E3F8D61E48D7150076866E /* FilesToCloudContext */,
 				025DC5151E48709500FB679F /* FetchImagesContext */,
 			);
@@ -269,6 +295,7 @@
 		02E15F841E4380AE00001D33 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0211B8341E4A09FB00A3F723 /* LoadSetup */,
 				02E3F8D11E48BA280076866E /* CloudPeackViewController */,
 				02E15F851E4380AE00001D33 /* ImagePeackViewController */,
 				02E15F881E4380AE00001D33 /* LoadedImagesViewController */,
@@ -360,6 +387,7 @@
 				AC7127711E449F56007A0333 /* UITableView.swift */,
 				AC7127721E449F56007A0333 /* UIViewController.swift */,
 				AC7127731E449F56007A0333 /* UIWindow.swift */,
+				0211B83C1E4A1D6000A3F723 /* UIApplication.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -685,6 +713,7 @@
 				025DC5191E488FBB00FB679F /* RoundView.swift in Sources */,
 				AC7127C21E449F56007A0333 /* ViewController.swift in Sources */,
 				AC7127A11E449F56007A0333 /* Array.swift in Sources */,
+				0211B83B1E4A125700A3F723 /* LoginWithDropbox.swift in Sources */,
 				AC7127B21E449F56007A0333 /* RemoveModel + UITableView.swift in Sources */,
 				02F319FE1E446F5900758A11 /* ImageCollectionViewCell.swift in Sources */,
 				02A777061E435F520084D4EE /* AppDelegate.swift in Sources */,
@@ -700,7 +729,9 @@
 				AC7127C01E449F56007A0333 /* TableViewController.swift in Sources */,
 				AC7127AB1E449F56007A0333 /* AddModel + UICollectionView.swift in Sources */,
 				AC7127B81E449F56007A0333 /* TwoIndexArrayChange.swift in Sources */,
+				0211B83D1E4A1D6000A3F723 /* UIApplication.swift in Sources */,
 				AC7127A31E449F56007A0333 /* UICollectionView.swift in Sources */,
+				0211B8391E4A123F00A3F723 /* LoginContext.swift in Sources */,
 				AC7127C31E449F56007A0333 /* RoundedView.swift in Sources */,
 				AC71279E1E449F56007A0333 /* Lock.swift in Sources */,
 				AC7127AA1E449F56007A0333 /* ArrayChange.swift in Sources */,
@@ -709,6 +740,7 @@
 				AC7127B41E449F56007A0333 /* UpdateModel + UICollectionView.swift in Sources */,
 				AC7127AD1E449F56007A0333 /* AddModel.swift in Sources */,
 				AC7127B91E449F56007A0333 /* ArrayModel.swift in Sources */,
+				0211B8361E4A0A3900A3F723 /* LoadSetupViewController.swift in Sources */,
 				AC7127AE1E449F56007A0333 /* MoveModel + UICollectionView.swift in Sources */,
 				AC7127B71E449F56007A0333 /* OneIndexArrayChange.swift in Sources */,
 				AC7127C41E449F56007A0333 /* TableViewCell.swift in Sources */,

@@ -22,7 +22,7 @@ extension ArrayModel : Sequence {
     public typealias Iterator = NSFastEnumerationIterator
     
     public func makeIterator() -> NSFastEnumerationIterator {
-        return NSFastEnumerationIterator(self as! NSFastEnumeration)
+        return NSFastEnumerationIterator(self.models as! NSFastEnumeration)
     }
 }
 
