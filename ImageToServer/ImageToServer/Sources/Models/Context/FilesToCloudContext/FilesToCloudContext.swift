@@ -29,7 +29,6 @@ class FilesToCloudContext: Context {
         for i in 0..<models.count {
             guard let model = objectsToLoad?[i] as? UIImage else { break }
             guard let data = UIImageJPEGRepresentation(model, 200) else { return }
-                _ = Files
             _ = cli.files.upload(path: "/myPhotos/\(NSDate()).jpeg", input: data)
                 .response { response, error in
                     if let response = response {
