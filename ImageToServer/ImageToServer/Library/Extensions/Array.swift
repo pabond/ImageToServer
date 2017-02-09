@@ -26,4 +26,8 @@ extension Array {
         
         return nil
     }
+    
+    func contains<T>(obj: T) -> Bool where T : Equatable, T : Equatable {
+        return self.filter({$0 as? T == obj}).count > 0
+    }
 }

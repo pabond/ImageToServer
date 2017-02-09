@@ -22,7 +22,7 @@ extension ArrayModel : Sequence {
     public typealias Iterator = NSFastEnumerationIterator
     
     public func makeIterator() -> NSFastEnumerationIterator {
-        return NSFastEnumerationIterator(self.models as! NSFastEnumeration)
+        return NSFastEnumerationIterator(self.models as NSFastEnumeration)
     }
 }
 
@@ -67,7 +67,7 @@ class ArrayModel : Model {
             return false
         }
         
-        return (models.contains(where: { $0 === model }))
+        return models.contains { $0 === model }
     }
     
     func indexOfModel(_ model: AnyObject?) -> Int? {
@@ -75,7 +75,7 @@ class ArrayModel : Model {
             return nil
         }
         
-        return (models.index(where: { $0 === model}))!
+        return (models.index { $0 === model})!
     }
     
     func removeModel(_ model: AnyObject?) {

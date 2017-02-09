@@ -12,6 +12,10 @@
 		0211B8391E4A123F00A3F723 /* LoginContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211B8381E4A123F00A3F723 /* LoginContext.swift */; };
 		0211B83B1E4A125700A3F723 /* LoginWithDropbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211B83A1E4A125700A3F723 /* LoginWithDropbox.swift */; };
 		0211B83D1E4A1D6000A3F723 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211B83C1E4A1D6000A3F723 /* UIApplication.swift */; };
+		0227D96D1E4B5A5C00AF2FBB /* LoadSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227D96C1E4B5A5C00AF2FBB /* LoadSetupView.swift */; };
+		022ED80F1E4C93D000EB583A /* DBArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022ED80E1E4C93D000EB583A /* DBArrayModel.swift */; };
+		024586361E4C5AC80031C605 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024586351E4C5AC80031C605 /* UINavigationController.swift */; };
+		024586381E4C68A70031C605 /* AppDelegate + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024586371E4C68A70031C605 /* AppDelegate + Extensions.swift */; };
 		025DC5141E48706C00FB679F /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5131E48706C00FB679F /* Context.swift */; };
 		025DC5171E4870E200FB679F /* FetchImagesContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5161E4870E200FB679F /* FetchImagesContext.swift */; };
 		025DC5191E488FBB00FB679F /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5181E488FBB00FB679F /* RoundView.swift */; };
@@ -24,7 +28,6 @@
 		02E15F8C1E4380AE00001D33 /* ImagePeackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F871E4380AE00001D33 /* ImagePeackViewController.swift */; };
 		02E15F8D1E4380AE00001D33 /* LoadedImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F891E4380AE00001D33 /* LoadedImagesViewController.swift */; };
 		02E15F8E1E4380AE00001D33 /* LoadedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F8A1E4380AE00001D33 /* LoadedImageView.swift */; };
-		02E3F8D31E48BA560076866E /* CloudPeackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E3F8D21E48BA560076866E /* CloudPeackViewController.swift */; };
 		02E3F8D81E48D73B0076866E /* FilesToCloudContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E3F8D71E48D73B0076866E /* FilesToCloudContext.swift */; };
 		02E3F8DB1E48DBDC0076866E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02E3F8D91E48DBDC0076866E /* Model.xcdatamodeld */; };
 		02F319FE1E446F5900758A11 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F319FC1E446F5900758A11 /* ImageCollectionViewCell.swift */; };
@@ -86,6 +89,11 @@
 		0211B8381E4A123F00A3F723 /* LoginContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginContext.swift; sourceTree = "<group>"; };
 		0211B83A1E4A125700A3F723 /* LoginWithDropbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWithDropbox.swift; sourceTree = "<group>"; };
 		0211B83C1E4A1D6000A3F723 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		0227D96C1E4B5A5C00AF2FBB /* LoadSetupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadSetupView.swift; sourceTree = "<group>"; };
+		022ED80E1E4C93D000EB583A /* DBArrayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBArrayModel.swift; sourceTree = "<group>"; };
+		022ED8181E4C9D3600EB583A /* ImageToServer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageToServer-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		024586351E4C5AC80031C605 /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		024586371E4C68A70031C605 /* AppDelegate + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate + Extensions.swift"; sourceTree = "<group>"; };
 		025DC5131E48706C00FB679F /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		025DC5161E4870E200FB679F /* FetchImagesContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchImagesContext.swift; sourceTree = "<group>"; };
 		025DC5181E488FBB00FB679F /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
@@ -102,7 +110,6 @@
 		02E15F871E4380AE00001D33 /* ImagePeackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePeackViewController.swift; sourceTree = "<group>"; };
 		02E15F891E4380AE00001D33 /* LoadedImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadedImagesViewController.swift; sourceTree = "<group>"; };
 		02E15F8A1E4380AE00001D33 /* LoadedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadedImageView.swift; sourceTree = "<group>"; };
-		02E3F8D21E48BA560076866E /* CloudPeackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudPeackViewController.swift; sourceTree = "<group>"; };
 		02E3F8D71E48D73B0076866E /* FilesToCloudContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesToCloudContext.swift; sourceTree = "<group>"; };
 		02E3F8DA1E48DBDC0076866E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		02F319FC1E446F5900758A11 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -174,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				0211B8351E4A0A3900A3F723 /* LoadSetupViewController.swift */,
+				0227D96C1E4B5A5C00AF2FBB /* LoadSetupView.swift */,
 			);
 			path = LoadSetup;
 			sourceTree = "<group>";
@@ -181,8 +189,8 @@
 		0211B8371E4A121000A3F723 /* LoginContext */ = {
 			isa = PBXGroup;
 			children = (
-				0211B8381E4A123F00A3F723 /* LoginContext.swift */,
 				0211B83A1E4A125700A3F723 /* LoginWithDropbox.swift */,
+				0211B8381E4A123F00A3F723 /* LoginContext.swift */,
 			);
 			path = LoginContext;
 			sourceTree = "<group>";
@@ -241,6 +249,7 @@
 				02A777261E436F960084D4EE /* Resurses */,
 				02A777271E436F960084D4EE /* Sources */,
 				02A777051E435F520084D4EE /* AppDelegate.swift */,
+				022ED8181E4C9D3600EB583A /* ImageToServer-Bridging-Header.h */,
 				02A777091E435F520084D4EE /* Main.storyboard */,
 				02A7770C1E435F520084D4EE /* Images.xcassets */,
 				02A7770E1E435F520084D4EE /* LaunchScreen.xib */,
@@ -296,7 +305,6 @@
 			isa = PBXGroup;
 			children = (
 				0211B8341E4A09FB00A3F723 /* LoadSetup */,
-				02E3F8D11E48BA280076866E /* CloudPeackViewController */,
 				02E15F851E4380AE00001D33 /* ImagePeackViewController */,
 				02E15F881E4380AE00001D33 /* LoadedImagesViewController */,
 			);
@@ -321,14 +329,6 @@
 				AC7127C51E449F6B007A0333 /* SentImagesCell */,
 			);
 			path = LoadedImagesViewController;
-			sourceTree = "<group>";
-		};
-		02E3F8D11E48BA280076866E /* CloudPeackViewController */ = {
-			isa = PBXGroup;
-			children = (
-				02E3F8D21E48BA560076866E /* CloudPeackViewController.swift */,
-			);
-			path = CloudPeackViewController;
 			sourceTree = "<group>";
 		};
 		02E3F8D61E48D7150076866E /* FilesToCloudContext */ = {
@@ -388,6 +388,8 @@
 				AC7127721E449F56007A0333 /* UIViewController.swift */,
 				AC7127731E449F56007A0333 /* UIWindow.swift */,
 				0211B83C1E4A1D6000A3F723 /* UIApplication.swift */,
+				024586351E4C5AC80031C605 /* UINavigationController.swift */,
+				024586371E4C68A70031C605 /* AppDelegate + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -406,6 +408,7 @@
 			children = (
 				AC7127751E449F56007A0333 /* ArrayChange */,
 				AC71278F1E449F56007A0333 /* ArrayModel.swift */,
+				022ED80E1E4C93D000EB583A /* DBArrayModel.swift */,
 				AC7127911E449F56007A0333 /* Model.swift */,
 			);
 			path = Models;
@@ -733,14 +736,18 @@
 				AC7127A31E449F56007A0333 /* UICollectionView.swift in Sources */,
 				0211B8391E4A123F00A3F723 /* LoginContext.swift in Sources */,
 				AC7127C31E449F56007A0333 /* RoundedView.swift in Sources */,
+				0227D96D1E4B5A5C00AF2FBB /* LoadSetupView.swift in Sources */,
 				AC71279E1E449F56007A0333 /* Lock.swift in Sources */,
 				AC7127AA1E449F56007A0333 /* ArrayChange.swift in Sources */,
+				022ED80F1E4C93D000EB583A /* DBArrayModel.swift in Sources */,
 				AC7127BF1E449F56007A0333 /* SlideOutAnimationController.swift in Sources */,
 				AC7127BD1E449F56007A0333 /* SlideInPresentationController.swift in Sources */,
 				AC7127B41E449F56007A0333 /* UpdateModel + UICollectionView.swift in Sources */,
 				AC7127AD1E449F56007A0333 /* AddModel.swift in Sources */,
 				AC7127B91E449F56007A0333 /* ArrayModel.swift in Sources */,
 				0211B8361E4A0A3900A3F723 /* LoadSetupViewController.swift in Sources */,
+				024586381E4C68A70031C605 /* AppDelegate + Extensions.swift in Sources */,
+				024586361E4C5AC80031C605 /* UINavigationController.swift in Sources */,
 				AC7127AE1E449F56007A0333 /* MoveModel + UICollectionView.swift in Sources */,
 				AC7127B71E449F56007A0333 /* OneIndexArrayChange.swift in Sources */,
 				AC7127C41E449F56007A0333 /* TableViewCell.swift in Sources */,
@@ -756,7 +763,6 @@
 				025DC5141E48706C00FB679F /* Context.swift in Sources */,
 				AC7127A91E449F56007A0333 /* ArrayChange + UITableView.swift in Sources */,
 				AC7127AC1E449F56007A0333 /* AddModel + UITableView.swift in Sources */,
-				02E3F8D31E48BA560076866E /* CloudPeackViewController.swift in Sources */,
 				AC7127A81E449F56007A0333 /* ArrayChange + UICollectionView.swift in Sources */,
 				AC7127A51E449F56007A0333 /* UITableView.swift in Sources */,
 				02E3F8DB1E48DBDC0076866E /* Model.xcdatamodeld in Sources */,
@@ -890,6 +896,7 @@
 				INFOPLIST_FILE = ImageToServer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ImageToServer-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -902,6 +909,7 @@
 				INFOPLIST_FILE = ImageToServer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ImageToServer-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

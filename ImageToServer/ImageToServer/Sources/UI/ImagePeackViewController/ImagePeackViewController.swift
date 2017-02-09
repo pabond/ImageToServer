@@ -16,7 +16,7 @@ fileprivate let alertTitle = "No pictures picked"
 fileprivate let alertText = "Please pick some images to send first"
 
 class ImagePeackViewController: UIViewController {
-    var startSending: ((_ cloudType: CloudType, _ images: ArrayModel?) -> ())?
+    var startSending: ((_ images: ArrayModel?) -> ())?
     let disposeBag = DisposeBag()
     var imagePeackView: ImagePeackView?
     var images: [UIImage]?
@@ -44,22 +44,14 @@ class ImagePeackViewController: UIViewController {
         }
     }
     
-    @IBAction func onStoreCloud(_ sender: Any) {
-        if pickedImages.count != 0 {
-            performSegue(toViewControllerWithClass: CloudPeackViewController.self, sender: nil)
-        } else {
-            infoAlert(title: alertTitle, text: alertText)
-        }
+    @IBAction func onLoadSetup(_ sender: Any) {
+        navigationController?.popViewControllerWithHandler(completion: { [weak self] in
+            self?.startSending?(self?.pickedImages)
+        })
     }
     
-    func loadToCloud(_ cloud: CloudType) {
-        startSending?(cloud, pickedImages)
-        popCurrentViewController()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let vc = segue.destination as? CloudPeackViewController else { return }
-        vc.loadImages = loadToCloud
+    func setCellSelected(_ cell: ImageCollectionViewCell) {
+        cell.selectedImage.isHidden = false
     }
 }
 
@@ -71,20 +63,24 @@ extension ImagePeackViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.cellWithClass(ImageCollectionViewCell.self, for: indexPath) as! ImageCollectionViewCell
-        cell.object = images?[indexPath.row]
+        let object = images?[indexPath.row]
+        cell.object = object
+        if pickedImages.count != 0 && pickedImages.containsModel(object) {
+            setCellSelected(cell)
+        }
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell else { return }
-        cell.selectedView.isHidden = false
+        setCellSelected(cell)
         pickedImages.addModel(cell.object)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell else { return }
-        cell.selectedView.isHidden = true
+        cell.selectedImage.isHidden = true
         pickedImages.removeModel(cell.object)
     }
 }

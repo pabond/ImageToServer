@@ -48,6 +48,7 @@ class FetchImagesContext: Context {
         let fetchResult: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
         if fetchResult.count > 0 {
             var images = [UIImage]()
+            
             for i in 0..<fetchResult.count {
                 let img: PHAsset! = fetchResult.object(at: i) as PHAsset
                 imageManager.requestImage(for: img, targetSize: size, contentMode: .aspectFill, options: requestOptions, resultHandler: { image, error in

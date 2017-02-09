@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import MagicalRecord
 
 let kBatchSize: Int = 10
 let kCacheName = "Master"

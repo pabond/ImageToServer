@@ -59,4 +59,9 @@ extension UIViewController {
     func popCurrentViewController() {
         _ = navigationController?.popViewController(animated: true)
     }
+    
+    func instantiateViewController<T>(withClass cls: T.Type) -> T? {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: String(describing: T.self)) as? T
+    }
 }

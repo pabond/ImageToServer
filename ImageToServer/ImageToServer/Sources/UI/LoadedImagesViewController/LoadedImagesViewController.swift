@@ -23,15 +23,20 @@ class LoadedImagesViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let vc = segue.destination as? ImagePeackViewController else { return }
-        vc.startSending = sendImages
+        vc.startSending = pickedImages
     }
     
-    func sendImages(to cloudType: CloudType, with images: ArrayModel?) {
-        if cloudType == .dropBox {
-            images.map {
-                let loadContext = FilesToCloudContext(objects: $0)
-                loadContext.execute()
-            }
+    func pickedImages(with images: ArrayModel?) {
+        guard let vc = instantiateViewController(withClass: LoadSetupViewController.self) else { return }
+        vc.images = images
+        vc.startLoading = startLoading
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func startLoading(_ images: ArrayModel?) {
+        images.map {
+            let loadContext = FilesToCloudContext(objects: $0)
+            loadContext.execute()
         }
     }
 }

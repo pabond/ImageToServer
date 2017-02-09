@@ -25,23 +25,27 @@ class FilesToCloudContext: Context {
             loginContext.execute()
         }
         
-        guard let cli = client, let model = objectsToLoad?[0] as? UIImage else { return }
-        guard let data = UIImageJPEGRepresentation(model, 20) else { return }
-        
-        _ = cli.files.upload(path: "/myPhotos/\(NSDate()).jpeg", input: data)
-            .response { response, error in
-                if let response = response {
-                    print(response)
-                } else if let error = error {
-                    print(error)
+        guard let cli = client, let models = objectsToLoad else { return }
+        for i in 0..<models.count {
+            guard let model = objectsToLoad?[i] as? UIImage else { break }
+            guard let data = UIImageJPEGRepresentation(model, 200) else { return }
+                _ = Files
+            _ = cli.files.upload(path: "/myPhotos/\(NSDate()).jpeg", input: data)
+                .response { response, error in
+                    if let response = response {
+                        print(response)
+                    } else if let error = error {
+                        print(error)
+                    }
                 }
-            }
-            .progress { progressData in
-                print(progressData)
+                .progress { progressData in
+                    print(progressData)
+                }
         }
+        //
         
         // in case you want to cancel the request
-//        if false {
+//        if Bool {
 //            request.cancel()
 //        }
     }

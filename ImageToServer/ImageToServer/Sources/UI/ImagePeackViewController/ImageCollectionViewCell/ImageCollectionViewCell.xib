@@ -20,30 +20,32 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VST-bO-jt3">
                         <rect key="frame" x="0.0" y="0.0" width="147" height="136"/>
                     </imageView>
-                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dYB-8g-Z4z" customClass="RoundView" customModule="ImageToServer" customModuleProvider="target">
-                        <rect key="frame" x="119" y="108" width="20" height="20"/>
-                        <color key="backgroundColor" red="0.052649337580843204" green="0.76354031735751293" blue="0.1653859627891148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OKImage" translatesAutoresizingMaskIntoConstraints="NO" id="Um3-S8-gh1">
+                        <rect key="frame" x="117" y="106" width="20" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="PFZ-pq-4ZA"/>
-                            <constraint firstAttribute="width" constant="20" id="iqA-7O-n8Z"/>
+                            <constraint firstAttribute="height" constant="20" id="RIQ-rl-JuQ"/>
+                            <constraint firstAttribute="width" constant="20" id="lmP-sa-IE5"/>
                         </constraints>
-                    </view>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="dYB-8g-Z4z" secondAttribute="bottom" constant="8" id="BY3-Q2-Hwa"/>
-                <constraint firstAttribute="trailing" secondItem="dYB-8g-Z4z" secondAttribute="trailing" constant="8" id="IEu-Hg-TX9"/>
                 <constraint firstItem="VST-bO-jt3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="LbH-cm-QF0"/>
                 <constraint firstAttribute="bottom" secondItem="VST-bO-jt3" secondAttribute="bottom" id="b1x-Nw-BIz"/>
+                <constraint firstAttribute="trailing" secondItem="Um3-S8-gh1" secondAttribute="trailing" constant="10" id="cza-NF-vnI"/>
                 <constraint firstAttribute="trailing" secondItem="VST-bO-jt3" secondAttribute="trailing" id="mQc-dS-Q6Z"/>
+                <constraint firstAttribute="bottom" secondItem="Um3-S8-gh1" secondAttribute="bottom" constant="10" id="oCg-El-Ti3"/>
                 <constraint firstItem="VST-bO-jt3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="tv9-bd-Ho0"/>
             </constraints>
             <size key="customSize" width="147" height="136"/>
             <connections>
                 <outlet property="imageView" destination="VST-bO-jt3" id="Lyj-Q6-gef"/>
-                <outlet property="selectedView" destination="dYB-8g-Z4z" id="eVx-Fw-Ixc"/>
+                <outlet property="selectedImage" destination="Um3-S8-gh1" id="378-jr-j6G"/>
             </connections>
             <point key="canvasLocation" x="721.5" y="500"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="OKImage" width="128" height="128"/>
+    </resources>
 </document>

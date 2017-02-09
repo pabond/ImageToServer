@@ -9,7 +9,7 @@
 import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var selectedView: RoundView!
+    @IBOutlet weak var selectedImage: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
 
     var object: UIImage? {
