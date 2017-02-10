@@ -1,5 +1,5 @@
 //
-//  ImagePeackView.swift
+//  ImagePickView.swift
 //  ImageToServer
 //
 //  Created by Pavel Bondar on 2/2/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImagePeackView: UIView {
+class ImagePickView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func awakeFromNib() {

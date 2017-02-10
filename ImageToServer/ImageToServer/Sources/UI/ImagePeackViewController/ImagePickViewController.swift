@@ -15,18 +15,18 @@ fileprivate let cellsPerRow: CGFloat = 4
 fileprivate let alertTitle = "No pictures picked"
 fileprivate let alertText = "Please pick some images to send first"
 
-class ImagePeackViewController: UIViewController {
+class ImagePickViewController: UIViewController {
     var startSending: ((_ images: ArrayModel?) -> ())?
     let disposeBag = DisposeBag()
-    var imagePeackView: ImagePeackView?
+    var imagePickView: ImagePickView?
     var images: [UIImage]?
     var pickedImages = ArrayModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imagePeackView = viewGetter()
-        imagePeackView?.collectionView.registerCell(withClass: ImageCollectionViewCell.self)
+        imagePickView = viewGetter()
+        imagePickView?.collectionView.registerCell(withClass: ImageCollectionViewCell.self)
         allImages()
     }
 
@@ -35,7 +35,7 @@ class ImagePeackViewController: UIViewController {
         context.observable.subscribe({ [weak self] (images) in
             self?.images = images.element
             DispatchQueue.main.async { [weak self] () -> Void in
-                self?.imagePeackView?.collectionView.reloadData()
+                self?.imagePickView?.collectionView.reloadData()
             }
         }).addDisposableTo(disposeBag)
         
@@ -55,7 +55,7 @@ class ImagePeackViewController: UIViewController {
     }
 }
 
-extension ImagePeackViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ImagePickViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images?.count ?? 0
@@ -85,7 +85,7 @@ extension ImagePeackViewController: UICollectionViewDelegate, UICollectionViewDa
     }
 }
 
-extension ImagePeackViewController: UICollectionViewDelegateFlowLayout {
+extension ImagePickViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize

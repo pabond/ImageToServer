@@ -82,7 +82,7 @@ extension LoadSetupViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == (images?.count ?? 0) {
-            let vc = instantiateViewController(withClass: ImagePeackViewController.self)
+            let vc = instantiateViewController(withClass: ImagePickViewController.self)
             vc?.startSending = imagesAdded
             images.map { vc?.pickedImages = $0 }
             vc.map { navigationController?.pushViewController($0, animated: true) }

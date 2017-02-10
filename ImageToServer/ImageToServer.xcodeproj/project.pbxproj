@@ -24,8 +24,8 @@
 		02A7770D1E435F520084D4EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A7770C1E435F520084D4EE /* Images.xcassets */; };
 		02A777101E435F520084D4EE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A7770E1E435F520084D4EE /* LaunchScreen.xib */; };
 		02A7771C1E435F520084D4EE /* ImageToServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7771B1E435F520084D4EE /* ImageToServerTests.swift */; };
-		02E15F8B1E4380AE00001D33 /* ImagePeackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F861E4380AE00001D33 /* ImagePeackView.swift */; };
-		02E15F8C1E4380AE00001D33 /* ImagePeackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F871E4380AE00001D33 /* ImagePeackViewController.swift */; };
+		02E15F8B1E4380AE00001D33 /* ImagePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F861E4380AE00001D33 /* ImagePickView.swift */; };
+		02E15F8C1E4380AE00001D33 /* ImagePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F871E4380AE00001D33 /* ImagePickViewController.swift */; };
 		02E15F8D1E4380AE00001D33 /* LoadedImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F891E4380AE00001D33 /* LoadedImagesViewController.swift */; };
 		02E15F8E1E4380AE00001D33 /* LoadedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F8A1E4380AE00001D33 /* LoadedImageView.swift */; };
 		02E3F8D81E48D73B0076866E /* FilesToCloudContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E3F8D71E48D73B0076866E /* FilesToCloudContext.swift */; };
@@ -106,8 +106,8 @@
 		02A777151E435F520084D4EE /* ImageToServerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageToServerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A7771A1E435F520084D4EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02A7771B1E435F520084D4EE /* ImageToServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageToServerTests.swift; sourceTree = "<group>"; };
-		02E15F861E4380AE00001D33 /* ImagePeackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePeackView.swift; sourceTree = "<group>"; };
-		02E15F871E4380AE00001D33 /* ImagePeackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePeackViewController.swift; sourceTree = "<group>"; };
+		02E15F861E4380AE00001D33 /* ImagePickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickView.swift; sourceTree = "<group>"; };
+		02E15F871E4380AE00001D33 /* ImagePickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickViewController.swift; sourceTree = "<group>"; };
 		02E15F891E4380AE00001D33 /* LoadedImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadedImagesViewController.swift; sourceTree = "<group>"; };
 		02E15F8A1E4380AE00001D33 /* LoadedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadedImageView.swift; sourceTree = "<group>"; };
 		02E3F8D71E48D73B0076866E /* FilesToCloudContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesToCloudContext.swift; sourceTree = "<group>"; };
@@ -314,8 +314,8 @@
 		02E15F851E4380AE00001D33 /* ImagePeackViewController */ = {
 			isa = PBXGroup;
 			children = (
-				02E15F871E4380AE00001D33 /* ImagePeackViewController.swift */,
-				02E15F861E4380AE00001D33 /* ImagePeackView.swift */,
+				02E15F871E4380AE00001D33 /* ImagePickViewController.swift */,
+				02E15F861E4380AE00001D33 /* ImagePickView.swift */,
 				02F319FB1E446F2D00758A11 /* ImageCollectionViewCell */,
 			);
 			path = ImagePeackViewController;
@@ -728,7 +728,7 @@
 				AC7127A21E449F56007A0333 /* NSManagedObject+BPVExtensions.m in Sources */,
 				AC7127B11E449F56007A0333 /* RemoveModel + UICollectionView.swift in Sources */,
 				AC7127B01E449F56007A0333 /* MoveModel.swift in Sources */,
-				02E15F8C1E4380AE00001D33 /* ImagePeackViewController.swift in Sources */,
+				02E15F8C1E4380AE00001D33 /* ImagePickViewController.swift in Sources */,
 				AC7127C01E449F56007A0333 /* TableViewController.swift in Sources */,
 				AC7127AB1E449F56007A0333 /* AddModel + UICollectionView.swift in Sources */,
 				AC7127B81E449F56007A0333 /* TwoIndexArrayChange.swift in Sources */,
@@ -759,7 +759,7 @@
 				02E15F8D1E4380AE00001D33 /* LoadedImagesViewController.swift in Sources */,
 				AC7127BB1E449F56007A0333 /* Model.swift in Sources */,
 				02E3F8D81E48D73B0076866E /* FilesToCloudContext.swift in Sources */,
-				02E15F8B1E4380AE00001D33 /* ImagePeackView.swift in Sources */,
+				02E15F8B1E4380AE00001D33 /* ImagePickView.swift in Sources */,
 				025DC5141E48706C00FB679F /* Context.swift in Sources */,
 				AC7127A91E449F56007A0333 /* ArrayChange + UITableView.swift in Sources */,
 				AC7127AC1E449F56007A0333 /* AddModel + UITableView.swift in Sources */,

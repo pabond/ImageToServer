@@ -22,7 +22,7 @@ class LoadedImagesViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let vc = segue.destination as? ImagePeackViewController else { return }
+        guard let vc = segue.destination as? ImagePickViewController else { return }
         vc.startSending = pickedImages
     }
     
@@ -45,7 +45,7 @@ class LoadedImagesViewController: UIViewController {
     }
     
     @IBAction func onPickImages(_ sender: Any) {
-        guard let vc = instantiateViewController(withClass: ImagePeackViewController.self) else { return }
+        guard let vc = instantiateViewController(withClass: ImagePickViewController.self) else { return }
         vc.startSending = pickedImages
         navigationController?.pushViewController(vc, animated: true)
     }
