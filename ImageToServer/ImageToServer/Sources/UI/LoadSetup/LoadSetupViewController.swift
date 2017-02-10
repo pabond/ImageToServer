@@ -12,7 +12,7 @@ fileprivate let inset: CGFloat = 3.0
 fileprivate let cellsPerRow: CGFloat = 4
 
 class LoadSetupViewController: ViewController {
-    var startLoading: ((_ images: ArrayModel?) -> ())?
+    var startLoading: ((_ images: ArrayModel?, _ title: String?) -> ())?
     var loadSetupView: LoadSetupView?
     var images: ArrayModel?
     let clouds = ["Dropbox", "Box", "Google Drive", "iCloud", "MailRu Cloud"]
@@ -25,8 +25,16 @@ class LoadSetupViewController: ViewController {
     }
     
     @IBAction func onSend(_ sender: Any) {
+        let title = loadSetupView?.nameTextField.text
+        
+        if title == nil || title == "" {
+            infoAlert(title: "Name not set", text: "Please input pakage to send name")
+            
+            return
+        }
+        
         navigationController?.popViewControllerWithHandler { [weak self] in
-            self?.startLoading.map { $0(self?.images) }
+            self?.startLoading.map { $0(self?.images, title) }
         }
     }
     

@@ -33,11 +33,21 @@ class LoadedImagesViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    func startLoading(_ images: ArrayModel?) {
+    func startLoading(_ images: ArrayModel?, title: String?) {
         images.map {
-            let loadContext = FilesToCloudContext(objects: $0)
+            let loadContext = FilesToCloudContext(objects: $0, sessionID: title)
             loadContext.execute()
         }
+    }
+    
+    @IBAction func onLoadSetup(_ sender: Any) {
+        pickedImages(with: nil)
+    }
+    
+    @IBAction func onPickImages(_ sender: Any) {
+        guard let vc = instantiateViewController(withClass: ImagePeackViewController.self) else { return }
+        vc.startSending = pickedImages
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
