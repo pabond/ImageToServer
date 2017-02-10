@@ -9,7 +9,7 @@
 import UIKit
 
 enum CloudType {
-    case dropBox, gDrive, box, mailRuCloud, iCloud
+    case dropBox, box, mailRuCloud, iCloud, gDrive
 }
 
 class LoadedImagesViewController: UIViewController {
@@ -33,9 +33,9 @@ class LoadedImagesViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    func startLoading(_ images: ArrayModel?, title: String?) {
+    func startLoading(_ images: ArrayModel?, title: String?, cloudType: CloudType) {
         images.map {
-            let loadContext = FilesToCloudContext(objects: $0, sessionID: title)
+            let loadContext = FilesToCloudContext.uploadContext(objects: $0, sessionID: title, cloudType: cloudType)
             loadContext.execute()
         }
     }

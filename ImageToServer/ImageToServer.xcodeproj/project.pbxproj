@@ -19,6 +19,10 @@
 		025DC5141E48706C00FB679F /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5131E48706C00FB679F /* Context.swift */; };
 		025DC5171E4870E200FB679F /* FetchImagesContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5161E4870E200FB679F /* FetchImagesContext.swift */; };
 		025DC5191E488FBB00FB679F /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5181E488FBB00FB679F /* RoundView.swift */; };
+		025DD5F21E4E12CF000EE2D7 /* DropboxUploadContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DD5F11E4E12CF000EE2D7 /* DropboxUploadContext.swift */; };
+		025DD5F41E4E12E2000EE2D7 /* BoxUploadContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DD5F31E4E12E2000EE2D7 /* BoxUploadContext.swift */; };
+		025DD5F61E4E1302000EE2D7 /* ICloudUploadContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DD5F51E4E1302000EE2D7 /* ICloudUploadContext.swift */; };
+		025DD5F81E4E1355000EE2D7 /* MailRuUploadContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DD5F71E4E1355000EE2D7 /* MailRuUploadContext.swift */; };
 		02A777061E435F520084D4EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A777051E435F520084D4EE /* AppDelegate.swift */; };
 		02A7770B1E435F520084D4EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A777091E435F520084D4EE /* Main.storyboard */; };
 		02A7770D1E435F520084D4EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A7770C1E435F520084D4EE /* Images.xcassets */; };
@@ -97,6 +101,10 @@
 		025DC5131E48706C00FB679F /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		025DC5161E4870E200FB679F /* FetchImagesContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchImagesContext.swift; sourceTree = "<group>"; };
 		025DC5181E488FBB00FB679F /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
+		025DD5F11E4E12CF000EE2D7 /* DropboxUploadContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropboxUploadContext.swift; sourceTree = "<group>"; };
+		025DD5F31E4E12E2000EE2D7 /* BoxUploadContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxUploadContext.swift; sourceTree = "<group>"; };
+		025DD5F51E4E1302000EE2D7 /* ICloudUploadContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICloudUploadContext.swift; sourceTree = "<group>"; };
+		025DD5F71E4E1355000EE2D7 /* MailRuUploadContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailRuUploadContext.swift; sourceTree = "<group>"; };
 		02A777001E435F520084D4EE /* ImageToServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageToServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A777041E435F520084D4EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02A777051E435F520084D4EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -222,6 +230,17 @@
 			path = FetchImagesContext;
 			sourceTree = "<group>";
 		};
+		025DD5ED1E4E125D000EE2D7 /* CloudContext */ = {
+			isa = PBXGroup;
+			children = (
+				025DD5F11E4E12CF000EE2D7 /* DropboxUploadContext.swift */,
+				025DD5F31E4E12E2000EE2D7 /* BoxUploadContext.swift */,
+				025DD5F51E4E1302000EE2D7 /* ICloudUploadContext.swift */,
+				025DD5F71E4E1355000EE2D7 /* MailRuUploadContext.swift */,
+			);
+			path = CloudContext;
+			sourceTree = "<group>";
+		};
 		02A776F71E435F520084D4EE = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				02E3F8D71E48D73B0076866E /* FilesToCloudContext.swift */,
+				025DD5ED1E4E125D000EE2D7 /* CloudContext */,
 			);
 			path = FilesToCloudContext;
 			sourceTree = "<group>";
@@ -720,6 +740,7 @@
 				AC7127B21E449F56007A0333 /* RemoveModel + UITableView.swift in Sources */,
 				02F319FE1E446F5900758A11 /* ImageCollectionViewCell.swift in Sources */,
 				02A777061E435F520084D4EE /* AppDelegate.swift in Sources */,
+				025DD5F61E4E1302000EE2D7 /* ICloudUploadContext.swift in Sources */,
 				AC7127B61E449F56007A0333 /* UpdateModel.swift in Sources */,
 				AC7127AF1E449F56007A0333 /* MoveModel + UITableView.swift in Sources */,
 				AC7127C11E449F56007A0333 /* TrancitionViewController.swift in Sources */,
@@ -750,13 +771,16 @@
 				024586361E4C5AC80031C605 /* UINavigationController.swift in Sources */,
 				AC7127AE1E449F56007A0333 /* MoveModel + UICollectionView.swift in Sources */,
 				AC7127B71E449F56007A0333 /* OneIndexArrayChange.swift in Sources */,
+				025DD5F41E4E12E2000EE2D7 /* BoxUploadContext.swift in Sources */,
 				AC7127C41E449F56007A0333 /* TableViewCell.swift in Sources */,
 				AC7127C81E44A024007A0333 /* SentImagesCell.swift in Sources */,
 				AC7127B51E449F56007A0333 /* UpdateModel + UITableView.swift in Sources */,
 				02E15F8E1E4380AE00001D33 /* LoadedImageView.swift in Sources */,
+				025DD5F81E4E1355000EE2D7 /* MailRuUploadContext.swift in Sources */,
 				AC7127A41E449F56007A0333 /* UINib.swift in Sources */,
 				AC7127B31E449F56007A0333 /* RemoveModel.swift in Sources */,
 				02E15F8D1E4380AE00001D33 /* LoadedImagesViewController.swift in Sources */,
+				025DD5F21E4E12CF000EE2D7 /* DropboxUploadContext.swift in Sources */,
 				AC7127BB1E449F56007A0333 /* Model.swift in Sources */,
 				02E3F8D81E48D73B0076866E /* FilesToCloudContext.swift in Sources */,
 				02E15F8B1E4380AE00001D33 /* ImagePickView.swift in Sources */,

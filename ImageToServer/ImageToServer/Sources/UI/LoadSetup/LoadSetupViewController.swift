@@ -11,11 +11,16 @@ import UIKit
 fileprivate let inset: CGFloat = 3.0
 fileprivate let cellsPerRow: CGFloat = 4
 
+fileprivate let alertNoNameTitle = "Name not set"
+fileprivate let alertNoNameText = "Please input pakage to send name"
+fileprivate let addImageName = "AddImage"
+
+
 class LoadSetupViewController: ViewController {
-    var startLoading: ((_ images: ArrayModel?, _ title: String?) -> ())?
+    var startLoading: ((_ images: ArrayModel?, _ title: String?, _ cloud: CloudType) -> ())?
     var loadSetupView: LoadSetupView?
     var images: ArrayModel?
-    let clouds = ["Dropbox", "Box", "Google Drive", "iCloud", "MailRu Cloud"]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,34 +33,20 @@ class LoadSetupViewController: ViewController {
         let title = loadSetupView?.nameTextField.text
         
         if title == nil || title == "" {
-            infoAlert(title: "Name not set", text: "Please input pakage to send name")
+            infoAlert(title: alertNoNameTitle, text: alertNoNameText)
             
             return
         }
         
         navigationController?.popViewControllerWithHandler { [weak self] in
-            self?.startLoading.map { $0(self?.images, title) }
+            guard let cloud = self?.loadSetupView?.selectedCloud else { return }
+            self?.startLoading.map { $0(self?.images, title, cloud) }
         }
     }
     
     func imagesAdded(_ images: ArrayModel?) {
         self.images = images
         loadSetupView?.collectionView.reloadData()
-    }
-}
-
-extension LoadSetupViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return clouds.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return clouds[row]
     }
 }
 
@@ -72,7 +63,7 @@ extension LoadSetupViewController: UICollectionViewDelegate, UICollectionViewDat
         if images != nil, index < (images?.count)!, let image = images?[index] as? UIImage {
             object = image
         } else {
-            object = UIImage(named: "AddImage")
+            object = UIImage(named: addImageName)
         }
         
         cell.object = object
