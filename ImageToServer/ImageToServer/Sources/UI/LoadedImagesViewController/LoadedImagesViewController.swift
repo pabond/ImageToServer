@@ -12,10 +12,6 @@ enum CloudType: String {
     case dropBox, box, mailRuCloud, iCloud, gDrive
 }
 
-class LoadSession: NSObject {
-    
-}
-
 class LoadedImagesViewController: UIViewController {
     var loadImageView: LoadedImageView?
     var sessions = Sessions()
@@ -24,6 +20,7 @@ class LoadedImagesViewController: UIViewController {
         super.viewDidLoad()
         
         loadImageView = viewGetter()
+        loadImageView?.tableView.registerCell(withClass: SentImagesCell.self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -39,6 +36,8 @@ class LoadedImagesViewController: UIViewController {
     }
     
     func startLoading(_ session: Session) {
+        sessions.addModel(session)
+        loadImageView?.tableView.reloadData()
         let loadContext = FilesToCloudContext.uploadContext(session)
         loadContext.execute()
     }
@@ -60,6 +59,9 @@ extension LoadedImagesViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueCellWithClass(SentImagesCell.self, path: indexPath)
+        let cell = tableView.dequeueCellWithClass(SentImagesCell.self, path: indexPath)
+        cell.object = sessions[indexPath.row]
+        
+        return cell
     }
 }

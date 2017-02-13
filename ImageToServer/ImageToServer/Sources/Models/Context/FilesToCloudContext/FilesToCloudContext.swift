@@ -14,7 +14,7 @@ class FilesToCloudContext: Context {
     
     class func uploadContext(_ session: Session) -> FilesToCloudContext {
         var cls: FilesToCloudContext.Type
-        switch cloudType {
+        switch session.cloudType {
         case CloudType.box:
             cls = BoxUploadContext.self
         case CloudType.iCloud:
@@ -25,10 +25,10 @@ class FilesToCloudContext: Context {
             cls = DropboxUploadContext.self
         }
         
-        return cls.init(objects: objects, sessionID: sessionID)
+        return cls.init(objects: session, sessionID: session.ID)
     }
     
-    required init(objects: ArrayModel, sessionID: String?) {
+    required init(objects: ArrayModel?, sessionID: String?) {
         super.init()
         
         objectsToLoad = objects
