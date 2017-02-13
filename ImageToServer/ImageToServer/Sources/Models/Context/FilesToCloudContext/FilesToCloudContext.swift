@@ -12,7 +12,7 @@ class FilesToCloudContext: Context {
     var objectsToLoad: ArrayModel?
     var sessionID: String?
     
-    class func uploadContext(objects: ArrayModel, sessionID: String?, cloudType: CloudType) -> FilesToCloudContext {
+    class func uploadContext(_ session: Session) -> FilesToCloudContext {
         var cls: FilesToCloudContext.Type
         switch cloudType {
         case CloudType.box:

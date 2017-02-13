@@ -1,19 +1,83 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="SentImagesCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="55" id="KGk-i7-Jjw" customClass="SentImagesCell" customModule="ImageToServer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SessionName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h08-dS-1jh">
+                        <rect key="frame" x="8" y="8" width="105" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WUo-L6-4BN">
+                        <rect key="frame" x="8" y="37" width="254" height="2"/>
+                    </progressView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ykz-oa-830">
+                        <rect key="frame" x="240" y="8" width="6" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="of" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Md-2i-qyk">
+                        <rect key="frame" x="246" y="8" width="16" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w6T-jV-hYD">
+                        <rect key="frame" x="272" y="8" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="lmR-8z-daQ"/>
+                            <constraint firstAttribute="height" constant="40" id="mvz-ul-CJI"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="num" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zd6-aP-7Gc">
+                        <rect key="frame" x="206" y="8" width="34" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Ykz-oa-830" firstAttribute="leading" secondItem="zd6-aP-7Gc" secondAttribute="trailing" id="5bW-Li-W5o"/>
+                    <constraint firstItem="WUo-L6-4BN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="KM7-QH-Iex"/>
+                    <constraint firstItem="WUo-L6-4BN" firstAttribute="top" secondItem="h08-dS-1jh" secondAttribute="bottom" constant="8" id="OM9-yX-Wsz"/>
+                    <constraint firstItem="h08-dS-1jh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="QV9-f6-saO"/>
+                    <constraint firstItem="zd6-aP-7Gc" firstAttribute="centerY" secondItem="h08-dS-1jh" secondAttribute="centerY" id="RFu-yi-V7w"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="7Md-2i-qyk" secondAttribute="trailing" constant="50" id="Sd6-wd-GCN"/>
+                    <constraint firstAttribute="trailing" secondItem="w6T-jV-hYD" secondAttribute="trailing" constant="8" id="T4m-EA-YgH"/>
+                    <constraint firstItem="7Md-2i-qyk" firstAttribute="leading" secondItem="Ykz-oa-830" secondAttribute="trailing" id="UXg-FQ-9DY"/>
+                    <constraint firstItem="w6T-jV-hYD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Ude-kT-mlT"/>
+                    <constraint firstItem="h08-dS-1jh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="WXi-Xh-oOo"/>
+                    <constraint firstItem="7Md-2i-qyk" firstAttribute="centerY" secondItem="h08-dS-1jh" secondAttribute="centerY" id="aL3-Y0-6T4"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="WUo-L6-4BN" secondAttribute="bottom" constant="7.5" id="bOO-Ki-SA6"/>
+                    <constraint firstItem="7Md-2i-qyk" firstAttribute="centerY" secondItem="Ykz-oa-830" secondAttribute="centerY" id="hH4-KW-9W1"/>
+                    <constraint firstItem="WUo-L6-4BN" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="-50" id="wod-MZ-S8g"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="cloudImageView" destination="w6T-jV-hYD" id="0zs-qH-F3I"/>
+                <outlet property="completedLabel" destination="zd6-aP-7Gc" id="9n3-zf-cdE"/>
+                <outlet property="operationsCountLabel" destination="7Md-2i-qyk" id="sEy-dK-OWP"/>
+                <outlet property="sessionNameLabel" destination="h08-dS-1jh" id="Bdv-4v-WWD"/>
+                <outlet property="sessionProgress" destination="WUo-L6-4BN" id="FQc-hm-VCF"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="31.5"/>
         </tableViewCell>
     </objects>
 </document>

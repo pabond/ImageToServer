@@ -23,6 +23,10 @@
 		025DD5F41E4E12E2000EE2D7 /* BoxUploadContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DD5F31E4E12E2000EE2D7 /* BoxUploadContext.swift */; };
 		025DD5F61E4E1302000EE2D7 /* ICloudUploadContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DD5F51E4E1302000EE2D7 /* ICloudUploadContext.swift */; };
 		025DD5F81E4E1355000EE2D7 /* MailRuUploadContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DD5F71E4E1355000EE2D7 /* MailRuUploadContext.swift */; };
+		026F610D1E51E4C700191629 /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F610C1E51E4C700191629 /* Sessions.swift */; };
+		026F610F1E51E4EA00191629 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F610E1E51E4EA00191629 /* Session.swift */; };
+		026F61151E51E8B900191629 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F61141E51E8B900191629 /* Constants.swift */; };
+		026F61171E51EDF500191629 /* Enum + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F61161E51EDF500191629 /* Enum + Extensions.swift */; };
 		02A777061E435F520084D4EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A777051E435F520084D4EE /* AppDelegate.swift */; };
 		02A7770B1E435F520084D4EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A777091E435F520084D4EE /* Main.storyboard */; };
 		02A7770D1E435F520084D4EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A7770C1E435F520084D4EE /* Images.xcassets */; };
@@ -105,6 +109,10 @@
 		025DD5F31E4E12E2000EE2D7 /* BoxUploadContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxUploadContext.swift; sourceTree = "<group>"; };
 		025DD5F51E4E1302000EE2D7 /* ICloudUploadContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICloudUploadContext.swift; sourceTree = "<group>"; };
 		025DD5F71E4E1355000EE2D7 /* MailRuUploadContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailRuUploadContext.swift; sourceTree = "<group>"; };
+		026F610C1E51E4C700191629 /* Sessions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sessions.swift; sourceTree = "<group>"; };
+		026F610E1E51E4EA00191629 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		026F61141E51E8B900191629 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		026F61161E51EDF500191629 /* Enum + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Enum + Extensions.swift"; sourceTree = "<group>"; };
 		02A777001E435F520084D4EE /* ImageToServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageToServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A777041E435F520084D4EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02A777051E435F520084D4EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +214,8 @@
 		025DC50E1E486FB000FB679F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				026F610C1E51E4C700191629 /* Sessions.swift */,
+				026F610E1E51E4EA00191629 /* Session.swift */,
 				025DC50F1E486FE600FB679F /* Context */,
 			);
 			path = Models;
@@ -241,6 +251,14 @@
 			path = CloudContext;
 			sourceTree = "<group>";
 		};
+		026F61111E51E88400191629 /* Resurses */ = {
+			isa = PBXGroup;
+			children = (
+				026F61141E51E8B900191629 /* Constants.swift */,
+			);
+			path = Resurses;
+			sourceTree = "<group>";
+		};
 		02A776F71E435F520084D4EE = {
 			isa = PBXGroup;
 			children = (
@@ -265,7 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				AC7127641E449F56007A0333 /* Library */,
-				02A777261E436F960084D4EE /* Resurses */,
+				026F61111E51E88400191629 /* Resurses */,
 				02A777271E436F960084D4EE /* Sources */,
 				02A777051E435F520084D4EE /* AppDelegate.swift */,
 				022ED8181E4C9D3600EB583A /* ImageToServer-Bridging-Header.h */,
@@ -302,13 +320,6 @@
 				02A7771A1E435F520084D4EE /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		02A777261E436F960084D4EE /* Resurses */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resurses;
 			sourceTree = "<group>";
 		};
 		02A777271E436F960084D4EE /* Sources */ = {
@@ -410,6 +421,7 @@
 				0211B83C1E4A1D6000A3F723 /* UIApplication.swift */,
 				024586351E4C5AC80031C605 /* UINavigationController.swift */,
 				024586371E4C68A70031C605 /* AppDelegate + Extensions.swift */,
+				026F61161E51EDF500191629 /* Enum + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -754,6 +766,7 @@
 				AC7127AB1E449F56007A0333 /* AddModel + UICollectionView.swift in Sources */,
 				AC7127B81E449F56007A0333 /* TwoIndexArrayChange.swift in Sources */,
 				0211B83D1E4A1D6000A3F723 /* UIApplication.swift in Sources */,
+				026F610D1E51E4C700191629 /* Sessions.swift in Sources */,
 				AC7127A31E449F56007A0333 /* UICollectionView.swift in Sources */,
 				0211B8391E4A123F00A3F723 /* LoginContext.swift in Sources */,
 				AC7127C31E449F56007A0333 /* RoundedView.swift in Sources */,
@@ -765,6 +778,7 @@
 				AC7127BD1E449F56007A0333 /* SlideInPresentationController.swift in Sources */,
 				AC7127B41E449F56007A0333 /* UpdateModel + UICollectionView.swift in Sources */,
 				AC7127AD1E449F56007A0333 /* AddModel.swift in Sources */,
+				026F61171E51EDF500191629 /* Enum + Extensions.swift in Sources */,
 				AC7127B91E449F56007A0333 /* ArrayModel.swift in Sources */,
 				0211B8361E4A0A3900A3F723 /* LoadSetupViewController.swift in Sources */,
 				024586381E4C68A70031C605 /* AppDelegate + Extensions.swift in Sources */,
@@ -781,8 +795,10 @@
 				AC7127B31E449F56007A0333 /* RemoveModel.swift in Sources */,
 				02E15F8D1E4380AE00001D33 /* LoadedImagesViewController.swift in Sources */,
 				025DD5F21E4E12CF000EE2D7 /* DropboxUploadContext.swift in Sources */,
+				026F610F1E51E4EA00191629 /* Session.swift in Sources */,
 				AC7127BB1E449F56007A0333 /* Model.swift in Sources */,
 				02E3F8D81E48D73B0076866E /* FilesToCloudContext.swift in Sources */,
+				026F61151E51E8B900191629 /* Constants.swift in Sources */,
 				02E15F8B1E4380AE00001D33 /* ImagePickView.swift in Sources */,
 				025DC5141E48706C00FB679F /* Context.swift in Sources */,
 				AC7127A91E449F56007A0333 /* ArrayChange + UITableView.swift in Sources */,

@@ -8,12 +8,17 @@
 
 import UIKit
 
-enum CloudType {
+enum CloudType: String {
     case dropBox, box, mailRuCloud, iCloud, gDrive
+}
+
+class LoadSession: NSObject {
+    
 }
 
 class LoadedImagesViewController: UIViewController {
     var loadImageView: LoadedImageView?
+    var sessions = Sessions()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +38,9 @@ class LoadedImagesViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    func startLoading(_ images: ArrayModel?, title: String?, cloudType: CloudType) {
-        images.map {
-            let loadContext = FilesToCloudContext.uploadContext(objects: $0, sessionID: title, cloudType: cloudType)
-            loadContext.execute()
-        }
+    func startLoading(_ session: Session) {
+        let loadContext = FilesToCloudContext.uploadContext(session)
+        loadContext.execute()
     }
     
     @IBAction func onLoadSetup(_ sender: Any) {
@@ -53,14 +56,10 @@ class LoadedImagesViewController: UIViewController {
 
 extension LoadedImagesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return sessions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return tableView.dequeueCellWithClass(SentImagesCell.self, path: indexPath)
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
 }

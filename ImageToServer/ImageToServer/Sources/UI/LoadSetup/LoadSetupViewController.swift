@@ -17,7 +17,7 @@ fileprivate let addImageName = "AddImage"
 
 
 class LoadSetupViewController: ViewController {
-    var startLoading: ((_ images: ArrayModel?, _ title: String?, _ cloud: CloudType) -> ())?
+    var startLoading: (( _ session: Session) -> ())?
     var loadSetupView: LoadSetupView?
     var images: ArrayModel?
     
@@ -39,8 +39,11 @@ class LoadSetupViewController: ViewController {
         }
         
         navigationController?.popViewControllerWithHandler { [weak self] in
-            guard let cloud = self?.loadSetupView?.selectedCloud else { return }
-            self?.startLoading.map { $0(self?.images, title, cloud) }
+            guard let cloud = self?.loadSetupView?.selectedCloud, let images = self?.images  else { return }
+            
+            let session = Session(title!, cloud)
+            session.addModels(images.models)
+            self?.startLoading.map { $0(session) }
         }
     }
     
