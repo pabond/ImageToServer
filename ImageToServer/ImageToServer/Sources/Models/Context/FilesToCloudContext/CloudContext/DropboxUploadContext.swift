@@ -24,7 +24,7 @@ class DropboxUploadContext: FilesToCloudContext {
         for i in 0..<session.count {
             guard let mediaModel = session[i] as? MediaModel else { break }
             guard let model = mediaModel.image else { return }
-            guard let data = UIImageJPEGRepresentation(model, 200)  else { return }
+            guard let data = UIImageJPEGRepresentation(model, 600)  else { return }
             
             _ = cli.files.upload(path: "/myPhotos/\(NSDate())\(ID)\(i).jpeg", input: data)
                 .response { response, error in

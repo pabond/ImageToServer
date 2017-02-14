@@ -37,7 +37,7 @@ class FetchImagesContext: Context {
     }
     
     var size: CGSize {
-        return CGSize(width: 200, height: 200)
+        return CGSize(width: 600, height: 600)
     }
     
     var sortDescriptors: [NSSortDescriptor] {

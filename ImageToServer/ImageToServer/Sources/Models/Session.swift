@@ -14,7 +14,11 @@ class Session: ArrayModel {
     
     var ID: String
     var cloudType: CloudType
-    var completedCount: Int { return (models.filter { $0.progress == 1 }).count }
+    var completedCount: Int {
+        guard let models = models as? [MediaModel] else { return 0 }
+        
+        return (models.filter { $0.progress == 1 }).count
+    }
     
     init(_ name: String, _ cloudType: CloudType) {
         self.ID = name
