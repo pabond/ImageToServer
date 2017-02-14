@@ -19,7 +19,7 @@ fileprivate let addImageName = "AddImage"
 class LoadSetupViewController: ViewController {
     var startLoading: (( _ session: Session) -> ())?
     var loadSetupView: LoadSetupView?
-    var images: ArrayModel?
+    var mediaModels: ArrayModel?
     
 
     override func viewDidLoad() {
@@ -39,16 +39,16 @@ class LoadSetupViewController: ViewController {
         }
         
         navigationController?.popViewControllerWithHandler { [weak self] in
-            guard let cloud = self?.loadSetupView?.selectedCloud, let images = self?.images  else { return }
+            guard let cloud = self?.loadSetupView?.selectedCloud, let mediaModels = self?.mediaModels  else { return }
             
             let session = Session(title!, cloud)
-            session.addModels(images.models)
+            session.addModels(mediaModels.models)
             self?.startLoading.map { $0(session) }
         }
     }
     
-    func imagesAdded(_ images: ArrayModel?) {
-        self.images = images
+    func imagesAdded(_ mediaModels: ArrayModel?) {
+        self.mediaModels = mediaModels
         loadSetupView?.collectionView.reloadData()
     }
 }
@@ -56,14 +56,14 @@ class LoadSetupViewController: ViewController {
 extension LoadSetupViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (images?.count ?? 0) + 1
+        return (mediaModels?.count ?? 0) + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.cellWithClass(ImageCollectionViewCell.self, for: indexPath) as! ImageCollectionViewCell
         let index = indexPath.row
         var object: UIImage?
-        if images != nil, index < (images?.count)!, let image = images?[index] as? UIImage {
+        if mediaModels != nil, index < (mediaModels?.count)!, let image = mediaModels?[index].image {
             object = image
         } else {
             object = UIImage(named: addImageName)
@@ -75,10 +75,10 @@ extension LoadSetupViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == (images?.count ?? 0) {
-            let vc = instantiateViewController(withClass: ImagePickViewController.self)
+        if indexPath.row == (mediaModels?.count ?? 0) {
+            let vc = instantiateViewControllerOnMain(withClass: ImagePickViewController.self)
             vc?.startSending = imagesAdded
-            images.map { vc?.pickedImages = $0 }
+            mediaModels.map { vc?.pickedModels = $0 }
             vc.map { navigationController?.pushViewController($0, animated: true) }
         }
     }

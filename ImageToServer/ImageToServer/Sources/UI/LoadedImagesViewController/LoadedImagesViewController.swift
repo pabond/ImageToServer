@@ -28,9 +28,9 @@ class LoadedImagesViewController: UIViewController {
         vc.startSending = pickedImages
     }
     
-    func pickedImages(with images: ArrayModel?) {
-        guard let vc = instantiateViewController(withClass: LoadSetupViewController.self) else { return }
-        vc.images = images
+    func pickedImages(with mediaModels: ArrayModel?) {
+        guard let vc = instantiateViewControllerOnMain(withClass: LoadSetupViewController.self) else { return }
+        vc.mediaModels = mediaModels
         vc.startLoading = startLoading
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -47,7 +47,7 @@ class LoadedImagesViewController: UIViewController {
     }
     
     @IBAction func onPickImages(_ sender: Any) {
-        guard let vc = instantiateViewController(withClass: ImagePickViewController.self) else { return }
+        guard let vc = instantiateViewControllerOnMain(withClass: ImagePickViewController.self) else { return }
         vc.startSending = pickedImages
         navigationController?.pushViewController(vc, animated: true)
     }

@@ -9,6 +9,9 @@
 import UIKit
 import Foundation
 
+fileprivate let storiboardMain = "Main"
+fileprivate let OKTitle = "OK"
+
 extension UIViewController {
     func viewGetter<V>() -> V? {
         return self.viewIfLoaded.flatMap({$0 as? V})
@@ -50,7 +53,7 @@ extension UIViewController {
                                                 message: text,
                                                 preferredStyle: .alert)
         
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let defaultAction = UIAlertAction(title: OKTitle, style: .default, handler: nil)
         alertController.addAction(defaultAction)
         
         present(alertController, animated: true, completion: nil)
@@ -60,8 +63,12 @@ extension UIViewController {
         _ = navigationController?.popViewController(animated: true)
     }
     
-    func instantiateViewController<T>(withClass cls: T.Type) -> T? {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    func instantiateViewControllerOnMain<T>(withClass cls: T.Type) -> T? {
+        return instantiateViewController(withClass: cls, on: storiboardMain)
+    }
+    
+    func instantiateViewController<T>(withClass cls: T.Type, on storyboardName: String) -> T? {
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: String(describing: T.self)) as? T
     }
 }

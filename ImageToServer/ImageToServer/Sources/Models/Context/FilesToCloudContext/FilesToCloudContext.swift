@@ -9,8 +9,8 @@
 import UIKit
 
 class FilesToCloudContext: Context {
-    var objectsToLoad: ArrayModel?
     var sessionID: String?
+    var session: Session?
     
     class func uploadContext(_ session: Session) -> FilesToCloudContext {
         var cls: FilesToCloudContext.Type
@@ -25,13 +25,13 @@ class FilesToCloudContext: Context {
             cls = DropboxUploadContext.self
         }
         
-        return cls.init(objects: session, sessionID: session.ID)
+        return cls.init(session: session)
     }
     
-    required init(objects: ArrayModel?, sessionID: String?) {
+    required init(session: Session) {
         super.init()
         
-        objectsToLoad = objects
-        self.sessionID = sessionID
+        self.session = session
+        self.sessionID = session.ID
     }
 }

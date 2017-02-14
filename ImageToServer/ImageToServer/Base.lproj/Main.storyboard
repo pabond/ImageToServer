@@ -13,7 +13,7 @@
         <scene sceneID="1FY-3E-gx9">
             <objects>
                 <navigationController id="YzZ-aJ-LLx" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iD8-sj-PW4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="iD8-sj-PW4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -28,7 +28,6 @@
         <!--Sent images-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="LoadedImagesViewController" id="BYZ-38-t0r" customClass="LoadedImagesViewController" customModule="ImageToServer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -92,9 +91,9 @@
                                 <exclude reference="cfw-QJ-Xpm"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="5fI-7a-5kt"/>
                                 <exclude reference="P1k-S3-SU2"/>
                                 <exclude reference="lPt-S1-8Op"/>
-                                <exclude reference="5fI-7a-5kt"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -102,9 +101,9 @@
                                 <include reference="cfw-QJ-Xpm"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="5fI-7a-5kt"/>
                                 <include reference="P1k-S3-SU2"/>
                                 <include reference="lPt-S1-8Op"/>
-                                <include reference="5fI-7a-5kt"/>
                             </mask>
                         </variation>
                         <connections>
@@ -119,6 +118,7 @@
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-204" y="406.14692653673166"/>
         </scene>

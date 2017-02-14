@@ -11,7 +11,7 @@ import SwiftyDropbox
 
 class DropboxUploadContext: FilesToCloudContext {
     
-    var progressHandler: ((_ progressData: Double, _ sessionID: String, _ itemID: Int) -> ())?
+    //var progressHandler: ((_ progressData: Double, _ sessionID: String, _ itemID: Int) -> ())?
     
     override func execute() {
         let client = DropboxClientsManager.authorizedClient
@@ -20,9 +20,10 @@ class DropboxUploadContext: FilesToCloudContext {
             loginContext.execute()
         }
         
-        guard let cli = client, let models = objectsToLoad, let ID = sessionID else { return }
-        for i in 0..<models.count {
-            guard let model = objectsToLoad?[i] as? UIImage else { break }
+        guard let cli = client, let session = session, let ID = sessionID else { return }
+        for i in 0..<session.count {
+            guard let mediaModel = session[i] as? MediaModel else { break }
+            guard let model = mediaModel.image else { return }
             guard let data = UIImageJPEGRepresentation(model, 200)  else { return }
             
             _ = cli.files.upload(path: "/myPhotos/\(NSDate())\(ID)\(i).jpeg", input: data)
@@ -33,16 +34,16 @@ class DropboxUploadContext: FilesToCloudContext {
                         print(error)
                     }
                 }
-                .progress { [weak self] progressData in
+                .progress { progressData in
                     print(progressData)
                     
-                    self?.progressHandler.map { $0(progressData.fractionCompleted, ID, i) }
+                    session.progressChange(progressData.fractionCompleted, forItem: i)
             }
         }
-        
-        // in case you want to cancel the request
-        //        if Bool {
-        //            request.cancel()
-        //        }
     }
 }
+
+//in case you want to cancel the request
+//if Bool {
+//    request.cancel()
+//}

@@ -9,17 +9,23 @@
 import UIKit
 
 extension UINavigationController {
-    //Same function as "popViewController", but allow us to know when this function ends
+    
     func popViewControllerWithHandler(completion: @escaping ()->()) {
-        CATransaction.begin()
-        CATransaction.setCompletionBlock(completion)
-        self.popViewController(animated: true)
-        CATransaction.commit()
+        transitionFlow(block: {
+            self.popViewController(animated: true)
+        }, completion: completion)
     }
+    
     func pushViewController(viewController: UIViewController, completion: @escaping ()->()) {
+        transitionFlow(block: {
+            self.pushViewController(viewController, animated: true)
+        }, completion: completion)
+    }
+    
+    func transitionFlow(block: () -> (),completion: @escaping ()->()) {
         CATransaction.begin()
         CATransaction.setCompletionBlock(completion)
-        self.pushViewController(viewController, animated: true)
+        block()
         CATransaction.commit()
     }
 }

@@ -11,7 +11,7 @@ import RxSwift
 import Photos
 
 class FetchImagesContext: Context {
-    let observable = PublishSubject<[UIImage]>()
+    let observable = PublishSubject<[MediaModel]>()
     
     var imageManager: PHImageManager {
         return PHImageManager.default()
@@ -47,16 +47,16 @@ class FetchImagesContext: Context {
     override func execute() {
         let fetchResult: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
         if fetchResult.count > 0 {
-            var images = [UIImage]()
+            var mediaModels = [MediaModel]()
             
             for i in 0..<fetchResult.count {
-                let img: PHAsset! = fetchResult.object(at: i) as PHAsset
-                imageManager.requestImage(for: img, targetSize: size, contentMode: .aspectFill, options: requestOptions, resultHandler: { image, error in
-                    image.map{ images.append($0) }
+                let asset: PHAsset! = fetchResult.object(at: i) as PHAsset
+                imageManager.requestImage(for: asset, targetSize: size, contentMode: .aspectFill, options: requestOptions, resultHandler: { image, error in
+                    image.map{ mediaModels.append(MediaModel(assetID: asset.localIdentifier, image: $0)) }
                 })
             }
             
-            observable.onNext(images)
+            observable.onNext(mediaModels)
         } else {
             print("you have no photos")
         }
