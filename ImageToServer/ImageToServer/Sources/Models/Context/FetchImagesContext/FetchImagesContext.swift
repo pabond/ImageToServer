@@ -51,8 +51,8 @@ class FetchImagesContext: Context {
             
             for i in 0..<fetchResult.count {
                 let asset: PHAsset! = fetchResult.object(at: i) as PHAsset
-                imageManager.requestImage(for: asset, targetSize: size, contentMode: .aspectFill, options: requestOptions, resultHandler: { image, error in
-                    image.map{ mediaModels.append(MediaModel(assetID: asset.localIdentifier, image: $0)) }
+                imageManager.requestImageData(for: asset, options: requestOptions, resultHandler: { imageData, dataUTI ,orientation, info in
+                    imageData.map { mediaModels.append(MediaModel(assetID: asset.localIdentifier, data: $0)) }
                 })
             }
             
