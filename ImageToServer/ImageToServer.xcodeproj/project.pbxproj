@@ -17,6 +17,10 @@
 		02353F731E53189D0012B4B4 /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02353F721E53189D0012B4B4 /* MediaModel.swift */; };
 		024586361E4C5AC80031C605 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024586351E4C5AC80031C605 /* UINavigationController.swift */; };
 		024586381E4C68A70031C605 /* AppDelegate + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024586371E4C68A70031C605 /* AppDelegate + Extensions.swift */; };
+		0246A1BD1E5464AC00094152 /* DBMediaModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0246A1B91E5464AC00094152 /* DBMediaModel+CoreDataClass.swift */; };
+		0246A1BE1E5464AC00094152 /* DBMediaModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0246A1BA1E5464AC00094152 /* DBMediaModel+CoreDataProperties.swift */; };
+		0246A1BF1E5464AC00094152 /* DBSession+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0246A1BB1E5464AC00094152 /* DBSession+CoreDataClass.swift */; };
+		0246A1C01E5464AC00094152 /* DBSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0246A1BC1E5464AC00094152 /* DBSession+CoreDataProperties.swift */; };
 		025DC5141E48706C00FB679F /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5131E48706C00FB679F /* Context.swift */; };
 		025DC5171E4870E200FB679F /* FetchImagesContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5161E4870E200FB679F /* FetchImagesContext.swift */; };
 		025DC5191E488FBB00FB679F /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5181E488FBB00FB679F /* RoundView.swift */; };
@@ -104,6 +108,10 @@
 		02353F721E53189D0012B4B4 /* MediaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
 		024586351E4C5AC80031C605 /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		024586371E4C68A70031C605 /* AppDelegate + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate + Extensions.swift"; sourceTree = "<group>"; };
+		0246A1B91E5464AC00094152 /* DBMediaModel+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBMediaModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0246A1BA1E5464AC00094152 /* DBMediaModel+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBMediaModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0246A1BB1E5464AC00094152 /* DBSession+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBSession+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0246A1BC1E5464AC00094152 /* DBSession+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBSession+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		025DC5131E48706C00FB679F /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		025DC5161E4870E200FB679F /* FetchImagesContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchImagesContext.swift; sourceTree = "<group>"; };
 		025DC5181E488FBB00FB679F /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
@@ -213,9 +221,21 @@
 			path = LoginContext;
 			sourceTree = "<group>";
 		};
+		0246A1B81E5464AC00094152 /* MO Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				0246A1B91E5464AC00094152 /* DBMediaModel+CoreDataClass.swift */,
+				0246A1BA1E5464AC00094152 /* DBMediaModel+CoreDataProperties.swift */,
+				0246A1BB1E5464AC00094152 /* DBSession+CoreDataClass.swift */,
+				0246A1BC1E5464AC00094152 /* DBSession+CoreDataProperties.swift */,
+			);
+			path = "MO Subclasses";
+			sourceTree = "<group>";
+		};
 		025DC50E1E486FB000FB679F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0246A1B81E5464AC00094152 /* MO Subclasses */,
 				026F610C1E51E4C700191629 /* Sessions.swift */,
 				026F610E1E51E4EA00191629 /* Session.swift */,
 				02353F721E53189D0012B4B4 /* MediaModel.swift */,
@@ -753,6 +773,7 @@
 				AC7127A11E449F56007A0333 /* Array.swift in Sources */,
 				0211B83B1E4A125700A3F723 /* LoginWithDropbox.swift in Sources */,
 				AC7127B21E449F56007A0333 /* RemoveModel + UITableView.swift in Sources */,
+				0246A1BF1E5464AC00094152 /* DBSession+CoreDataClass.swift in Sources */,
 				02F319FE1E446F5900758A11 /* ImageCollectionViewCell.swift in Sources */,
 				02A777061E435F520084D4EE /* AppDelegate.swift in Sources */,
 				025DD5F61E4E1302000EE2D7 /* ICloudUploadContext.swift in Sources */,
@@ -761,6 +782,7 @@
 				AC7127C11E449F56007A0333 /* TrancitionViewController.swift in Sources */,
 				AC7127BE1E449F56007A0333 /* SlideInPresentationManager.swift in Sources */,
 				02353F731E53189D0012B4B4 /* MediaModel.swift in Sources */,
+				0246A1C01E5464AC00094152 /* DBSession+CoreDataProperties.swift in Sources */,
 				AC7127BC1E449F56007A0333 /* SlideInPresentationAnimator.swift in Sources */,
 				AC7127A21E449F56007A0333 /* NSManagedObject+BPVExtensions.m in Sources */,
 				AC7127B11E449F56007A0333 /* RemoveModel + UICollectionView.swift in Sources */,
@@ -780,6 +802,7 @@
 				022ED80F1E4C93D000EB583A /* DBArrayModel.swift in Sources */,
 				AC7127BF1E449F56007A0333 /* SlideOutAnimationController.swift in Sources */,
 				AC7127BD1E449F56007A0333 /* SlideInPresentationController.swift in Sources */,
+				0246A1BE1E5464AC00094152 /* DBMediaModel+CoreDataProperties.swift in Sources */,
 				AC7127B41E449F56007A0333 /* UpdateModel + UICollectionView.swift in Sources */,
 				AC7127AD1E449F56007A0333 /* AddModel.swift in Sources */,
 				026F61171E51EDF500191629 /* Enum + Extensions.swift in Sources */,
@@ -793,6 +816,7 @@
 				AC7127C41E449F56007A0333 /* TableViewCell.swift in Sources */,
 				AC7127C81E44A024007A0333 /* SentImagesCell.swift in Sources */,
 				AC7127B51E449F56007A0333 /* UpdateModel + UITableView.swift in Sources */,
+				0246A1BD1E5464AC00094152 /* DBMediaModel+CoreDataClass.swift in Sources */,
 				02E15F8E1E4380AE00001D33 /* LoadedImageView.swift in Sources */,
 				025DD5F81E4E1355000EE2D7 /* MailRuUploadContext.swift in Sources */,
 				AC7127A41E449F56007A0333 /* UINib.swift in Sources */,

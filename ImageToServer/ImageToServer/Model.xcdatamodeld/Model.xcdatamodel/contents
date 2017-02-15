@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="DBImage" representedClassName="DBImage" syncable="YES" codeGenerationType="class"/>
-    <entity name="DBUser" representedClassName="DBUser" syncable="YES" codeGenerationType="class">
-        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="DBMediaModel" representedClassName=".DBMediaModel" syncable="YES">
+        <attribute name="assetID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="progress" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="session" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DBSession" inverseName="mediaModels" inverseEntity="DBSession" syncable="YES"/>
+    </entity>
+    <entity name="DBSession" representedClassName=".DBSession" syncable="YES">
+        <attribute name="cloudType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="mediaModels" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="DBMediaModel" inverseName="session" inverseEntity="DBMediaModel" syncable="YES"/>
     </entity>
     <elements>
-        <element name="DBUser" positionX="-63" positionY="-18" width="128" height="75"/>
-        <element name="DBImage" positionX="-18" positionY="45" width="128" height="45"/>
+        <element name="DBSession" positionX="-27" positionY="27" width="128" height="90"/>
+        <element name="DBMediaModel" positionX="-9" positionY="45" width="128" height="105"/>
     </elements>
 </model>
