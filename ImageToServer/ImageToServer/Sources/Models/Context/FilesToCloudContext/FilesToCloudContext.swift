@@ -10,16 +10,17 @@ import UIKit
 
 class FilesToCloudContext: Context {
     var sessionID: String?
-    var session: Session?
+    var session: DBSession?
     
-    class func uploadContext(_ session: Session) -> FilesToCloudContext {
+    class func uploadContext(_ session: DBSession) -> FilesToCloudContext {
         var cls: FilesToCloudContext.Type
-        switch session.cloudType {
-        case CloudType.box:
+        
+        switch session.cloudType! {
+        case CloudType.box.rawValue:
             cls = BoxUploadContext.self
-        case CloudType.iCloud:
+        case CloudType.iCloud.rawValue:
             cls = ICloudUploadContext.self
-        case CloudType.mailRuCloud:
+        case CloudType.mailRuCloud.rawValue:
             cls = MailRuUploadContext.self
         default:
             cls = DropboxUploadContext.self
@@ -28,10 +29,10 @@ class FilesToCloudContext: Context {
         return cls.init(session: session)
     }
     
-    required init(session: Session) {
+    required init(session: DBSession) {
         super.init()
         
         self.session = session
-        self.sessionID = session.ID
+        self.sessionID = session.id
     }
 }

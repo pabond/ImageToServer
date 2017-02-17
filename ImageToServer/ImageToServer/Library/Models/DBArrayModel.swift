@@ -6,9 +6,7 @@
 //  Copyright © 2016 Pavel Bondar. All rights reserved.
 //
 
-import UIKit
 import RxSwift
-import MagicalRecord
 
 let kBatchSize: Int = 10
 let kCacheName = "Master"
@@ -45,7 +43,7 @@ class DBArrayModel: ArrayModel {
     var entityName: String {
         get { return "" }
     }
-
+    
     init(with object: NSManagedObject?, keyPath path: String) {
         super.init()
         
@@ -76,7 +74,7 @@ class DBArrayModel: ArrayModel {
         
         return controller
     }
-   
+    
     func performLoading() {
         do {
             try self.fetchedResultsController?.performFetch()
@@ -101,7 +99,7 @@ class DBArrayModel: ArrayModel {
             }
         })
     }
-        
+    
     override func model(at index: Int?) -> AnyObject? {
         var object: AnyObject?
         Lock.sync(self, withBlock: {
@@ -117,19 +115,19 @@ class DBArrayModel: ArrayModel {
         }
         
         var index: Int?
-        Lock.sync(self) { 
+        Lock.sync(self) {
             index = (models.index(where: { $0.objectID === model?.objectID }))
         }
         
         return index
     }
-
+    
     override func removeModelAtIndex(_ index: Int?) {
         Lock.sync(self, withBlock: {
             removeModel(model(at: index))
         })
     }
-
+    
     override func moveModel(from index: Int, to destIndex: Int) {
         return
     }

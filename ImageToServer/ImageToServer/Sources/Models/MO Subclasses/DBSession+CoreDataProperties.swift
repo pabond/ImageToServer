@@ -1,9 +1,9 @@
 //
 //  DBSession+CoreDataProperties.swift
-//  
+//  ImageToServer
 //
-//  Created by Pavel Bondar on 2/15/17.
-//
+//  Created by Pavel Bondar on 2/17/17.
+//  Copyright © 2017 Pavel Bondar. All rights reserved.
 //
 
 import Foundation
@@ -16,32 +16,15 @@ extension DBSession {
         return NSFetchRequest<DBSession>(entityName: "DBSession");
     }
 
-    @NSManaged public var id: String?
     @NSManaged public var cloudType: String?
-    @NSManaged public var mediaModels: NSOrderedSet?
+    @NSManaged public var id: String?
+    @NSManaged public var identifier: Int16
+    @NSManaged public var mediaModels: NSSet?
 
 }
 
 // MARK: Generated accessors for mediaModels
 extension DBSession {
-
-    @objc(insertObject:inMediaModelsAtIndex:)
-    @NSManaged public func insertIntoMediaModels(_ value: DBMediaModel, at idx: Int)
-
-    @objc(removeObjectFromMediaModelsAtIndex:)
-    @NSManaged public func removeFromMediaModels(at idx: Int)
-
-    @objc(insertMediaModels:atIndexes:)
-    @NSManaged public func insertIntoMediaModels(_ values: [DBMediaModel], at indexes: NSIndexSet)
-
-    @objc(removeMediaModelsAtIndexes:)
-    @NSManaged public func removeFromMediaModels(at indexes: NSIndexSet)
-
-    @objc(replaceObjectInMediaModelsAtIndex:withObject:)
-    @NSManaged public func replaceMediaModels(at idx: Int, with value: DBMediaModel)
-
-    @objc(replaceMediaModelsAtIndexes:withMediaModels:)
-    @NSManaged public func replaceMediaModels(at indexes: NSIndexSet, with values: [DBMediaModel])
 
     @objc(addMediaModelsObject:)
     @NSManaged public func addToMediaModels(_ value: DBMediaModel)
@@ -50,9 +33,9 @@ extension DBSession {
     @NSManaged public func removeFromMediaModels(_ value: DBMediaModel)
 
     @objc(addMediaModels:)
-    @NSManaged public func addToMediaModels(_ values: NSOrderedSet)
+    @NSManaged public func addToMediaModels(_ values: NSSet)
 
     @objc(removeMediaModels:)
-    @NSManaged public func removeFromMediaModels(_ values: NSOrderedSet)
+    @NSManaged public func removeFromMediaModels(_ values: NSSet)
 
 }

@@ -12,13 +12,13 @@ class MediaModel: NSObject {
     var progress: Double = 0
     var assetID: String?
     var image: UIImage? {
-        return imageData.map { UIImage(data: $0 as Data) } ?? nil
+        return imageData.map { UIImage(data: $0) } ?? nil
     }
     
-    var imageData: NSData?
+    var imageData: Data?
     
     init(assetID: String?, data: Data) {
         self.assetID = assetID
-        self.imageData = data as NSData
+        self.imageData = data as Data
     }
 }

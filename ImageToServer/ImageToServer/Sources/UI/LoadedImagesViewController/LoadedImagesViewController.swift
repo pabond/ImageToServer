@@ -7,20 +7,31 @@
 //
 
 import UIKit
+import RxSwift
 
 enum CloudType: String {
     case dropBox, box, mailRuCloud, iCloud, gDrive
 }
 
+fileprivate let sessionsKeyPath = "sessions"
+
 class LoadedImagesViewController: UIViewController {
+    let disposeBag = DisposeBag()
     var loadImageView: LoadedImageView?
-    var sessions = Sessions()
     
+    var sessions: DBSessions?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadImageView = viewGetter()
         loadImageView?.tableView.registerCell(withClass: SentImagesCell.self)
+        
+        sessions = DBSessions(with: nil, keyPath: sessionsKeyPath)
+        
+        sessions?.observable.observeOn(MainScheduler.instance).subscribe({ [weak self] (change) in
+            _ = change.map({ $0.apply(to: (self?.loadImageView?.tableView)!) })
+        }).addDisposableTo(disposeBag)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -35,9 +46,8 @@ class LoadedImagesViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    func startLoading(_ session: Session) {
-        sessions.addModel(session)
-        loadImageView?.tableView.reloadData()
+    func startLoading(_ session: DBSession) {
+        sessions?.addModel(session)
         let loadContext = FilesToCloudContext.uploadContext(session)
         loadContext.execute()
     }
@@ -55,12 +65,12 @@ class LoadedImagesViewController: UIViewController {
 
 extension LoadedImagesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sessions.count
+        return sessions?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCellWithClass(SentImagesCell.self, path: indexPath)
-        cell.object = sessions[indexPath.row]
+        cell.object = sessions?[indexPath.row]
         
         return cell
     }

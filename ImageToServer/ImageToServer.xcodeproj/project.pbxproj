@@ -15,12 +15,15 @@
 		0227D96D1E4B5A5C00AF2FBB /* LoadSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227D96C1E4B5A5C00AF2FBB /* LoadSetupView.swift */; };
 		022ED80F1E4C93D000EB583A /* DBArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022ED80E1E4C93D000EB583A /* DBArrayModel.swift */; };
 		02353F731E53189D0012B4B4 /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02353F721E53189D0012B4B4 /* MediaModel.swift */; };
+		0240577F1E55B5990053EAB7 /* ManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0240577E1E55B5990053EAB7 /* ManagedObject.swift */; };
 		024586361E4C5AC80031C605 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024586351E4C5AC80031C605 /* UINavigationController.swift */; };
 		024586381E4C68A70031C605 /* AppDelegate + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024586371E4C68A70031C605 /* AppDelegate + Extensions.swift */; };
 		0246A1BD1E5464AC00094152 /* DBMediaModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0246A1B91E5464AC00094152 /* DBMediaModel+CoreDataClass.swift */; };
 		0246A1BE1E5464AC00094152 /* DBMediaModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0246A1BA1E5464AC00094152 /* DBMediaModel+CoreDataProperties.swift */; };
 		0246A1BF1E5464AC00094152 /* DBSession+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0246A1BB1E5464AC00094152 /* DBSession+CoreDataClass.swift */; };
 		0246A1C01E5464AC00094152 /* DBSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0246A1BC1E5464AC00094152 /* DBSession+CoreDataProperties.swift */; };
+		0246A1C21E546BBD00094152 /* DBSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0246A1C11E546BBD00094152 /* DBSessions.swift */; };
+		0246A1C41E546BE600094152 /* DBMediaModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0246A1C31E546BE600094152 /* DBMediaModels.swift */; };
 		025DC5141E48706C00FB679F /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5131E48706C00FB679F /* Context.swift */; };
 		025DC5171E4870E200FB679F /* FetchImagesContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5161E4870E200FB679F /* FetchImagesContext.swift */; };
 		025DC5191E488FBB00FB679F /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5181E488FBB00FB679F /* RoundView.swift */; };
@@ -106,12 +109,15 @@
 		022ED80E1E4C93D000EB583A /* DBArrayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBArrayModel.swift; sourceTree = "<group>"; };
 		022ED8181E4C9D3600EB583A /* ImageToServer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageToServer-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		02353F721E53189D0012B4B4 /* MediaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
+		0240577E1E55B5990053EAB7 /* ManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObject.swift; sourceTree = "<group>"; };
 		024586351E4C5AC80031C605 /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		024586371E4C68A70031C605 /* AppDelegate + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate + Extensions.swift"; sourceTree = "<group>"; };
 		0246A1B91E5464AC00094152 /* DBMediaModel+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBMediaModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0246A1BA1E5464AC00094152 /* DBMediaModel+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBMediaModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0246A1BB1E5464AC00094152 /* DBSession+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBSession+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0246A1BC1E5464AC00094152 /* DBSession+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBSession+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0246A1C11E546BBD00094152 /* DBSessions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBSessions.swift; sourceTree = "<group>"; };
+		0246A1C31E546BE600094152 /* DBMediaModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMediaModels.swift; sourceTree = "<group>"; };
 		025DC5131E48706C00FB679F /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		025DC5161E4870E200FB679F /* FetchImagesContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchImagesContext.swift; sourceTree = "<group>"; };
 		025DC5181E488FBB00FB679F /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
@@ -224,10 +230,10 @@
 		0246A1B81E5464AC00094152 /* MO Subclasses */ = {
 			isa = PBXGroup;
 			children = (
-				0246A1B91E5464AC00094152 /* DBMediaModel+CoreDataClass.swift */,
 				0246A1BA1E5464AC00094152 /* DBMediaModel+CoreDataProperties.swift */,
-				0246A1BB1E5464AC00094152 /* DBSession+CoreDataClass.swift */,
+				0246A1B91E5464AC00094152 /* DBMediaModel+CoreDataClass.swift */,
 				0246A1BC1E5464AC00094152 /* DBSession+CoreDataProperties.swift */,
+				0246A1BB1E5464AC00094152 /* DBSession+CoreDataClass.swift */,
 			);
 			path = "MO Subclasses";
 			sourceTree = "<group>";
@@ -235,6 +241,8 @@
 		025DC50E1E486FB000FB679F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0246A1C31E546BE600094152 /* DBMediaModels.swift */,
+				0246A1C11E546BBD00094152 /* DBSessions.swift */,
 				0246A1B81E5464AC00094152 /* MO Subclasses */,
 				026F610C1E51E4C700191629 /* Sessions.swift */,
 				026F610E1E51E4EA00191629 /* Session.swift */,
@@ -434,8 +442,8 @@
 		AC7127671E449F56007A0333 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AC71276B1E449F56007A0333 /* Array.swift */,
 				AC71276C1E449F56007A0333 /* NSManagedObject */,
+				AC71276B1E449F56007A0333 /* Array.swift */,
 				AC71276F1E449F56007A0333 /* UICollectionView.swift */,
 				AC7127701E449F56007A0333 /* UINib.swift */,
 				AC7127711E449F56007A0333 /* UITableView.swift */,
@@ -445,6 +453,7 @@
 				024586351E4C5AC80031C605 /* UINavigationController.swift */,
 				024586371E4C68A70031C605 /* AppDelegate + Extensions.swift */,
 				026F61161E51EDF500191629 /* Enum + Extensions.swift */,
+				0240577E1E55B5990053EAB7 /* ManagedObject.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -771,6 +780,8 @@
 				025DC5191E488FBB00FB679F /* RoundView.swift in Sources */,
 				AC7127C21E449F56007A0333 /* ViewController.swift in Sources */,
 				AC7127A11E449F56007A0333 /* Array.swift in Sources */,
+				0246A1C41E546BE600094152 /* DBMediaModels.swift in Sources */,
+				0246A1C21E546BBD00094152 /* DBSessions.swift in Sources */,
 				0211B83B1E4A125700A3F723 /* LoginWithDropbox.swift in Sources */,
 				AC7127B21E449F56007A0333 /* RemoveModel + UITableView.swift in Sources */,
 				0246A1BF1E5464AC00094152 /* DBSession+CoreDataClass.swift in Sources */,
@@ -821,6 +832,7 @@
 				025DD5F81E4E1355000EE2D7 /* MailRuUploadContext.swift in Sources */,
 				AC7127A41E449F56007A0333 /* UINib.swift in Sources */,
 				AC7127B31E449F56007A0333 /* RemoveModel.swift in Sources */,
+				0240577F1E55B5990053EAB7 /* ManagedObject.swift in Sources */,
 				02E15F8D1E4380AE00001D33 /* LoadedImagesViewController.swift in Sources */,
 				025DD5F21E4E12CF000EE2D7 /* DropboxUploadContext.swift in Sources */,
 				026F610F1E51E4EA00191629 /* Session.swift in Sources */,

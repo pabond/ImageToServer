@@ -20,13 +20,18 @@ class DropboxUploadContext: FilesToCloudContext {
             loginContext.execute()
         }
         
-        guard let cli = client, let session = session, let ID = sessionID else { return }
-        for i in 0..<session.count {
-            guard let mediaModel = session[i] as? MediaModel else { break }
-            guard let model = mediaModel.image else { return }
-            guard let data = UIImageJPEGRepresentation(model, 600)  else { return }
+        guard let cli = client else { return }
+        guard let session = session else { return }
+        guard let mediaModels = session.mediaModelsList else { return }
+        guard let ID = sessionID else { return }
+        let count = mediaModels.count
+        for i in 0..<count {
+            guard let mediaModel = mediaModels[i] as? DBMediaModel else { break }
+//            guard let model = mediaModel.image else { return }
+//            guard let data = UIImageJPEGRepresentation(model, 600)  else { return }
             
-            _ = cli.files.upload(path: "/myPhotos/\(NSDate())\(ID)\(i).jpeg", input: data)
+            guard let data = mediaModel.imageData as? Data, let assetID = mediaModel.assetID else { return }
+            _ = cli.files.upload(path: "/myPhotos/\(assetID)\(ID)\(i).jpeg", input: data)
                 .response { response, error in
                     if let response = response {
                         print(response)

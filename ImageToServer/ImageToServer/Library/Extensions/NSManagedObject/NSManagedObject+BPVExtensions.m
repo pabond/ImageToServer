@@ -12,9 +12,6 @@ typedef void(^BPVBlock)();
 
 @implementation NSManagedObject (BPVExtensions)
 
-#pragma mark -
-#pragma mark Class methods
-
 - (void)setCustomValue:(id)value forKey:(NSString *)key {
     [self willChangeValueForKey:key];
     [self setPrimitiveValue:value forKey:key];

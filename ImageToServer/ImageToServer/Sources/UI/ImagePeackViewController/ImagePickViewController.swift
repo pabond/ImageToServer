@@ -32,11 +32,12 @@ class ImagePickViewController: UIViewController {
 
     func allImages () {
         let context = FetchImagesContext()
-        context.observable.subscribe({ [weak self] (mediaModels) in
+        context
+            .observable
+            .observeOn(MainScheduler.instance)
+            .subscribe({ [weak self] (mediaModels) in
             self?.mediaModels = mediaModels.element
-            DispatchQueue.main.async { [weak self] () -> Void in
-                self?.imagePickView?.collectionView.reloadData()
-            }
+            self?.imagePickView?.collectionView.reloadData()
         }).addDisposableTo(disposeBag)
         
         DispatchQueue.global().async {
@@ -46,8 +47,20 @@ class ImagePickViewController: UIViewController {
     
     @IBAction func onLoadSetup(_ sender: Any) {
         navigationController?.popViewControllerWithHandler(completion: { [weak self] in
-            self?.startSending?(self?.pickedModels)
+            self?.startSending?(self?.dbMediaMoelsArray())
         })
+    }
+    
+    func dbMediaMoelsArray() -> ArrayModel {
+        let arrayModel = ArrayModel()
+        guard let pickedModels = pickedModels.models as? [MediaModel] else { return arrayModel }
+        var dbMediaModel: DBMediaModel?
+        for model in pickedModels {
+            model.imageData.map { dbMediaModel = DBMediaModel.MediaModel(assetID: model.assetID, data: $0) }
+            dbMediaModel.map { arrayModel.addModel($0) }
+        }
+        
+        return arrayModel
     }
     
     func setCellSelected(_ cell: ImageCollectionViewCell) {

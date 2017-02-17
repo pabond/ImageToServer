@@ -6,8 +6,6 @@
 //  Copyright © 2016 Pavel Bondar. All rights reserved.
 //
 
-import UIKit
-
 let notFound = Int(INT_MAX)
 
 enum ModelChangeState {
@@ -29,29 +27,19 @@ extension ArrayModel : Sequence {
 class ArrayModel : Model {
     var models = Array<AnyObject>()
     var count: Int {
-        get {
-            return models.count
-        }
+        return models.count
     }
     
     subscript(index: Int) -> AnyObject {
-        get {
-            return models[index]
-        }
+        return models[index]
     }
     
     func addModel(_ model: AnyObject?) {
-        if model == nil {
-            return
-        }
-        
-        models.append(model!)
+        model.map { models.append($0) }
     }
     
     func addModels(_ objects: Array<AnyObject>) {
-        for object in objects {
-            addModel(object)
-        }
+        objects.forEach { addModel($0) }
     }
     
     func model(at index: Int?) -> AnyObject? {
@@ -61,13 +49,13 @@ class ArrayModel : Model {
         
         return models[index!]
     }
-   
+    
     func containsModel(_ model: AnyObject?) -> Bool {
         if model == nil && models.isEmpty {
             return false
         }
         
-        return models.contains { $0 === model }
+        return (models.contains(where: { $0 === model }))
     }
     
     func indexOfModel(_ model: AnyObject?) -> Int? {
@@ -75,7 +63,7 @@ class ArrayModel : Model {
             return nil
         }
         
-        return (models.index { $0 === model})!
+        return (models.index(where: { $0 === model}))!
     }
     
     func removeModel(_ model: AnyObject?) {

@@ -14,10 +14,11 @@ fileprivate let cellsPerRow: CGFloat = 4
 fileprivate let alertNoNameTitle = "Name not set"
 fileprivate let alertNoNameText = "Please input pakage to send name"
 fileprivate let addImageName = "AddImage"
-
+fileprivate let alertNotSelectedImages = "Images not selected"
+fileprivate let alertNotSelectedImagesText = "Please select some pictures to send"
 
 class LoadSetupViewController: ViewController {
-    var startLoading: (( _ session: Session) -> ())?
+    var startLoading: (( _ session: DBSession) -> ())?
     var loadSetupView: LoadSetupView?
     var mediaModels: ArrayModel?
     
@@ -32,18 +33,16 @@ class LoadSetupViewController: ViewController {
     @IBAction func onSend(_ sender: Any) {
         let title = loadSetupView?.nameTextField.text
         
-        if title == nil || title == "" {
-            infoAlert(title: alertNoNameTitle, text: alertNoNameText)
-            
-            return
-        }
+        guard title != nil || title != "" else { infoAlert(title: alertNoNameTitle, text: alertNoNameText); return }
+        guard mediaModels?.count != 0 else { infoAlert(title: alertNotSelectedImages, text: alertNotSelectedImagesText); return }
         
         navigationController?.popViewControllerWithHandler { [weak self] in
             guard let cloud = self?.loadSetupView?.selectedCloud, let mediaModels = self?.mediaModels  else { return }
             
-            let session = Session(title!, cloud)
-            session.addModels(mediaModels.models)
-            self?.startLoading.map { $0(session) }
+            let session = DBSession.session(title!, cloud)
+            session?.mediaModelsList?.addModels(mediaModels.models)
+            guard let ses = session, let loadFunc = self?.startLoading else { return }
+            loadFunc(ses)
         }
     }
     
@@ -66,7 +65,7 @@ extension LoadSetupViewController: UICollectionViewDelegate, UICollectionViewDat
         if mediaModels != nil, index < (mediaModels?.count)!, let image = mediaModels?[index].image {
             object = image
         } else {
-            object = UIImage(named: addImageName)
+            object = #imageLiteral(resourceName: "AddImage")
         }
         
         cell.object = object

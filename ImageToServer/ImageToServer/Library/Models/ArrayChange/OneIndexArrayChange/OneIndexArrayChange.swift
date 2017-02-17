@@ -12,7 +12,7 @@ class OneIndexArrayChange: ArrayChange {
     var indexPath: IndexPath?
     var tIndexPath: IndexPath {
         get {
-            return IndexPath(row: ((indexPath?.row) ?? 0) + 1, section: (indexPath?.section) ?? 0)
+            return IndexPath(row: ((indexPath?.row) ?? 0), section: (indexPath?.section) ?? 0)
         }
     }
     

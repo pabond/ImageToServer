@@ -20,5 +20,4 @@ extension DBMediaModel {
     @NSManaged public var progress: Double
     @NSManaged public var assetID: String?
     @NSManaged public var session: DBSession?
-
 }

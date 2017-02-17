@@ -24,12 +24,12 @@ class SentImagesCell: TableViewCell {
     }
     
     override func fillWith(_ object: AnyObject?) {
-        guard let session = object as? Session else { return }
+        guard let session = object as? DBSession else { return }
         subcribeOnProgress(session)
         
-        cloudImageView.image = UIImage(named: session.cloudType.rawValue)
-        sessionNameLabel.text = session.ID
-        operationsCountLabel.text = String(session.count)
+        cloudImageView.image = UIImage(named: (session.cloudType) ?? "")
+        sessionNameLabel.text = session.id
+        operationsCountLabel.text = String((session.mediaModels?.count) ?? 0)
         completedLabel.text = String(session.completedCount)
     }
     
@@ -37,7 +37,7 @@ class SentImagesCell: TableViewCell {
         sessionProgress.setProgress(Float(progress), animated: true)
     }
     
-    func subcribeOnProgress(_ session: Session) {
+    func subcribeOnProgress(_ session: DBSession) {
         session.observableProgress.subscribe({ [weak self] (progress) in
             guard let progress = progress.element else { return }
             DispatchQueue.main.async { [weak self] () -> Void in

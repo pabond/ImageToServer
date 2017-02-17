@@ -9,18 +9,19 @@
 import MagicalRecord
 import SwiftyDropbox
 
-fileprivate let storeName = "mySessions.store"
+//fileprivate let storeName = "Sessions.store"
 
 extension AppDelegate {
     func magicalRecordSetup() {
         MagicalRecord.enableShorthandMethods()
-        MagicalRecord.setupCoreDataStack(withStoreNamed: storeName)
+        MagicalRecord.setupCoreDataStack(withStoreNamed: "Sessions.store")
     }
     
     func save() {
         NSManagedObjectContext.mr_default().mr_saveToPersistentStore { (saved, error) in
-            let saveError: NSError? = error as? NSError
-            print("\(saveError), \(saveError?.userInfo)")
+            if !saved {
+                print(error ?? "")
+            }
         }
     }
     

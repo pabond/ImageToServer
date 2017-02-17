@@ -15,18 +15,21 @@ fileprivate let appKey = "3z8hq7rwaeolla2"
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
-    {
-        DropboxClientsManager.setupWithAppKey(appKey)
+    { 
         magicalRecordSetup()
+        DropboxClientsManager.setupWithAppKey(appKey)
+        
+        print(DBSession.mr_findAll() ?? "")
+        print(DBMediaModel.mr_findAll() ?? "")
         
         return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        
+        save()
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -38,13 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-
+        
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-
+        save()
     }
-
-
 }
 
