@@ -11,14 +11,12 @@ import UIKit
 class MediaModel: NSObject {
     var progress: Double = 0
     var assetID: String?
-    var image: UIImage? {
-        return imageData.map { UIImage(data: $0) } ?? nil
-    }
+    var image: UIImage?
     
-    var imageData: Data?
-    
-    init(assetID: String?, data: Data) {
+    init(assetID: String?, image: UIImage) {
+        super.init()
+        
         self.assetID = assetID
-        self.imageData = data as Data
+        self.image = image
     }
 }

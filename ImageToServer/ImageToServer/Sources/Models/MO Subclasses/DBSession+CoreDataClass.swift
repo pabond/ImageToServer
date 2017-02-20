@@ -22,6 +22,14 @@ public class DBSession: NSManagedObject {
         return (models.filter { $0.progress == 1 }).count
     }
     
+    var progress: Double {
+        var progress: Double = 0
+        guard let operations = mediaModelsList?.models as? [DBMediaModel] else { return 0 }
+        operations.forEach { progress += $0.progress }
+        
+        return progress/Double(operations.count)
+    }
+    
     override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
         super.init(entity: entity, insertInto: context)
         
@@ -39,11 +47,15 @@ public class DBSession: NSManagedObject {
     }
     
     func progressChange(_ progress: Double, forItem index: Int) {
-        guard let mediaModel = mediaModelsList?[index] as? MediaModel else { return }
+        guard let mediaModel = mediaModelsList?[index] as? DBMediaModel else { return }
         mediaModel.progress = progress
-        var progress: Double = 0
-        guard let operations = mediaModelsList?.models as? [DBMediaModel] else { return }
-        operations.forEach { progress += $0.progress }
-        observableProgress.onNext(progress/Double(operations.count))
+        
+        observableProgress.onNext(progress)
+    }
+    
+    func shouldReload() -> Bool {
+        guard let count = mediaModels?.count else { return false }
+        
+        return (completedCount - count) == 0
     }
 }

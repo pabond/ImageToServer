@@ -35,6 +35,10 @@
 		026F610F1E51E4EA00191629 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F610E1E51E4EA00191629 /* Session.swift */; };
 		026F61151E51E8B900191629 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F61141E51E8B900191629 /* Constants.swift */; };
 		026F61171E51EDF500191629 /* Enum + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F61161E51EDF500191629 /* Enum + Extensions.swift */; };
+		029A303C1E5ADAEF001C363D /* NSFileManager+BPVExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A303B1E5ADAEF001C363D /* NSFileManager+BPVExtensions.m */; };
+		029A30401E5ADBAF001C363D /* BPVMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A303F1E5ADBAF001C363D /* BPVMacro.m */; };
+		029A30421E5AF637001C363D /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029A30411E5AF637001C363D /* FileManager.swift */; };
+		029A30451E5B17C0001C363D /* FillSessionWithModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029A30441E5B17C0001C363D /* FillSessionWithModels.swift */; };
 		02A777061E435F520084D4EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A777051E435F520084D4EE /* AppDelegate.swift */; };
 		02A7770B1E435F520084D4EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A777091E435F520084D4EE /* Main.storyboard */; };
 		02A7770D1E435F520084D4EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A7770C1E435F520084D4EE /* Images.xcassets */; };
@@ -129,6 +133,12 @@
 		026F610E1E51E4EA00191629 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		026F61141E51E8B900191629 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		026F61161E51EDF500191629 /* Enum + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Enum + Extensions.swift"; sourceTree = "<group>"; };
+		029A303A1E5ADAEF001C363D /* NSFileManager+BPVExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+BPVExtensions.h"; sourceTree = "<group>"; };
+		029A303B1E5ADAEF001C363D /* NSFileManager+BPVExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+BPVExtensions.m"; sourceTree = "<group>"; };
+		029A303E1E5ADBAF001C363D /* BPVMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPVMacro.h; sourceTree = "<group>"; };
+		029A303F1E5ADBAF001C363D /* BPVMacro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPVMacro.m; sourceTree = "<group>"; };
+		029A30411E5AF637001C363D /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		029A30441E5B17C0001C363D /* FillSessionWithModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillSessionWithModels.swift; sourceTree = "<group>"; };
 		02A777001E435F520084D4EE /* ImageToServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageToServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A777041E435F520084D4EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02A777051E435F520084D4EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -259,6 +269,7 @@
 				0211B8371E4A121000A3F723 /* LoginContext */,
 				02E3F8D61E48D7150076866E /* FilesToCloudContext */,
 				025DC5151E48709500FB679F /* FetchImagesContext */,
+				029A30431E5B17A8001C363D /* FillSessionWithModels */,
 			);
 			path = Context;
 			sourceTree = "<group>";
@@ -288,6 +299,32 @@
 				026F61141E51E8B900191629 /* Constants.swift */,
 			);
 			path = Resurses;
+			sourceTree = "<group>";
+		};
+		029A30391E5ADAEF001C363D /* NSFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				029A303A1E5ADAEF001C363D /* NSFileManager+BPVExtensions.h */,
+				029A303B1E5ADAEF001C363D /* NSFileManager+BPVExtensions.m */,
+			);
+			path = NSFileManager;
+			sourceTree = "<group>";
+		};
+		029A303D1E5ADBAF001C363D /* BPVMacro */ = {
+			isa = PBXGroup;
+			children = (
+				029A303E1E5ADBAF001C363D /* BPVMacro.h */,
+				029A303F1E5ADBAF001C363D /* BPVMacro.m */,
+			);
+			path = BPVMacro;
+			sourceTree = "<group>";
+		};
+		029A30431E5B17A8001C363D /* FillSessionWithModels */ = {
+			isa = PBXGroup;
+			children = (
+				029A30441E5B17C0001C363D /* FillSessionWithModels.swift */,
+			);
+			path = FillSessionWithModels;
 			sourceTree = "<group>";
 		};
 		02A776F71E435F520084D4EE = {
@@ -434,6 +471,7 @@
 		AC7127651E449F56007A0333 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				029A303D1E5ADBAF001C363D /* BPVMacro */,
 				AC7127661E449F56007A0333 /* Lock.swift */,
 			);
 			path = Classes;
@@ -443,8 +481,9 @@
 			isa = PBXGroup;
 			children = (
 				AC71276C1E449F56007A0333 /* NSManagedObject */,
-				AC71276B1E449F56007A0333 /* Array.swift */,
+				029A30391E5ADAEF001C363D /* NSFileManager */,
 				AC71276F1E449F56007A0333 /* UICollectionView.swift */,
+				AC71276B1E449F56007A0333 /* Array.swift */,
 				AC7127701E449F56007A0333 /* UINib.swift */,
 				AC7127711E449F56007A0333 /* UITableView.swift */,
 				AC7127721E449F56007A0333 /* UIViewController.swift */,
@@ -454,6 +493,7 @@
 				024586371E4C68A70031C605 /* AppDelegate + Extensions.swift */,
 				026F61161E51EDF500191629 /* Enum + Extensions.swift */,
 				0240577E1E55B5990053EAB7 /* ManagedObject.swift */,
+				029A30411E5AF637001C363D /* FileManager.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -781,6 +821,7 @@
 				AC7127C21E449F56007A0333 /* ViewController.swift in Sources */,
 				AC7127A11E449F56007A0333 /* Array.swift in Sources */,
 				0246A1C41E546BE600094152 /* DBMediaModels.swift in Sources */,
+				029A303C1E5ADAEF001C363D /* NSFileManager+BPVExtensions.m in Sources */,
 				0246A1C21E546BBD00094152 /* DBSessions.swift in Sources */,
 				0211B83B1E4A125700A3F723 /* LoginWithDropbox.swift in Sources */,
 				AC7127B21E449F56007A0333 /* RemoveModel + UITableView.swift in Sources */,
@@ -806,6 +847,7 @@
 				026F610D1E51E4C700191629 /* Sessions.swift in Sources */,
 				AC7127A31E449F56007A0333 /* UICollectionView.swift in Sources */,
 				0211B8391E4A123F00A3F723 /* LoginContext.swift in Sources */,
+				029A30401E5ADBAF001C363D /* BPVMacro.m in Sources */,
 				AC7127C31E449F56007A0333 /* RoundedView.swift in Sources */,
 				0227D96D1E4B5A5C00AF2FBB /* LoadSetupView.swift in Sources */,
 				AC71279E1E449F56007A0333 /* Lock.swift in Sources */,
@@ -831,9 +873,11 @@
 				02E15F8E1E4380AE00001D33 /* LoadedImageView.swift in Sources */,
 				025DD5F81E4E1355000EE2D7 /* MailRuUploadContext.swift in Sources */,
 				AC7127A41E449F56007A0333 /* UINib.swift in Sources */,
+				029A30451E5B17C0001C363D /* FillSessionWithModels.swift in Sources */,
 				AC7127B31E449F56007A0333 /* RemoveModel.swift in Sources */,
 				0240577F1E55B5990053EAB7 /* ManagedObject.swift in Sources */,
 				02E15F8D1E4380AE00001D33 /* LoadedImagesViewController.swift in Sources */,
+				029A30421E5AF637001C363D /* FileManager.swift in Sources */,
 				025DD5F21E4E12CF000EE2D7 /* DropboxUploadContext.swift in Sources */,
 				026F610F1E51E4EA00191629 /* Session.swift in Sources */,
 				AC7127BB1E449F56007A0333 /* Model.swift in Sources */,

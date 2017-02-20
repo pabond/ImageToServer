@@ -4,3 +4,4 @@
 
 #import <MagicalRecord/MagicalRecord.h>
 #import "NSManagedObject+BPVExtensions.h"
+#import "NSFileManager+BPVExtensions.h"

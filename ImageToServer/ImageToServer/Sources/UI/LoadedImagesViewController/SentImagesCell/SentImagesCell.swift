@@ -18,11 +18,6 @@ class SentImagesCell: TableViewCell {
     
     let disposeBag = DisposeBag()
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-
-    }
-    
     override func fillWith(_ object: AnyObject?) {
         guard let session = object as? DBSession else { return }
         subcribeOnProgress(session)
@@ -31,6 +26,7 @@ class SentImagesCell: TableViewCell {
         sessionNameLabel.text = session.id
         operationsCountLabel.text = String((session.mediaModels?.count) ?? 0)
         completedLabel.text = String(session.completedCount)
+        sessionProgress.progress = Float(session.progress)
     }
     
     func setProgress(_ progress: Double, for item: Int) {

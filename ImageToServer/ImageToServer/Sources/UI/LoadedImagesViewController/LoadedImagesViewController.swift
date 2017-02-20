@@ -70,8 +70,19 @@ extension LoadedImagesViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCellWithClass(SentImagesCell.self, path: indexPath)
-        cell.object = sessions?[indexPath.row]
-        
+        let session = sessions?[indexPath.row]
+        cell.object = session
+
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCellEditingStyle,
+                   forRowAt indexPath: IndexPath)
+    {
+        if editingStyle == .delete {
+            let session = sessions?.model(at: indexPath.row) as! DBSession
+            session.mr_deleteEntity()
+        }
     }
 }

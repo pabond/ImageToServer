@@ -47,20 +47,8 @@ class ImagePickViewController: UIViewController {
     
     @IBAction func onLoadSetup(_ sender: Any) {
         navigationController?.popViewControllerWithHandler(completion: { [weak self] in
-            self?.startSending?(self?.dbMediaMoelsArray())
+            self?.startSending?(self?.pickedModels)
         })
-    }
-    
-    func dbMediaMoelsArray() -> ArrayModel {
-        let arrayModel = ArrayModel()
-        guard let pickedModels = pickedModels.models as? [MediaModel] else { return arrayModel }
-        var dbMediaModel: DBMediaModel?
-        for model in pickedModels {
-            model.imageData.map { dbMediaModel = DBMediaModel.MediaModel(assetID: model.assetID, data: $0) }
-            dbMediaModel.map { arrayModel.addModel($0) }
-        }
-        
-        return arrayModel
     }
     
     func setCellSelected(_ cell: ImageCollectionViewCell) {

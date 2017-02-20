@@ -17,6 +17,8 @@ fileprivate let addImageName = "AddImage"
 fileprivate let alertNotSelectedImages = "Images not selected"
 fileprivate let alertNotSelectedImagesText = "Please select some pictures to send"
 
+let kApplicationFolderName = "ImageToServer"
+
 class LoadSetupViewController: ViewController {
     var startLoading: (( _ session: DBSession) -> ())?
     var loadSetupView: LoadSetupView?
@@ -37,12 +39,10 @@ class LoadSetupViewController: ViewController {
         guard mediaModels?.count != 0 else { infoAlert(title: alertNotSelectedImages, text: alertNotSelectedImagesText); return }
         
         navigationController?.popViewControllerWithHandler { [weak self] in
-            guard let cloud = self?.loadSetupView?.selectedCloud, let mediaModels = self?.mediaModels  else { return }
-            
-            let session = DBSession.session(title!, cloud)
-            session?.mediaModelsList?.addModels(mediaModels.models)
-            guard let ses = session, let loadFunc = self?.startLoading else { return }
-            loadFunc(ses)
+            guard let cloud = self?.loadSetupView?.selectedCloud, let session = DBSession.session(title!, cloud) else { return }
+            let context = FillSessionWithModels.fillSession(session, with: self?.mediaModels)
+            context.execute()
+            self?.startLoading.map { $0(session) }
         }
     }
     
