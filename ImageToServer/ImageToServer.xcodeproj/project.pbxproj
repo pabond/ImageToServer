@@ -251,13 +251,13 @@
 		025DC50E1E486FB000FB679F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				025DC50F1E486FE600FB679F /* Context */,
+				0246A1B81E5464AC00094152 /* MO Subclasses */,
 				0246A1C31E546BE600094152 /* DBMediaModels.swift */,
 				0246A1C11E546BBD00094152 /* DBSessions.swift */,
-				0246A1B81E5464AC00094152 /* MO Subclasses */,
 				026F610C1E51E4C700191629 /* Sessions.swift */,
 				026F610E1E51E4EA00191629 /* Session.swift */,
 				02353F721E53189D0012B4B4 /* MediaModel.swift */,
-				025DC50F1E486FE600FB679F /* Context */,
 			);
 			path = Models;
 			sourceTree = "<group>";

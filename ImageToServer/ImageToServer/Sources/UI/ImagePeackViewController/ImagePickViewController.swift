@@ -21,6 +21,7 @@ class ImagePickViewController: UIViewController {
     var imagePickView: ImagePickView?
     var mediaModels: [MediaModel]?
     var pickedModels = ArrayModel()
+    var prepickedImages: ArrayModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +52,10 @@ class ImagePickViewController: UIViewController {
         })
     }
     
-    func setCellSelected(_ cell: ImageCollectionViewCell) {
+    func setCellSelected(_ cell: UICollectionViewCell?, at index: Int) {
+        guard let cell = cell as? ImageCollectionViewCell else { return }
         cell.selectedImage.isHidden = false
+        pickedModels.addModel(mediaModels?[index])
     }
 }
 
@@ -66,9 +69,12 @@ extension ImagePickViewController: UICollectionViewDelegate, UICollectionViewDat
         let cell = collectionView.cellWithClass(ImageCollectionViewCell.self, for: indexPath) as! ImageCollectionViewCell
         let object = mediaModels?[indexPath.row]
         cell.object = object?.image
-        if pickedModels.count != 0, let models = pickedModels.models as? [MediaModel] {
+        if prepickedImages != nil, prepickedImages?.count != 0, let models = prepickedImages?.models as? [MediaModel] {
             if models.contains(where: { $0.assetID == object?.assetID }) {
-                setCellSelected(cell)
+                setCellSelected(cell, at: indexPath.row)
+                collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+            } else {
+                cell.selectedImage.isHidden = true
             }
         }
         
@@ -76,9 +82,7 @@ extension ImagePickViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell else { return }
-        setCellSelected(cell)
-        pickedModels.addModel(mediaModels?[indexPath.row])
+        setCellSelected(collectionView.cellForItem(at: indexPath), at: indexPath.row)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

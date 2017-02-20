@@ -10,5 +10,4 @@ import UIKit
 
 class LoadedImageView: UIView {
     @IBOutlet weak var tableView: UITableView!
-    
 }

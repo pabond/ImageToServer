@@ -8,6 +8,8 @@
 
 import UIKit
 
+let kApplicationFolderName = "ImageToServer"
+
 class FillSessionWithModels: Context {
     var mediaModels: ArrayModel?
     var session: DBSession!

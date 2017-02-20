@@ -12,19 +12,16 @@ fileprivate let inset: CGFloat = 3.0
 fileprivate let cellsPerRow: CGFloat = 4
 
 fileprivate let alertNoNameTitle = "Name not set"
-fileprivate let alertNoNameText = "Please input pakage to send name"
+fileprivate let alertNoNameText = "Please input session name to send"
 fileprivate let addImageName = "AddImage"
 fileprivate let alertNotSelectedImages = "Images not selected"
 fileprivate let alertNotSelectedImagesText = "Please select some pictures to send"
-
-let kApplicationFolderName = "ImageToServer"
 
 class LoadSetupViewController: ViewController {
     var startLoading: (( _ session: DBSession) -> ())?
     var loadSetupView: LoadSetupView?
     var mediaModels: ArrayModel?
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,8 +32,15 @@ class LoadSetupViewController: ViewController {
     @IBAction func onSend(_ sender: Any) {
         let title = loadSetupView?.nameTextField.text
         
-        guard title != nil || title != "" else { infoAlert(title: alertNoNameTitle, text: alertNoNameText); return }
-        guard mediaModels?.count != 0 else { infoAlert(title: alertNotSelectedImages, text: alertNotSelectedImagesText); return }
+        if title == nil || title == "" {
+            infoAlert(title: alertNoNameTitle, text: alertNoNameText)
+            
+            return
+        } else if mediaModels?.count == 0 {
+            infoAlert(title: alertNotSelectedImages, text: alertNotSelectedImagesText)
+            
+            return
+        }
         
         navigationController?.popViewControllerWithHandler { [weak self] in
             guard let cloud = self?.loadSetupView?.selectedCloud, let session = DBSession.session(title!, cloud) else { return }
@@ -62,7 +66,7 @@ extension LoadSetupViewController: UICollectionViewDelegate, UICollectionViewDat
         let cell = collectionView.cellWithClass(ImageCollectionViewCell.self, for: indexPath) as! ImageCollectionViewCell
         let index = indexPath.row
         var object: UIImage?
-        if mediaModels != nil, index < (mediaModels?.count)!, let image = mediaModels?[index].image {
+        if mediaModels != nil, index < (mediaModels?.count ?? 0), let image = mediaModels?[index].image {
             object = image
         } else {
             object = #imageLiteral(resourceName: "AddImage")
@@ -74,10 +78,10 @@ extension LoadSetupViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == (mediaModels?.count ?? 0) {
+        if indexPath.row == mediaModels?.count {
             let vc = instantiateViewControllerOnMain(withClass: ImagePickViewController.self)
             vc?.startSending = imagesAdded
-            mediaModels.map { vc?.pickedModels = $0 }
+            vc?.prepickedImages = mediaModels
             vc.map { navigationController?.pushViewController($0, animated: true) }
         }
     }
