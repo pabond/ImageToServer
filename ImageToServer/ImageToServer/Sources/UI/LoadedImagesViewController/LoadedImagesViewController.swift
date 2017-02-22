@@ -29,7 +29,7 @@ class LoadedImagesViewController: UIViewController {
         
         sessions = DBSessions(with: nil, keyPath: sessionsKeyPath)
         
-        sessions?.observable.observeOn(MainScheduler.instance).subscribe({ [weak self] (change) in
+        sessions?.observable.observeOn(MainScheduler.asyncInstance).subscribe({ [weak self] (change) in
             _ = change.map({ $0.apply(to: (self?.loadImageView?.tableView)!) })
         }).addDisposableTo(disposeBag)
     }
@@ -48,8 +48,7 @@ class LoadedImagesViewController: UIViewController {
     
     func startLoading(_ session: DBSession) {
         sessions?.addModel(session)
-        let loadContext = FilesToCloudContext.uploadContext(session)
-        loadContext.execute()
+        session.load()
     }
     
     @IBAction func onLoadSetup(_ sender: Any) {

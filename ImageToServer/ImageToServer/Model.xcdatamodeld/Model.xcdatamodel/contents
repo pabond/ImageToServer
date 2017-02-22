@@ -10,10 +10,11 @@
         <attribute name="cloudType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="identifier" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="mediaModels" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DBMediaModel" inverseName="session" inverseEntity="DBMediaModel" syncable="YES"/>
     </entity>
     <elements>
         <element name="DBMediaModel" positionX="-9" positionY="-45" width="128" height="105"/>
-        <element name="DBSession" positionX="-225" positionY="45" width="128" height="103"/>
+        <element name="DBSession" positionX="-225" positionY="45" width="128" height="120"/>
     </elements>
 </model>

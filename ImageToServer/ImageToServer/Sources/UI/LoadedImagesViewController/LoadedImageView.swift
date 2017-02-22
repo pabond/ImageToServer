@@ -8,6 +8,15 @@
 
 import UIKit
 
+fileprivate let headerCellHeight: CGFloat = 56.0
+
 class LoadedImageView: UIView {
     @IBOutlet weak var tableView: UITableView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = headerCellHeight
+    }
 }

@@ -12,14 +12,33 @@ import RxSwift
 
 fileprivate let mediaModelsKeyPath = "mediaModels"
 
+enum SessionState: String {
+    case sessionFailLoading, sessionWillLoad, sessionDidLoad, sessionReadyForLoad
+    
+    var image: UIImage? {
+        return UIImage(named: self.rawValue)
+    }
+}
+
 public class DBSession: NSManagedObject {
     let observableProgress = PublishSubject<Double>()
-    
+    let observableState = ReplaySubject<SessionState>.create(bufferSize: 2)
+
     var mediaModelsList: DBMediaModels?
+    var shouldStopLoading = false
     var completedCount: Int {
         guard let models = (mediaModelsList?.models) as? [DBMediaModel] else { return 0 }
         
         return (models.filter { $0.progress == 1 }).count
+    }
+    
+    var sessionState: SessionState? {
+        didSet {
+            state = sessionState?.rawValue
+            if sessionState != nil && oldValue != sessionState {
+                observableState.onNext(sessionState!)
+            }
+        }
     }
     
     var progress: Double {
@@ -30,27 +49,33 @@ public class DBSession: NSManagedObject {
         return progress/Double(operations.count)
     }
     
-    override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
-        super.init(entity: entity, insertInto: context)
-        
-        mediaModelsList = DBMediaModels(with: self, keyPath: mediaModelsKeyPath)
-    }
-    
     class func session(_ name: String, _ cloudType: CloudType) -> DBSession? {
         let session = DBSession.mr_createEntity()
         session?.id = name
         session?.cloudType = cloudType.rawValue
         session?.mediaModelsList = DBMediaModels(with: session, keyPath: mediaModelsKeyPath)
         session?.identifier = 1
+        session?.state = SessionState.sessionReadyForLoad.rawValue
         
         return session
+    }
+    
+    override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
+        super.init(entity: entity, insertInto: context)
+        
+        mediaModelsList = DBMediaModels(with: self, keyPath: mediaModelsKeyPath)
     }
     
     func progressChange(_ progress: Double, forItem index: Int) {
         guard let mediaModel = mediaModelsList?[index] as? DBMediaModel else { return }
         mediaModel.progress = progress
         
-        observableProgress.onNext(progress)
+        observableProgress.onNext(self.progress)
+    }
+    
+    func load() {
+        let loadContext = FilesToCloudContext.uploadContext(self)
+        loadContext.execute()
     }
     
     func shouldReload() -> Bool {

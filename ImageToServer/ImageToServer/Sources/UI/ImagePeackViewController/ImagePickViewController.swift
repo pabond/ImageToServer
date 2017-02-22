@@ -28,6 +28,7 @@ class ImagePickViewController: UIViewController {
         
         imagePickView = viewGetter()
         imagePickView?.collectionView.registerCell(withClass: ImageCollectionViewCell.self)
+        navigationItem.title = "Images"
         allImages()
     }
 

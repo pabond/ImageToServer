@@ -20,7 +20,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VST-bO-jt3">
                         <rect key="frame" x="0.0" y="0.0" width="147" height="136"/>
                     </imageView>
-                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OKImage" translatesAutoresizingMaskIntoConstraints="NO" id="Um3-S8-gh1">
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sessionDidLoad" translatesAutoresizingMaskIntoConstraints="NO" id="Um3-S8-gh1">
                         <rect key="frame" x="117" y="106" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="RIQ-rl-JuQ"/>
@@ -46,6 +46,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="OKImage" width="128" height="128"/>
+        <image name="sessionDidLoad" width="128" height="128"/>
     </resources>
 </document>

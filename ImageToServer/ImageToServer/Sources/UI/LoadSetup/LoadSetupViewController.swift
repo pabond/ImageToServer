@@ -78,7 +78,7 @@ extension LoadSetupViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == mediaModels?.count {
+        if indexPath.row == (mediaModels?.count ?? 0) {
             let vc = instantiateViewControllerOnMain(withClass: ImagePickViewController.self)
             vc?.startSending = imagesAdded
             vc?.prepickedImages = mediaModels

@@ -2,7 +2,7 @@
 //  DBSession+CoreDataProperties.swift
 //  ImageToServer
 //
-//  Created by Pavel Bondar on 2/17/17.
+//  Created by Pavel Bondar on 2/21/17.
 //  Copyright © 2017 Pavel Bondar. All rights reserved.
 //
 
@@ -19,6 +19,7 @@ extension DBSession {
     @NSManaged public var cloudType: String?
     @NSManaged public var id: String?
     @NSManaged public var identifier: Int16
+    @NSManaged public var state: String?
     @NSManaged public var mediaModels: NSSet?
 
 }

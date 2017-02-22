@@ -13,6 +13,8 @@ class DropboxUploadContext: FilesToCloudContext {
     
     override func execute() {
         if session?.progress == 1 {
+            session?.sessionState = .sessionDidLoad
+            
             return
         }
         
@@ -23,6 +25,8 @@ class DropboxUploadContext: FilesToCloudContext {
         }
         
         guard let cli = client, let session = session, let mediaModels = session.mediaModels, let ID = sessionID else { return }
+        session.sessionState = .sessionWillLoad
+        
         let models = mediaModels.allObjects
         for i in 0..<models.count {
             guard let mediaModel = models[i] as? DBMediaModel, let model = mediaModel.image else { break }
@@ -34,6 +38,7 @@ class DropboxUploadContext: FilesToCloudContext {
                         if let response = response {
                             print(response)
                         } else if let error = error {
+                            session.sessionState = .sessionFailLoading
                             print(error)
                         }
                     }

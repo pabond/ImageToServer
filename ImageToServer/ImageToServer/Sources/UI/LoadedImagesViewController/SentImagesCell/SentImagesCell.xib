@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="54.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SessionName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h08-dS-1jh">
@@ -25,50 +25,60 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <progressView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="WUo-L6-4BN">
-                        <rect key="frame" x="8" y="37.5" width="254" height="2.5"/>
+                        <rect key="frame" x="8" y="38" width="204" height="2.5"/>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.029831843470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </progressView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ykz-oa-830">
-                        <rect key="frame" x="240" y="8.5" width="6" height="21"/>
+                        <rect key="frame" x="190" y="8.5" width="6" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="of" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Md-2i-qyk">
-                        <rect key="frame" x="246" y="8.5" width="16" height="21"/>
+                        <rect key="frame" x="196" y="8.5" width="16" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w6T-jV-hYD">
-                        <rect key="frame" x="272" y="8" width="40" height="40"/>
+                        <rect key="frame" x="222" y="8" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="lmR-8z-daQ"/>
                             <constraint firstAttribute="height" constant="40" id="mvz-ul-CJI"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="num" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zd6-aP-7Gc">
-                        <rect key="frame" x="206" y="8.5" width="34" height="21"/>
+                        <rect key="frame" x="156" y="8.5" width="34" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pe7-8l-QFX">
+                        <rect key="frame" x="270" y="8" width="40" height="40"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="4V1-3H-4bf"/>
+                            <constraint firstAttribute="height" constant="40" id="nN2-U3-BS2"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="w6T-jV-hYD" firstAttribute="centerY" secondItem="Pe7-8l-QFX" secondAttribute="centerY" id="0iT-q0-oqD"/>
+                    <constraint firstAttribute="trailing" secondItem="Pe7-8l-QFX" secondAttribute="trailing" constant="10" id="49z-wZ-trt"/>
                     <constraint firstItem="Ykz-oa-830" firstAttribute="leading" secondItem="zd6-aP-7Gc" secondAttribute="trailing" id="5bW-Li-W5o"/>
                     <constraint firstItem="WUo-L6-4BN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="KM7-QH-Iex"/>
                     <constraint firstItem="WUo-L6-4BN" firstAttribute="top" secondItem="h08-dS-1jh" secondAttribute="bottom" constant="8" id="OM9-yX-Wsz"/>
                     <constraint firstItem="h08-dS-1jh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="QV9-f6-saO"/>
                     <constraint firstItem="zd6-aP-7Gc" firstAttribute="centerY" secondItem="h08-dS-1jh" secondAttribute="centerY" id="RFu-yi-V7w"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="7Md-2i-qyk" secondAttribute="trailing" constant="50" id="Sd6-wd-GCN"/>
-                    <constraint firstAttribute="trailing" secondItem="w6T-jV-hYD" secondAttribute="trailing" constant="8" id="T4m-EA-YgH"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="7Md-2i-qyk" secondAttribute="trailing" constant="100" id="Sd6-wd-GCN"/>
+                    <constraint firstAttribute="trailing" secondItem="w6T-jV-hYD" secondAttribute="trailing" constant="58" id="T4m-EA-YgH"/>
                     <constraint firstItem="7Md-2i-qyk" firstAttribute="leading" secondItem="Ykz-oa-830" secondAttribute="trailing" id="UXg-FQ-9DY"/>
                     <constraint firstItem="w6T-jV-hYD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Ude-kT-mlT"/>
                     <constraint firstItem="h08-dS-1jh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="WXi-Xh-oOo"/>
                     <constraint firstItem="7Md-2i-qyk" firstAttribute="centerY" secondItem="h08-dS-1jh" secondAttribute="centerY" id="aL3-Y0-6T4"/>
                     <constraint firstAttribute="bottomMargin" secondItem="WUo-L6-4BN" secondAttribute="bottom" constant="7.5" id="bOO-Ki-SA6"/>
                     <constraint firstItem="7Md-2i-qyk" firstAttribute="centerY" secondItem="Ykz-oa-830" secondAttribute="centerY" id="hH4-KW-9W1"/>
-                    <constraint firstItem="WUo-L6-4BN" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="-50" id="wod-MZ-S8g"/>
+                    <constraint firstItem="WUo-L6-4BN" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="-100" id="wod-MZ-S8g"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -77,6 +87,7 @@
                 <outlet property="operationsCountLabel" destination="7Md-2i-qyk" id="sEy-dK-OWP"/>
                 <outlet property="sessionNameLabel" destination="h08-dS-1jh" id="Bdv-4v-WWD"/>
                 <outlet property="sessionProgress" destination="WUo-L6-4BN" id="FQc-hm-VCF"/>
+                <outlet property="stateImageView" destination="Pe7-8l-QFX" id="fjK-TW-7ac"/>
             </connections>
             <point key="canvasLocation" x="25" y="31.5"/>
         </tableViewCell>

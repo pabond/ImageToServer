@@ -231,8 +231,8 @@
 		0211B8371E4A121000A3F723 /* LoginContext */ = {
 			isa = PBXGroup;
 			children = (
-				0211B83A1E4A125700A3F723 /* LoginWithDropbox.swift */,
 				0211B8381E4A123F00A3F723 /* LoginContext.swift */,
+				0211B83A1E4A125700A3F723 /* LoginWithDropbox.swift */,
 			);
 			path = LoginContext;
 			sourceTree = "<group>";
