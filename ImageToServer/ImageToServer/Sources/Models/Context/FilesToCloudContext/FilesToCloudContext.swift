@@ -35,4 +35,8 @@ class FilesToCloudContext: Context {
         self.session = session
         self.sessionID = session.id
     }
+    
+    func cancelLoading() {
+        
+    }
 }

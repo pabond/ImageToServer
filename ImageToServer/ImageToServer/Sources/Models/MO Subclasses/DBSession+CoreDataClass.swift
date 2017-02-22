@@ -24,8 +24,15 @@ public class DBSession: NSManagedObject {
     let observableProgress = PublishSubject<Double>()
     let observableState = ReplaySubject<SessionState>.create(bufferSize: 2)
 
+    var loadContext: FilesToCloudContext?
     var mediaModelsList: DBMediaModels?
-    var shouldStopLoading = false
+    var shouldStopLoading = false {
+        didSet {
+            if shouldStopLoading {
+                loadContext?.cancelLoading()
+            }
+        }
+    }
     var completedCount: Int {
         guard let models = (mediaModelsList?.models) as? [DBMediaModel] else { return 0 }
         
@@ -75,6 +82,7 @@ public class DBSession: NSManagedObject {
     
     func load() {
         let loadContext = FilesToCloudContext.uploadContext(self)
+        self.loadContext = loadContext
         loadContext.execute()
     }
     

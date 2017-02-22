@@ -10,6 +10,7 @@ import UIKit
 import SwiftyDropbox
 
 class DropboxUploadContext: FilesToCloudContext {
+    fileprivate var requests = [UploadRequest<Files.FileMetadataSerializer, Files.UploadErrorSerializer>]()
     
     override func execute() {
         if session?.progress == 1 {
@@ -33,7 +34,7 @@ class DropboxUploadContext: FilesToCloudContext {
             guard let data = UIImageJPEGRepresentation(model, 600) else { return }
             
             if mediaModel.progress != 1 {
-                _ = cli.files.upload(path: "/myPhotos/\(NSDate())\(ID)\(i).jpeg", input: data)
+                let request = cli.files.upload(path: "/myPhotos/\(NSDate())\(ID)\(i).jpeg", input: data)
                     .response { response, error in
                         if let response = response {
                             print(response)
@@ -47,12 +48,17 @@ class DropboxUploadContext: FilesToCloudContext {
                         
                         session.progressChange(progressData.fractionCompleted, forItem: i)
                 }
+                
+               requests.append(request)
+                
+                if session.shouldStopLoading {
+                    return
+                }
             }
         }
     }
+    
+    override func cancelLoading() {
+        requests.forEach { $0.cancel() }
+    }
 }
-
-//in case you want to cancel the request
-//if Bool {
-//    request.cancel()
-//}
