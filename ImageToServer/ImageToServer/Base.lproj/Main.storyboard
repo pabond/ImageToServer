@@ -28,12 +28,12 @@
         <!--Sent images-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoadedImagesViewController" id="BYZ-38-t0r" customClass="LoadedImagesViewController" customModule="ImageToServer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoadedImagesViewController" id="BYZ-38-t0r" customClass="SessionListViewController" customModule="ImageToServer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="LoadedImageView" customModule="ImageToServer" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="SessionListView" customModule="ImageToServer" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <userGuides>
@@ -110,17 +110,14 @@
                             <outlet property="tableView" destination="cfw-QJ-Xpm" id="o78-gD-p1X"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Sent images" id="jvk-gp-BS4">
-                        <barButtonItem key="rightBarButtonItem" title="Pick images" id="EQ7-yL-s3Y">
-                            <connections>
-                                <action selector="onPickImages:" destination="BYZ-38-t0r" id="T5k-Wf-iGS"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Sent images" id="jvk-gp-BS4"/>
+                    <connections>
+                        <segue destination="V83-ga-aWn" kind="show" id="fHF-zJ-upZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-204" y="406.14692653673166"/>
+            <point key="canvasLocation" x="-223" y="406"/>
         </scene>
         <!--Title-->
         <scene sceneID="qgi-hG-mTj">
@@ -220,9 +217,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIx-Oe-5ZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="530" y="406"/>
+            <point key="canvasLocation" x="1223" y="406"/>
         </scene>
-        <!--Load Setup View Controller-->
+        <!--Load setup-->
         <scene sceneID="7sq-cU-9GL">
             <objects>
                 <viewController storyboardIdentifier="LoadSetupViewController" id="V83-ga-aWn" customClass="LoadSetupViewController" customModule="ImageToServer" customModuleProvider="target" sceneMemberID="viewController">
@@ -235,7 +232,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBv-ot-ZVk">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter packege name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2or-d2-p04">
                                         <rect key="frame" x="8" y="-20" width="359" height="20.5"/>
@@ -346,13 +343,17 @@
                             <outlet property="nameTextField" destination="gru-gc-XQ7" id="1fb-VI-pDf"/>
                         </connections>
                     </view>
-                    <connections>
-                        <segue destination="7RQ-WV-gs0" kind="show" identifier="ImagePickViewController" id="brd-h8-IhS"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Load setup" id="wg2-s1-hyd">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Vf4-Sq-tp3">
+                            <connections>
+                                <action selector="onCancel:" destination="V83-ga-aWn" id="3kE-uh-rrJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oRn-Mb-vTy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-298" y="1195"/>
+            <point key="canvasLocation" x="478" y="406"/>
         </scene>
     </scenes>
 </document>

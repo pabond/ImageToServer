@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyDropbox
 
-class LoginWithDropbox: LoginContext {
+class LoginWithDropbox: NSObject, ContextProtocol {
     var controller: UIViewController?
     
     override init() {
@@ -18,7 +18,7 @@ class LoginWithDropbox: LoginContext {
         self.controller = UIApplication.topViewController()
     }
     
-    override func execute() {
+    func execute() {
         guard let controller = controller else { return }
         DropboxClientsManager.authorizeFromController(UIApplication.shared,
                                                       controller: controller,

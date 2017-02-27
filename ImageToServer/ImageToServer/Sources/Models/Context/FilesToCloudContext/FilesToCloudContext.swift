@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FilesToCloudContext: Context {
+class FilesToCloudContext: NSObject, ContextProtocol {
     var sessionID: String?
     var session: DBSession?
     
@@ -34,6 +34,11 @@ class FilesToCloudContext: Context {
         
         self.session = session
         self.sessionID = session.id
+    }
+    
+    //MARK: -
+    //MARK: This methd should be owerwritten in subclasses
+    func execute() {
     }
     
     func cancelLoading() {

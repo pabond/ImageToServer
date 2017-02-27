@@ -16,7 +16,7 @@ extension UIViewController {
     func viewGetter<V>() -> V? {
         return self.viewIfLoaded.flatMap({$0 as? V})
     }
-    
+
     var isRegularWidthAndRegularHeight: Bool {
         let sizeClass = self.traitCollection
         return sizeClass.verticalSizeClass == .regular && sizeClass.horizontalSizeClass ==  .regular

@@ -11,12 +11,9 @@ import UIKit
 class ImageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var selectedImage: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
-
-    var object: UIImage? {
-        didSet {
-            fillWith(self.object)
-        }
-    }
+    
+    //MARK: -
+    //MARK: Public implementations
     
     func fillWith(_ object: AnyObject?) {
         guard let image = object as? UIImage else { return }

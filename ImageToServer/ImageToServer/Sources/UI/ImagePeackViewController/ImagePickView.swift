@@ -11,6 +11,9 @@ import UIKit
 class ImagePickView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     
+    //MARK: -
+    //MARK: View lifecycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

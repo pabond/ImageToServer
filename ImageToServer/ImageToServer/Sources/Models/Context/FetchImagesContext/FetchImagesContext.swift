@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import Photos
 
-class FetchImagesContext: Context {
+class FetchImagesContext: NSObject, ContextProtocol {
     let observable = PublishSubject<[MediaModel]>()
     
     var imageManager: PHImageManager {
@@ -44,7 +44,7 @@ class FetchImagesContext: Context {
         return [NSSortDescriptor(key: "creationDate", ascending: true)]
     }
     
-    override func execute() {
+    func execute() {
         let fetchResult: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
         if fetchResult.count > 0 {
             var mediaModels = [MediaModel]()

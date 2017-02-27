@@ -16,12 +16,15 @@ fileprivate let alertTitle = "No pictures picked"
 fileprivate let alertText = "Please pick some images to send first"
 
 class ImagePickViewController: UIViewController {
-    var startSending: ((_ images: ArrayModel?) -> ())?
-    let disposeBag = DisposeBag()
-    var imagePickView: ImagePickView?
-    var mediaModels: [MediaModel]?
-    var pickedModels = ArrayModel()
     var prepickedImages: ArrayModel?
+    var startSending: ((_ images: ArrayModel?) -> ())?
+    fileprivate var mediaModels: [MediaModel]?
+    fileprivate var pickedModels = ArrayModel()
+    private let disposeBag = DisposeBag()
+    private var imagePickView: ImagePickView?
+    
+    //MARK: -
+    //MARK: View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +32,22 @@ class ImagePickViewController: UIViewController {
         imagePickView = viewGetter()
         imagePickView?.collectionView.registerCell(withClass: ImageCollectionViewCell.self)
         navigationItem.title = "Images"
-        allImages()
+        fetchImages()
+    }
+    
+    //MARK: -
+    //MARK: Interface Handling
+    
+    @IBAction func onLoadSetup(_ sender: Any) {
+        navigationController?.popViewControllerWithHandler(completion: { [weak self] in
+            self?.startSending?(self?.pickedModels)
+        })
     }
 
-    func allImages () {
+    //MARK: -
+    //MARK: Private functions
+    
+    private func fetchImages() {
         let context = FetchImagesContext()
         context
             .observable
@@ -47,18 +62,15 @@ class ImagePickViewController: UIViewController {
         }
     }
     
-    @IBAction func onLoadSetup(_ sender: Any) {
-        navigationController?.popViewControllerWithHandler(completion: { [weak self] in
-            self?.startSending?(self?.pickedModels)
-        })
-    }
-    
-    func setCellSelected(_ cell: UICollectionViewCell?, at index: Int) {
+    fileprivate func setCellSelected(_ cell: UICollectionViewCell?, at index: Int) {
         guard let cell = cell as? ImageCollectionViewCell else { return }
         cell.selectedImage.isHidden = false
         pickedModels.addModel(mediaModels?[index])
     }
 }
+
+//MARK: -
+//MARK: UICollectionViewDelegate, UICollectionViewDataSource
 
 extension ImagePickViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -69,7 +81,7 @@ extension ImagePickViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.cellWithClass(ImageCollectionViewCell.self, for: indexPath) as! ImageCollectionViewCell
         let object = mediaModels?[indexPath.row]
-        cell.object = object?.image
+        cell.fillWith(object?.image)
         if prepickedImages != nil, prepickedImages?.count != 0, let models = prepickedImages?.models as? [MediaModel] {
             if models.contains(where: { $0.assetID == object?.assetID }) {
                 setCellSelected(cell, at: indexPath.row)
@@ -92,6 +104,9 @@ extension ImagePickViewController: UICollectionViewDelegate, UICollectionViewDat
         pickedModels.removeModel(mediaModels?[indexPath.row])
     }
 }
+
+//MARK: -
+//MARK: UICollectionViewDelegateFlowLayout
 
 extension ImagePickViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,

@@ -33,6 +33,9 @@ class LoadSetupView: UIView {
         return cloud
     }
     
+    //MARK: -
+    //MARK: View lifecycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

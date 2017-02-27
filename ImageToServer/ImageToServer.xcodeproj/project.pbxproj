@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0211B8331E49CCF900A3F723 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0211B8321E49CCF900A3F723 /* GoogleService-Info.plist */; };
 		0211B8361E4A0A3900A3F723 /* LoadSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211B8351E4A0A3900A3F723 /* LoadSetupViewController.swift */; };
-		0211B8391E4A123F00A3F723 /* LoginContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211B8381E4A123F00A3F723 /* LoginContext.swift */; };
 		0211B83B1E4A125700A3F723 /* LoginWithDropbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211B83A1E4A125700A3F723 /* LoginWithDropbox.swift */; };
 		0211B83D1E4A1D6000A3F723 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211B83C1E4A1D6000A3F723 /* UIApplication.swift */; };
 		0227D96D1E4B5A5C00AF2FBB /* LoadSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227D96C1E4B5A5C00AF2FBB /* LoadSetupView.swift */; };
@@ -24,7 +23,7 @@
 		0246A1C01E5464AC00094152 /* DBSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0246A1BC1E5464AC00094152 /* DBSession+CoreDataProperties.swift */; };
 		0246A1C21E546BBD00094152 /* DBSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0246A1C11E546BBD00094152 /* DBSessions.swift */; };
 		0246A1C41E546BE600094152 /* DBMediaModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0246A1C31E546BE600094152 /* DBMediaModels.swift */; };
-		025DC5141E48706C00FB679F /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5131E48706C00FB679F /* Context.swift */; };
+		025DC5141E48706C00FB679F /* ContextProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5131E48706C00FB679F /* ContextProtocol.swift */; };
 		025DC5171E4870E200FB679F /* FetchImagesContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5161E4870E200FB679F /* FetchImagesContext.swift */; };
 		025DC5191E488FBB00FB679F /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DC5181E488FBB00FB679F /* RoundView.swift */; };
 		025DD5F21E4E12CF000EE2D7 /* DropboxUploadContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DD5F11E4E12CF000EE2D7 /* DropboxUploadContext.swift */; };
@@ -37,8 +36,11 @@
 		026F61171E51EDF500191629 /* Enum + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F61161E51EDF500191629 /* Enum + Extensions.swift */; };
 		029A303C1E5ADAEF001C363D /* NSFileManager+BPVExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A303B1E5ADAEF001C363D /* NSFileManager+BPVExtensions.m */; };
 		029A30401E5ADBAF001C363D /* BPVMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A303F1E5ADBAF001C363D /* BPVMacro.m */; };
-		029A30421E5AF637001C363D /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029A30411E5AF637001C363D /* FileManager.swift */; };
-		029A30451E5B17C0001C363D /* FillSessionWithModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029A30441E5B17C0001C363D /* FillSessionWithModels.swift */; };
+		02A356B71E6433D200FDA8C0 /* SlideInPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A356B31E6433D200FDA8C0 /* SlideInPresentationAnimator.swift */; };
+		02A356B81E6433D200FDA8C0 /* SlideInPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A356B41E6433D200FDA8C0 /* SlideInPresentationController.swift */; };
+		02A356B91E6433D200FDA8C0 /* SlideInPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A356B51E6433D200FDA8C0 /* SlideInPresentationManager.swift */; };
+		02A356BA1E6433D200FDA8C0 /* SlideOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A356B61E6433D200FDA8C0 /* SlideOutAnimationController.swift */; };
+		02A356BD1E64628200FDA8C0 /* SessionFillContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A356BC1E64628200FDA8C0 /* SessionFillContext.swift */; };
 		02A777061E435F520084D4EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A777051E435F520084D4EE /* AppDelegate.swift */; };
 		02A7770B1E435F520084D4EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A777091E435F520084D4EE /* Main.storyboard */; };
 		02A7770D1E435F520084D4EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A7770C1E435F520084D4EE /* Images.xcassets */; };
@@ -46,8 +48,8 @@
 		02A7771C1E435F520084D4EE /* ImageToServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7771B1E435F520084D4EE /* ImageToServerTests.swift */; };
 		02E15F8B1E4380AE00001D33 /* ImagePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F861E4380AE00001D33 /* ImagePickView.swift */; };
 		02E15F8C1E4380AE00001D33 /* ImagePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F871E4380AE00001D33 /* ImagePickViewController.swift */; };
-		02E15F8D1E4380AE00001D33 /* LoadedImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F891E4380AE00001D33 /* LoadedImagesViewController.swift */; };
-		02E15F8E1E4380AE00001D33 /* LoadedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F8A1E4380AE00001D33 /* LoadedImageView.swift */; };
+		02E15F8D1E4380AE00001D33 /* SessionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F891E4380AE00001D33 /* SessionListViewController.swift */; };
+		02E15F8E1E4380AE00001D33 /* SessionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E15F8A1E4380AE00001D33 /* SessionListView.swift */; };
 		02E3F8D81E48D73B0076866E /* FilesToCloudContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E3F8D71E48D73B0076866E /* FilesToCloudContext.swift */; };
 		02E3F8DB1E48DBDC0076866E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02E3F8D91E48DBDC0076866E /* Model.xcdatamodeld */; };
 		02F319FE1E446F5900758A11 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F319FC1E446F5900758A11 /* ImageCollectionViewCell.swift */; };
@@ -80,15 +82,10 @@
 		AC7127B81E449F56007A0333 /* TwoIndexArrayChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71278E1E449F56007A0333 /* TwoIndexArrayChange.swift */; };
 		AC7127B91E449F56007A0333 /* ArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71278F1E449F56007A0333 /* ArrayModel.swift */; };
 		AC7127BB1E449F56007A0333 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7127911E449F56007A0333 /* Model.swift */; };
-		AC7127BC1E449F56007A0333 /* SlideInPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7127941E449F56007A0333 /* SlideInPresentationAnimator.swift */; };
-		AC7127BD1E449F56007A0333 /* SlideInPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7127951E449F56007A0333 /* SlideInPresentationController.swift */; };
-		AC7127BE1E449F56007A0333 /* SlideInPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7127961E449F56007A0333 /* SlideInPresentationManager.swift */; };
-		AC7127BF1E449F56007A0333 /* SlideOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7127971E449F56007A0333 /* SlideOutAnimationController.swift */; };
 		AC7127C01E449F56007A0333 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7127981E449F56007A0333 /* TableViewController.swift */; };
 		AC7127C11E449F56007A0333 /* TrancitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7127991E449F56007A0333 /* TrancitionViewController.swift */; };
 		AC7127C21E449F56007A0333 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71279A1E449F56007A0333 /* ViewController.swift */; };
 		AC7127C31E449F56007A0333 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71279C1E449F56007A0333 /* RoundedView.swift */; };
-		AC7127C41E449F56007A0333 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71279D1E449F56007A0333 /* TableViewCell.swift */; };
 		AC7127C81E44A024007A0333 /* SentImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7127C61E44A024007A0333 /* SentImagesCell.swift */; };
 		AC7127C91E44A024007A0333 /* SentImagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC7127C71E44A024007A0333 /* SentImagesCell.xib */; };
 /* End PBXBuildFile section */
@@ -106,7 +103,6 @@
 /* Begin PBXFileReference section */
 		0211B8321E49CCF900A3F723 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0211B8351E4A0A3900A3F723 /* LoadSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadSetupViewController.swift; sourceTree = "<group>"; };
-		0211B8381E4A123F00A3F723 /* LoginContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginContext.swift; sourceTree = "<group>"; };
 		0211B83A1E4A125700A3F723 /* LoginWithDropbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWithDropbox.swift; sourceTree = "<group>"; };
 		0211B83C1E4A1D6000A3F723 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		0227D96C1E4B5A5C00AF2FBB /* LoadSetupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadSetupView.swift; sourceTree = "<group>"; };
@@ -122,7 +118,7 @@
 		0246A1BC1E5464AC00094152 /* DBSession+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBSession+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0246A1C11E546BBD00094152 /* DBSessions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBSessions.swift; sourceTree = "<group>"; };
 		0246A1C31E546BE600094152 /* DBMediaModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMediaModels.swift; sourceTree = "<group>"; };
-		025DC5131E48706C00FB679F /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		025DC5131E48706C00FB679F /* ContextProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextProtocol.swift; sourceTree = "<group>"; };
 		025DC5161E4870E200FB679F /* FetchImagesContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchImagesContext.swift; sourceTree = "<group>"; };
 		025DC5181E488FBB00FB679F /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		025DD5F11E4E12CF000EE2D7 /* DropboxUploadContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropboxUploadContext.swift; sourceTree = "<group>"; };
@@ -137,8 +133,11 @@
 		029A303B1E5ADAEF001C363D /* NSFileManager+BPVExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+BPVExtensions.m"; sourceTree = "<group>"; };
 		029A303E1E5ADBAF001C363D /* BPVMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPVMacro.h; sourceTree = "<group>"; };
 		029A303F1E5ADBAF001C363D /* BPVMacro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPVMacro.m; sourceTree = "<group>"; };
-		029A30411E5AF637001C363D /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
-		029A30441E5B17C0001C363D /* FillSessionWithModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillSessionWithModels.swift; sourceTree = "<group>"; };
+		02A356B31E6433D200FDA8C0 /* SlideInPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationAnimator.swift; sourceTree = "<group>"; };
+		02A356B41E6433D200FDA8C0 /* SlideInPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationController.swift; sourceTree = "<group>"; };
+		02A356B51E6433D200FDA8C0 /* SlideInPresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationManager.swift; sourceTree = "<group>"; };
+		02A356B61E6433D200FDA8C0 /* SlideOutAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideOutAnimationController.swift; sourceTree = "<group>"; };
+		02A356BC1E64628200FDA8C0 /* SessionFillContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionFillContext.swift; sourceTree = "<group>"; };
 		02A777001E435F520084D4EE /* ImageToServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageToServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A777041E435F520084D4EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02A777051E435F520084D4EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -150,8 +149,8 @@
 		02A7771B1E435F520084D4EE /* ImageToServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageToServerTests.swift; sourceTree = "<group>"; };
 		02E15F861E4380AE00001D33 /* ImagePickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickView.swift; sourceTree = "<group>"; };
 		02E15F871E4380AE00001D33 /* ImagePickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickViewController.swift; sourceTree = "<group>"; };
-		02E15F891E4380AE00001D33 /* LoadedImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadedImagesViewController.swift; sourceTree = "<group>"; };
-		02E15F8A1E4380AE00001D33 /* LoadedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadedImageView.swift; sourceTree = "<group>"; };
+		02E15F891E4380AE00001D33 /* SessionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionListViewController.swift; sourceTree = "<group>"; };
+		02E15F8A1E4380AE00001D33 /* SessionListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionListView.swift; sourceTree = "<group>"; };
 		02E3F8D71E48D73B0076866E /* FilesToCloudContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesToCloudContext.swift; sourceTree = "<group>"; };
 		02E3F8DA1E48DBDC0076866E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		02F319FC1E446F5900758A11 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -187,15 +186,10 @@
 		AC71278E1E449F56007A0333 /* TwoIndexArrayChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoIndexArrayChange.swift; sourceTree = "<group>"; };
 		AC71278F1E449F56007A0333 /* ArrayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayModel.swift; sourceTree = "<group>"; };
 		AC7127911E449F56007A0333 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		AC7127941E449F56007A0333 /* SlideInPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationAnimator.swift; sourceTree = "<group>"; };
-		AC7127951E449F56007A0333 /* SlideInPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationController.swift; sourceTree = "<group>"; };
-		AC7127961E449F56007A0333 /* SlideInPresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationManager.swift; sourceTree = "<group>"; };
-		AC7127971E449F56007A0333 /* SlideOutAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideOutAnimationController.swift; sourceTree = "<group>"; };
 		AC7127981E449F56007A0333 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		AC7127991E449F56007A0333 /* TrancitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrancitionViewController.swift; sourceTree = "<group>"; };
 		AC71279A1E449F56007A0333 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AC71279C1E449F56007A0333 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
-		AC71279D1E449F56007A0333 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		AC7127C61E44A024007A0333 /* SentImagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentImagesCell.swift; sourceTree = "<group>"; };
 		AC7127C71E44A024007A0333 /* SentImagesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SentImagesCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -231,7 +225,6 @@
 		0211B8371E4A121000A3F723 /* LoginContext */ = {
 			isa = PBXGroup;
 			children = (
-				0211B8381E4A123F00A3F723 /* LoginContext.swift */,
 				0211B83A1E4A125700A3F723 /* LoginWithDropbox.swift */,
 			);
 			path = LoginContext;
@@ -265,11 +258,11 @@
 		025DC50F1E486FE600FB679F /* Context */ = {
 			isa = PBXGroup;
 			children = (
-				025DC5131E48706C00FB679F /* Context.swift */,
+				025DC5131E48706C00FB679F /* ContextProtocol.swift */,
 				0211B8371E4A121000A3F723 /* LoginContext */,
 				02E3F8D61E48D7150076866E /* FilesToCloudContext */,
 				025DC5151E48709500FB679F /* FetchImagesContext */,
-				029A30431E5B17A8001C363D /* FillSessionWithModels */,
+				02A356BB1E64628200FDA8C0 /* SessionFillContext */,
 			);
 			path = Context;
 			sourceTree = "<group>";
@@ -319,12 +312,23 @@
 			path = BPVMacro;
 			sourceTree = "<group>";
 		};
-		029A30431E5B17A8001C363D /* FillSessionWithModels */ = {
+		02A356B21E6433D200FDA8C0 /* SlideInPresentationController */ = {
 			isa = PBXGroup;
 			children = (
-				029A30441E5B17C0001C363D /* FillSessionWithModels.swift */,
+				02A356B31E6433D200FDA8C0 /* SlideInPresentationAnimator.swift */,
+				02A356B41E6433D200FDA8C0 /* SlideInPresentationController.swift */,
+				02A356B51E6433D200FDA8C0 /* SlideInPresentationManager.swift */,
+				02A356B61E6433D200FDA8C0 /* SlideOutAnimationController.swift */,
 			);
-			path = FillSessionWithModels;
+			path = SlideInPresentationController;
+			sourceTree = "<group>";
+		};
+		02A356BB1E64628200FDA8C0 /* SessionFillContext */ = {
+			isa = PBXGroup;
+			children = (
+				02A356BC1E64628200FDA8C0 /* SessionFillContext.swift */,
+			);
+			path = SessionFillContext;
 			sourceTree = "<group>";
 		};
 		02A776F71E435F520084D4EE = {
@@ -422,8 +426,8 @@
 		02E15F881E4380AE00001D33 /* LoadedImagesViewController */ = {
 			isa = PBXGroup;
 			children = (
-				02E15F891E4380AE00001D33 /* LoadedImagesViewController.swift */,
-				02E15F8A1E4380AE00001D33 /* LoadedImageView.swift */,
+				02E15F891E4380AE00001D33 /* SessionListViewController.swift */,
+				02E15F8A1E4380AE00001D33 /* SessionListView.swift */,
 				AC7127C51E449F6B007A0333 /* SentImagesCell */,
 			);
 			path = LoadedImagesViewController;
@@ -493,7 +497,6 @@
 				024586371E4C68A70031C605 /* AppDelegate + Extensions.swift */,
 				026F61161E51EDF500191629 /* Enum + Extensions.swift */,
 				0240577E1E55B5990053EAB7 /* ManagedObject.swift */,
-				029A30411E5AF637001C363D /* FileManager.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -609,7 +612,7 @@
 		AC7127921E449F56007A0333 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				AC7127931E449F56007A0333 /* SlideInPresentationController */,
+				02A356B21E6433D200FDA8C0 /* SlideInPresentationController */,
 				AC7127981E449F56007A0333 /* TableViewController.swift */,
 				AC7127991E449F56007A0333 /* TrancitionViewController.swift */,
 				AC71279A1E449F56007A0333 /* ViewController.swift */,
@@ -617,21 +620,9 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		AC7127931E449F56007A0333 /* SlideInPresentationController */ = {
-			isa = PBXGroup;
-			children = (
-				AC7127941E449F56007A0333 /* SlideInPresentationAnimator.swift */,
-				AC7127951E449F56007A0333 /* SlideInPresentationController.swift */,
-				AC7127961E449F56007A0333 /* SlideInPresentationManager.swift */,
-				AC7127971E449F56007A0333 /* SlideOutAnimationController.swift */,
-			);
-			path = SlideInPresentationController;
-			sourceTree = "<group>";
-		};
 		AC71279B1E449F56007A0333 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AC71279D1E449F56007A0333 /* TableViewCell.swift */,
 				AC71279C1E449F56007A0333 /* RoundedView.swift */,
 				025DC5181E488FBB00FB679F /* RoundView.swift */,
 			);
@@ -817,6 +808,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				025DC5171E4870E200FB679F /* FetchImagesContext.swift in Sources */,
+				02A356B71E6433D200FDA8C0 /* SlideInPresentationAnimator.swift in Sources */,
+				02A356B91E6433D200FDA8C0 /* SlideInPresentationManager.swift in Sources */,
 				025DC5191E488FBB00FB679F /* RoundView.swift in Sources */,
 				AC7127C21E449F56007A0333 /* ViewController.swift in Sources */,
 				AC7127A11E449F56007A0333 /* Array.swift in Sources */,
@@ -826,16 +819,15 @@
 				0211B83B1E4A125700A3F723 /* LoginWithDropbox.swift in Sources */,
 				AC7127B21E449F56007A0333 /* RemoveModel + UITableView.swift in Sources */,
 				0246A1BF1E5464AC00094152 /* DBSession+CoreDataClass.swift in Sources */,
+				02A356BD1E64628200FDA8C0 /* SessionFillContext.swift in Sources */,
 				02F319FE1E446F5900758A11 /* ImageCollectionViewCell.swift in Sources */,
 				02A777061E435F520084D4EE /* AppDelegate.swift in Sources */,
 				025DD5F61E4E1302000EE2D7 /* ICloudUploadContext.swift in Sources */,
 				AC7127B61E449F56007A0333 /* UpdateModel.swift in Sources */,
 				AC7127AF1E449F56007A0333 /* MoveModel + UITableView.swift in Sources */,
 				AC7127C11E449F56007A0333 /* TrancitionViewController.swift in Sources */,
-				AC7127BE1E449F56007A0333 /* SlideInPresentationManager.swift in Sources */,
 				02353F731E53189D0012B4B4 /* MediaModel.swift in Sources */,
 				0246A1C01E5464AC00094152 /* DBSession+CoreDataProperties.swift in Sources */,
-				AC7127BC1E449F56007A0333 /* SlideInPresentationAnimator.swift in Sources */,
 				AC7127A21E449F56007A0333 /* NSManagedObject+BPVExtensions.m in Sources */,
 				AC7127B11E449F56007A0333 /* RemoveModel + UICollectionView.swift in Sources */,
 				AC7127B01E449F56007A0333 /* MoveModel.swift in Sources */,
@@ -846,15 +838,12 @@
 				0211B83D1E4A1D6000A3F723 /* UIApplication.swift in Sources */,
 				026F610D1E51E4C700191629 /* Sessions.swift in Sources */,
 				AC7127A31E449F56007A0333 /* UICollectionView.swift in Sources */,
-				0211B8391E4A123F00A3F723 /* LoginContext.swift in Sources */,
 				029A30401E5ADBAF001C363D /* BPVMacro.m in Sources */,
 				AC7127C31E449F56007A0333 /* RoundedView.swift in Sources */,
 				0227D96D1E4B5A5C00AF2FBB /* LoadSetupView.swift in Sources */,
 				AC71279E1E449F56007A0333 /* Lock.swift in Sources */,
 				AC7127AA1E449F56007A0333 /* ArrayChange.swift in Sources */,
 				022ED80F1E4C93D000EB583A /* DBArrayModel.swift in Sources */,
-				AC7127BF1E449F56007A0333 /* SlideOutAnimationController.swift in Sources */,
-				AC7127BD1E449F56007A0333 /* SlideInPresentationController.swift in Sources */,
 				0246A1BE1E5464AC00094152 /* DBMediaModel+CoreDataProperties.swift in Sources */,
 				AC7127B41E449F56007A0333 /* UpdateModel + UICollectionView.swift in Sources */,
 				AC7127AD1E449F56007A0333 /* AddModel.swift in Sources */,
@@ -862,29 +851,28 @@
 				AC7127B91E449F56007A0333 /* ArrayModel.swift in Sources */,
 				0211B8361E4A0A3900A3F723 /* LoadSetupViewController.swift in Sources */,
 				024586381E4C68A70031C605 /* AppDelegate + Extensions.swift in Sources */,
+				02A356BA1E6433D200FDA8C0 /* SlideOutAnimationController.swift in Sources */,
+				02A356B81E6433D200FDA8C0 /* SlideInPresentationController.swift in Sources */,
 				024586361E4C5AC80031C605 /* UINavigationController.swift in Sources */,
 				AC7127AE1E449F56007A0333 /* MoveModel + UICollectionView.swift in Sources */,
 				AC7127B71E449F56007A0333 /* OneIndexArrayChange.swift in Sources */,
 				025DD5F41E4E12E2000EE2D7 /* BoxUploadContext.swift in Sources */,
-				AC7127C41E449F56007A0333 /* TableViewCell.swift in Sources */,
 				AC7127C81E44A024007A0333 /* SentImagesCell.swift in Sources */,
 				AC7127B51E449F56007A0333 /* UpdateModel + UITableView.swift in Sources */,
 				0246A1BD1E5464AC00094152 /* DBMediaModel+CoreDataClass.swift in Sources */,
-				02E15F8E1E4380AE00001D33 /* LoadedImageView.swift in Sources */,
+				02E15F8E1E4380AE00001D33 /* SessionListView.swift in Sources */,
 				025DD5F81E4E1355000EE2D7 /* MailRuUploadContext.swift in Sources */,
 				AC7127A41E449F56007A0333 /* UINib.swift in Sources */,
-				029A30451E5B17C0001C363D /* FillSessionWithModels.swift in Sources */,
 				AC7127B31E449F56007A0333 /* RemoveModel.swift in Sources */,
 				0240577F1E55B5990053EAB7 /* ManagedObject.swift in Sources */,
-				02E15F8D1E4380AE00001D33 /* LoadedImagesViewController.swift in Sources */,
-				029A30421E5AF637001C363D /* FileManager.swift in Sources */,
+				02E15F8D1E4380AE00001D33 /* SessionListViewController.swift in Sources */,
 				025DD5F21E4E12CF000EE2D7 /* DropboxUploadContext.swift in Sources */,
 				026F610F1E51E4EA00191629 /* Session.swift in Sources */,
 				AC7127BB1E449F56007A0333 /* Model.swift in Sources */,
 				02E3F8D81E48D73B0076866E /* FilesToCloudContext.swift in Sources */,
 				026F61151E51E8B900191629 /* Constants.swift in Sources */,
 				02E15F8B1E4380AE00001D33 /* ImagePickView.swift in Sources */,
-				025DC5141E48706C00FB679F /* Context.swift in Sources */,
+				025DC5141E48706C00FB679F /* ContextProtocol.swift in Sources */,
 				AC7127A91E449F56007A0333 /* ArrayChange + UITableView.swift in Sources */,
 				AC7127AC1E449F56007A0333 /* AddModel + UITableView.swift in Sources */,
 				AC7127A81E449F56007A0333 /* ArrayChange + UICollectionView.swift in Sources */,

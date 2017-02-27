@@ -1,5 +1,5 @@
 //
-//  FillSessionWithModels.swift
+//  SessionFillContext.swift
 //  ImageToServer
 //
 //  Created by Pavel Bondar on 2/20/17.
@@ -10,12 +10,12 @@ import UIKit
 
 let kApplicationFolderName = "ImageToServer"
 
-class FillSessionWithModels: Context {
+class SessionFillContext: NSObject, ContextProtocol {
     var mediaModels: ArrayModel?
     var session: DBSession!
     
-    class func fillSession(_ session: DBSession, with models: ArrayModel?) -> FillSessionWithModels {
-        let context = FillSessionWithModels()
+    class func fillSession(_ session: DBSession, with models: ArrayModel?) -> SessionFillContext {
+        let context = SessionFillContext()
         
         context.session = session
         context.mediaModels = models
@@ -23,7 +23,7 @@ class FillSessionWithModels: Context {
         return context	
     }
     
-    override func execute() {
+    func execute() {
         guard let models = mediaModels?.models as? [MediaModel] else { return }
         var dbMediaModel: DBMediaModel?
         for model in models {

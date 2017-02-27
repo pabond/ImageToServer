@@ -10,10 +10,6 @@
 import Foundation
 
 struct Constants {
-    struct Storyboards {
-        
-    }
-    
     struct Images {
 
     }

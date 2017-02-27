@@ -1,5 +1,5 @@
 //
-//  Context.swift
+//  ContextProtocol.swift
 //  ImageToServer
 //
 //  Created by Pavel Bondar on 2/6/17.
@@ -8,8 +8,6 @@
 
 import UIKit
 
-class Context: NSObject {
-    func execute() {
-        
-    }
+protocol ContextProtocol {
+    func execute() -> ()
 }

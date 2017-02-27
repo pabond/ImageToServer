@@ -8,19 +8,23 @@
 
 import UIKit
 
-fileprivate let inset: CGFloat = 3.0
-fileprivate let cellsPerRow: CGFloat = 4
-
-fileprivate let alertNoNameTitle = "Name not set"
-fileprivate let alertNoNameText = "Please input session name to send"
-fileprivate let addImageName = "AddImage"
-fileprivate let alertNotSelectedImages = "Images not selected"
-fileprivate let alertNotSelectedImagesText = "Please select some pictures to send"
+fileprivate struct AlertConstants {
+    static let alertNoNameTitle = "Name not set"
+    static let alertNoNameText = "Please input session name to send"
+    static let alertNotSelectedImages = "Images not selected"
+    static let alertNotSelectedImagesText = "Please select some pictures to send"
+}
 
 class LoadSetupViewController: ViewController {
+    fileprivate let inset: CGFloat = 3.0
+    fileprivate let cellsPerRow: CGFloat = 4
+    
     var startLoading: (( _ session: DBSession) -> ())?
-    var loadSetupView: LoadSetupView?
     var mediaModels: ArrayModel?
+    fileprivate var loadSetupView: LoadSetupView?
+    
+    //MARK: -
+    //MARK: View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,32 +33,46 @@ class LoadSetupViewController: ViewController {
         loadSetupView?.collectionView.registerCell(withClass: ImageCollectionViewCell.self)
     }
     
+    //MARK: -
+    //MARK: Interface Handling
+    
+    
+    @IBAction func onCancel(_ sender: Any) {
+        popCurrentViewController()
+    }
+    
     @IBAction func onSend(_ sender: Any) {
         let title = loadSetupView?.nameTextField.text
         
         if title == nil || title == "" {
-            infoAlert(title: alertNoNameTitle, text: alertNoNameText)
+            infoAlert(title: AlertConstants.alertNoNameTitle, text: AlertConstants.alertNoNameText)
             
             return
         } else if mediaModels?.count == 0 {
-            infoAlert(title: alertNotSelectedImages, text: alertNotSelectedImagesText)
+            infoAlert(title: AlertConstants.alertNotSelectedImages, text: AlertConstants.alertNotSelectedImagesText)
             
             return
         }
         
         navigationController?.popViewControllerWithHandler { [weak self] in
             guard let cloud = self?.loadSetupView?.selectedCloud, let session = DBSession.session(title!, cloud) else { return }
-            let context = FillSessionWithModels.fillSession(session, with: self?.mediaModels)
+            let context = SessionFillContext.fillSession(session, with: self?.mediaModels)
             context.execute()
             self?.startLoading.map { $0(session) }
         }
     }
     
-    func imagesAdded(_ mediaModels: ArrayModel?) {
+    //MARK: -
+    //MARK: Private functions
+    
+    fileprivate func imagesAdded(_ mediaModels: ArrayModel?) {
         self.mediaModels = mediaModels
         loadSetupView?.collectionView.reloadData()
     }
 }
+
+//MARK: -
+//MARK: UICollectionViewDelegate, UICollectionViewDataSource
 
 extension LoadSetupViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -72,7 +90,7 @@ extension LoadSetupViewController: UICollectionViewDelegate, UICollectionViewDat
             object = #imageLiteral(resourceName: "AddImage")
         }
         
-        cell.object = object
+        cell.fillWith(object)
         
         return cell
     }
@@ -86,6 +104,9 @@ extension LoadSetupViewController: UICollectionViewDelegate, UICollectionViewDat
         }
     }
 }
+
+//MARK: -
+//MARK: UICollectionViewDelegateFlowLayout
 
 extension LoadSetupViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,

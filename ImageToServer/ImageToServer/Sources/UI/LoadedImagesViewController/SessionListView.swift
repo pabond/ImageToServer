@@ -10,13 +10,16 @@ import UIKit
 
 fileprivate let headerCellHeight: CGFloat = 56.0
 
-class LoadedImageView: UIView {
-    @IBOutlet weak var tableView: UITableView!
+class SessionListView: UIView {
+    @IBOutlet weak var tableView: UITableView?
+    
+    //MARK: -
+    //MARK: View lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = headerCellHeight
+        tableView?.rowHeight = UITableViewAutomaticDimension
+        tableView?.estimatedRowHeight = headerCellHeight
     }
 }
