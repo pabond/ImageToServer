@@ -15,22 +15,23 @@ fileprivate let cellsPerRow: CGFloat = 4
 fileprivate let alertTitle = "No pictures picked"
 fileprivate let alertText = "Please pick some images to send first"
 
-class ImagePickViewController: UIViewController {
+class ImagePickViewController: UIViewController, RootViewGettable {
+    
+    typealias RootViewType = ImagePickView
+    
     var prepickedImages: ArrayModel?
     var startSending: ((_ images: ArrayModel?) -> ())?
     fileprivate var mediaModels: [MediaModel]?
     fileprivate var pickedModels = ArrayModel()
     private let disposeBag = DisposeBag()
-    private var imagePickView: ImagePickView?
     
     //MARK: -
     //MARK: View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        imagePickView = viewGetter()
-        imagePickView?.collectionView.registerCell(withClass: ImageCollectionViewCell.self)
+
+        rootView?.collectionView.registerCell(withClass: ImageCollectionViewCell.self)
         navigationItem.title = "Images"
         fetchImages()
     }
@@ -54,7 +55,7 @@ class ImagePickViewController: UIViewController {
             .observeOn(MainScheduler.instance)
             .subscribe({ [weak self] (mediaModels) in
             self?.mediaModels = mediaModels.element
-            self?.imagePickView?.collectionView.reloadData()
+            self?.rootView?.collectionView.reloadData()
         }).addDisposableTo(disposeBag)
         
         DispatchQueue.global().async {

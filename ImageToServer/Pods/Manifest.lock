@@ -1,17 +1,6 @@
 PODS:
   - Alamofire (4.0.1)
-  - GoogleAPIClient/Core (1.0.5):
-    - GTMSessionFetcher (~> 1.1)
-  - GoogleAPIClient/Drive (1.0.5):
-    - GoogleAPIClient/Core
-    - GTMSessionFetcher (~> 1.1)
-  - GTMOAuth2 (1.1.4):
-    - GTMSessionFetcher (~> 1.1)
-  - GTMSessionFetcher (1.1.8):
-    - GTMSessionFetcher/Full (= 1.1.8)
-  - GTMSessionFetcher/Core (1.1.8)
-  - GTMSessionFetcher/Full (1.1.8):
-    - GTMSessionFetcher/Core (= 1.1.8)
+  - IDPCastable (0.1.3)
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
@@ -20,21 +9,18 @@ PODS:
     - Alamofire (~> 4.0.1)
 
 DEPENDENCIES:
-  - GoogleAPIClient/Drive (~> 1.0.2)
-  - GTMOAuth2 (~> 1.1.0)
+  - IDPCastable
   - MagicalRecord
   - RxSwift (~> 3.0)
   - SwiftyDropbox
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  GoogleAPIClient: 4a6b0b807de8b1115a2835180b25dd93dc60f1ea
-  GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
-  GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
+  IDPCastable: 15051ffccffca8408dd633fbc2a19584e2e11e9c
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
   SwiftyDropbox: dfcd4d308d32d74729255b48833db61acdfb9c23
 
-PODFILE CHECKSUM: edc3ce3c28343b7c07f93520b46ec7344e6c231e
+PODFILE CHECKSUM: 62201c763a04ab3c8c193e581399a0e4b85fa80b
 
 COCOAPODS: 1.2.0

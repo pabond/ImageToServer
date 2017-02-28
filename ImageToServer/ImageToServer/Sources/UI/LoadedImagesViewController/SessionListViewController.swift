@@ -15,9 +15,11 @@ enum CloudType: String {
 
 fileprivate let sessionsKeyPath = "sessions"
 
-class SessionListViewController: UIViewController {
+class SessionListViewController: UIViewController, RootViewGettable {
+    
+    typealias RootViewType = SessionListView
+    
     let disposeBag = DisposeBag()
-    var sessionsView: SessionListView?
     
     var sessions: DBSessions?
 
@@ -27,13 +29,12 @@ class SessionListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sessionsView = viewGetter()
-        sessionsView?.tableView?.registerCell(withClass: SentImagesCell.self)
+        rootView?.tableView?.registerCell(withClass: SentImagesCell.self)
         
         sessions = DBSessions(with: nil, keyPath: sessionsKeyPath)
         
         sessions?.observable.observeOn(MainScheduler.asyncInstance).subscribe({ [weak self] (change) in
-            _ = change.map({ $0.apply(to: (self?.sessionsView?.tableView)!) })
+            _ = change.map({ $0.apply(to: (self?.rootView?.tableView)!) })
         }).addDisposableTo(disposeBag)
     }
     

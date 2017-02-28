@@ -15,22 +15,23 @@ fileprivate struct AlertConstants {
     static let alertNotSelectedImagesText = "Please select some pictures to send"
 }
 
-class LoadSetupViewController: ViewController {
+class LoadSetupViewController: ViewController, RootViewGettable {
+    
+    typealias RootViewType = LoadSetupView
+    
     fileprivate let inset: CGFloat = 3.0
     fileprivate let cellsPerRow: CGFloat = 4
     
-    var startLoading: (( _ session: DBSession) -> ())?
+    var startLoading: ((_ session: DBSession) -> ())?
     var mediaModels: ArrayModel?
-    fileprivate var loadSetupView: LoadSetupView?
     
     //MARK: -
     //MARK: View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadSetupView = viewGetter()
-        loadSetupView?.collectionView.registerCell(withClass: ImageCollectionViewCell.self)
+
+        rootView?.collectionView.registerCell(withClass: ImageCollectionViewCell.self)
     }
     
     //MARK: -
@@ -42,7 +43,7 @@ class LoadSetupViewController: ViewController {
     }
     
     @IBAction func onSend(_ sender: Any) {
-        let title = loadSetupView?.nameTextField.text
+        let title = rootView?.nameTextField.text
         
         if title == nil || title == "" {
             infoAlert(title: AlertConstants.alertNoNameTitle, text: AlertConstants.alertNoNameText)
@@ -55,7 +56,7 @@ class LoadSetupViewController: ViewController {
         }
         
         navigationController?.popViewControllerWithHandler { [weak self] in
-            guard let cloud = self?.loadSetupView?.selectedCloud, let session = DBSession.session(title!, cloud) else { return }
+            guard let cloud = self?.rootView?.selectedCloud, let session = DBSession.session(title!, cloud) else { return }
             let context = SessionFillContext.fillSession(session, with: self?.mediaModels)
             context.execute()
             self?.startLoading.map { $0(session) }
@@ -67,7 +68,7 @@ class LoadSetupViewController: ViewController {
     
     fileprivate func imagesAdded(_ mediaModels: ArrayModel?) {
         self.mediaModels = mediaModels
-        loadSetupView?.collectionView.reloadData()
+        rootView?.collectionView.reloadData()
     }
 }
 

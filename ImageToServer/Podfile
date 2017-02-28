@@ -4,7 +4,6 @@ use_frameworks!
 target 'ImageToServer' do
 	pod 'RxSwift',    '~> 3.0'
 	pod 'MagicalRecord'
-	pod 'GoogleAPIClient/Drive', '~> 1.0.2'
-	pod 'GTMOAuth2', '~> 1.1.0'
 	pod 'SwiftyDropbox'
+	pod 'IDPCastable'
 end
